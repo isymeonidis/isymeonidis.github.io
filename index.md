@@ -1,5 +1,5 @@
 # Iraklis SYMEONIDIS, PhD, ISO 27001
-### Research scientist
+## Research scientist
 
 I am a research scientist at RISE Research Institutes of Sweden (website)
 I am also a free researcher at COSIC@KULeuven, given the designation of an alumnus.
