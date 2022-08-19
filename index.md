@@ -16,11 +16,6 @@ I have been working on various scientific and industrial projects, including but
 
 - and privacy infringes in Online Social Networks - the Cambridge Analytica Scandal on Facebook.
 
-Previously, I was a post-doctoral researcher at, a post-doctoral researcher at NSS of KTH, SnT of the University of Luxembourg and COSIC of KU Leuven.
-I hold a PhD degree from COSIC of KU Leuven, supervised by Prof. Bart Preneel. Furthermore, I hold a master’s degree in Digital Systems Security from the University of Piraeus and an engineering degree in Information and Communication Engineering from the University of the Aegean.
-
-CV: Short resume
-
 Emails:
 
 iraklis [dot] symeonidis  [at] ri [dot] se
@@ -35,7 +30,6 @@ RISE Research Institutes of Sweden
 Isafjordsgatan 22
 164 40, Kista
 Sweden
-
 
 <!-- 
 ## Welcome to GitHub Pages
