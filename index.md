@@ -31,6 +31,8 @@ Isafjordsgatan 22
 164 40, Kista
 Sweden
 
+[Some Link]({% post_url 2010-07-21-name-of-post %})
+
 <!-- 
 ## Welcome to GitHub Pages
 
