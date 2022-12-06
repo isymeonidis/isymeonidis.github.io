@@ -1,12 +1,14 @@
-# Iraklis SYMEONIDIS, PhD, ISO 27001
+# Iraklis Symeonidis, PhD, ISO 27001
 ## Research scientist
 
-I am a research scientist at RISE Research Institutes of Sweden (website)
-I am also a free researcher at COSIC@KULeuven, given the designation of an alumnus.
+I am a research scientist at RISE Research Institutes of Sweden (website), located in Stockholm.
+I hold a Ph.D. from COSIC of KU Leuven, supervised by Prof. Bart Preneel.
 
-My research interests and expertise lie in the intersection between cyber-secure and privacy-preserving systems
-(security and privacy by design and default).
-I focus on threat modelling and designing protocols from transport up to the application/service layer considering cryptographic primitives.
+<!-- I am also a free researcher at COSIC@KULeuven, given the designation of an alumnus. -->
+
+Research interests in the intersection between cyber-secure and privacy-preserving systems: Cyber-secure systems; Data governance and privacy-preserving; Secure architectures and networking; Applied cryptography; Decentralized systems and Smart Contracts.
+
+I focus on Security and privacy by design and default and designing protocols from transport up to the application/service layer considering cryptographic primitives.
 
 I have been working on various scientific and industrial projects, including but not limited to:
 
@@ -15,6 +17,9 @@ I have been working on various scientific and industrial projects, including but
 - End-to-end encryption for private messaging, 
 
 - and privacy infringes in Online Social Networks - the Cambridge Analytica Scandal on Facebook.
+
+Previously, he was a post-doctoral researcher at NSS of KTH, SnT of the University of Luxembourg, and COSIC of KU Leuven. Furthermore, he holds an MS.c. in Digital Systems Security from the University of Piraeus and an engineering degree in Information and Communication Engineering from the University of the Aegean.
+
 
 Emails:
 
