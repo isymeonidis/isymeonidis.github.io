@@ -17,7 +17,7 @@
         .container {
             max-width: 900px;
             margin: auto;
-            text-align: center;
+            text-align: justify;
         }
         h1, h2 {
             color: #2c3e50;
@@ -30,6 +30,7 @@
             background: #ecf0f1;
             padding: 10px;
             border-radius: 5px;
+            text-align: center;
         }
         .profile-img {
             width: 200px;
@@ -44,16 +45,16 @@
             <h1>Collateral Damage of Facebook Third-Party Applications</h1>
         </header>
         <section class="contact section">
-            <p><strong>By</strong> Iraklis Symeonidis (COSIC, KU Leuven) and Gergely Biczók (CrySyS Lab, BME)</p>
+            <p><strong>By</strong> Iraklis Symeonidis (COSIC, KU Leuven) and Gergely Biczók (CrySyS Lab, BME) - 2018-03-26 </p>
         </section>
         <section>
             <p>Recent technological advancements have enabled the collection of large amounts of personal data at an ever-increasing rate. Data analytics companies such as Cambridge Analytica (CA) and Palantir can collect rich information about individuals’ everyday lives and habits from big data-silos, enabling profiling and micro-targeting of individuals such as in the case of political elections or predictive policing. As it has been reported at several major news outlets already in 2015, approximately 87 million Facebook (FB) profiles have been harvested by Aleksandr Kogan’s app (37 million more than previously reported), “thisisyourdigitallife”, through his company Global Science Research (GSR) in collaboration with CA (CA is stating that they acquired licensed data for no more than 30 million people from GSR). This data has been used to draw a detailed psychological profile for every person affected, which in turn enabled CA to target them with personalized political ads potentially affecting the outcome of the 2016 US presidential elections. Whether CA used similar techniques at the time of the Brexit vote, elections in Kenya and an undisclosed Eastern European country (and several other countries) is under investigation. Both Kogan and CA deny allegations and say they have complied with regulations and acted in good faith.</p>
             <p>This blog post does not take sides in this debate, rather, it provides technical insight into the data collection mechanism, namely collateral information collection, that has enabled harvesting the FB profiles of the friends of app users. In this context, the term collateral damage refers to the privacy loss these friends suffer. In a larger nexus, this issue is part of interdependent privacy: when your privacy depends unavoidably on the actions of others (in this case, your friends).</p>
-            <img src="FB_API_Col-Dmg.png" alt="Facebook API Collateral Damage" class="img-fluid">
         </section>
         
         <section>
             <h2>Collateral Information Collection</h2>
+            <img src="FB_API_Col-Dmg.png" alt="Facebook API Collateral Damage" class="img-fluid">
             <p>Facebook has morphed into an immense information repository, storing individuals’ personal information; logging interactions between users and their friends, groups, events and pages. It also offers third-party applications (apps) developed by third-party application providers (app providers). While installing an app on Facebook, it enables access to the profile information of a user. Accepting the permissions, the app collects personal and often sensitive information of the user, such as profile image, dating preferences, religious and political interests.</p>
             <p>From a technical standpoint, Facebook provides an Application Programming Interface (API) and a set of permissions that allows third-party apps to gain access and transfer the information of users to app providers. Up until 2014 (2015 for already existing apps, Graph API v1.0), the profile information of a user could also be acquired when a friend of a user installed an app effectuating privacy interdependence on Facebook. Facebook claims that since 2015 (Graph API v2.0), this problem has been mitigated by changing the permission system, requiring mutual consent and mandating app reviews. However, in our previous work, we could retrieve information of arbitrary friends up until the API v2.3 using the Graph API interface.</p>
             <p>A user who shared personal information with his/her friends on Facebook had no idea whether a friend had installed an app that also accessed the shared content. In short, when a friend of a user installed an app, the app could request and grant access to the profile information of a user such as the birthday, current location, and history. Such access took place outside the circle of trust, the user was not aware whether a friend had installed an app collecting his/her information; collateral information collection was enabled only based on the friend’s consent and happened without the consent of the user herself. By default, almost all profile information of a user could be accessed by their friends’ applications, unless they manually unchecked the relevant boxes in “Apps others use”. Note that, in some cases, one or more app providers may offer several applications and thus potentially construct a more complete personal profile via data fusion. Such fusion is straightforward to carry out, as all users are assigned a unique ID on Facebook that carries over to any app. This “feature” is still available and will not be affected by FB CEO Mark Zuckerberg’s recent privacy-enhancing announcements.</p>
