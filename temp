@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iraklis Symeonidis - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .bio_section {
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        .section {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .contact {
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .profile-img {
+            width: 200px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img class="profile-img" src="https://media.licdn.com/dms/image/v2/D4D03AQHeCLOkPGQ6xQ/profile-displayphoto-shrink_800_800/B4DZTvBkk0GkAc-/0/1739176954746?e=1750896000&v=beta&t=du0ngMRpW6y_pJ0yVoQ-XS0Bse9SggE9GMUZUBfSMw0" alt="Iraklis Symeonidis">
+            <h1>Iraklis Symeonidis</h1>
+            <h2>PhD, MSc, ISO 27001 - Senior Scientist, Cybersecurity Architect</h2>
+<!--             <h2> Information Security Management and Governance, Risk Mitigation Strategies, Innovation</h2> -->
+        </header>
+        
+        <section class="contact section">
+            <p><strong>Senior scientist at</strong> <a href="https://www.ri.se/en/person/iraklis-symeonidis/" target="_blank"> RISE Research Institutes of Sweden</a></p>
+            <p><strong>Address:</strong> Isafjordsgatan 22, 16440 Kista, Sweden</p>
+<!--             <p><strong>Phone:</strong> +46 73-077 43 52</p> -->
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <script>
+                document.getElementById("email").innerHTML = "<a href='mailto:" + "iraklis.symeonidis" + "@iri.se'>iraklis.symeonidis [at] ri [dot] se</a>";
+            </script>
+<!--             <p><strong>Email:</strong> <a href="mailto:iraklis.symeonidis@ri.se">iraklis.symeonidis@ri.se</a></p> -->
+            <p><strong>Additional info:</strong> <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/" target="_blank">Linkedin</a></p>
+        </section>
+
+        <section class="bio_section">
+            <h2>Professional Summary</h2>
+<!--             <p>Iraklis Symeonidis is an expert in secure architectures, cryptography, and cybersecurity with a PhD in Applied Cryptography. Experienced in designing security-by-design and privacy-by-design solutions and contributing to industrial and scientific projects.</p> -->
+            <p>Iraklis Symeonidis is a Senior Research Scientist at RISE, specializing in cybersecurity and privacy. He focuses on information security governance, secure architectures, compliance frameworks, and risk mitigation strategies. With expertise in threat analysis and the design of cyber-resilient and privacy-preserving systems for real-world applications. He works to protect digital ecosystems supporting critical and connected infrastructure. He brings the necessary expertise needed to understand and address complex cybersecurity challenges, bridging research with practical applications and effectively engaging stakeholders at both technical and management levels.</p>
+        </section>
+
+        <section class="section">
+            <h2>Current Interests</h2>
+            <ul>
+                <li>Cybersecurity, secure architectures and networking</li>
+                <li>Applied cryptography</li>
+                <li>Privacy preserving technologies</li>
+                <li>Data governance and compliance</li>
+                <li>Information Security Management and Governance</li>
+                <li>Risk Mitigation Strategies</li>
+                <li>Digitalization and Innovation</li>
+            </ul>
+        </section>
+
+<!--         <section class="section">
+            <h2>Professional Experience</h2>
+            <p><strong>RISE Research Institutes of Sweden (2022 - Present)</strong> - Senior Scientist & Cybersecurity Architect</p>
+            <p><strong>KTH, Sweden (2020 - 2022)</strong> - Postdoctoral Researcher & Teaching Assistant</p>
+            <p><strong>SnT, University of Luxembourg (2018 - 2020)</strong> - Postdoctoral Researcher</p>
+            <p><strong>KU Leuven, Belgium (2013 - 2018)</strong> - PhD Researcher</p>
+        </section> -->
+
+<!--         <section class="section">
+            <h2>Education</h2>
+            <p><strong>PhD in Applied Cryptography (2013 - 2018)</strong> - KU Leuven, Belgium</p>
+            <p><strong>MSc in Digital Systems Security (2011 - 2013)</strong> - University of Piraeus, Greece</p>
+            <p><strong>Diploma of Engineering (1998 - 2004)</strong> - University of the Aegean, Greece</p>
+        </section> -->
+        <section class="section">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>PhD in Applied Cryptography</strong> - KU Leuven, Belgium</li>
+                <li><strong>MSc in Digital Systems Security</strong> - University of Piraeus, Greece</li>
+                <li><strong>Diploma of Engineering</strong> - University of the Aegean, Greece</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Certifications & Training (selection)</h2>
+            <ul>
+                <li>Cyber Security and Cryptography, 2015- KU Leuven, Belgium</li>
+                <li>ENCS Advanced Cyber Security Course, 2014 - The Hague, Netherlands</li>
+                <li>ISO/IEC 27001:2005 - Information Security Management, 2013 - Athens, Greece</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Invited Talks (selection) </h2>
+            <ul>
+                <li>"Engineering Privacy for Vehicle 2 Cloud Infrastructure" - Privacy Engineering Group, Netherlands (2021)</li>
+                <li>"Analysis and design of privacy-enhancing online sharing platforms" - University of Manchester, UK (2019)</li>
+                <li>"Privacy and car sharing systems" - IPEN workshop, Barcelona, Spain (2018)</li>
+                <li>"Privacy-preserving information sharing" - Chinese Academy of Sciences, Beijing, China (2018)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Media Attention</h2>
+            <p>Research on Facebook-Cambridge Analytica scandal, featured in Wired, NBC News, and France24: <a href="/fb_collateral_dmg.html" target="_blank">Link</a></p>
+        </section>
+
+         <section class="section">
+            <h2>Publications</h2>
+            <p><strong>Publications webpage:</strong> <a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a></p>
+        </section>
+        
+        <section class="section">
+            <h2>Languages</h2>
+            <ul>
+                <li>Excellent oral and written skills in English (C2), Greek (native)</li>
+                <li>Beginner in French (A1)</li>
+                <li>Beginner in Swedish (A1)</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Additional Skills</h2>
+            <ul>
+                <li>Board member of Orfeas choir, Sweden</li>
+                <li>Certified in First Aid and Pool Lifeguarding</li>
+                <li>Drone photography enthusiast</li>
+                <li>Former Water Polo and Volleyball player</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
