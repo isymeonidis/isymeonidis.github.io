@@ -37,16 +37,6 @@
       background:#000; color:#fff; border-radius:6px; z-index:1000; outline:2px solid #fff;
     }
 
-    #selected-publications { margin: 2rem 0; }
-    #selected-publications h2 {
-      color: #666; text-transform: uppercase; font-size: 18px; margin-bottom: .5rem;
-    }
-    .pubs { padding-left: 1.25rem; }
-    .pubs li { margin: 0 0 1rem 0; }
-    .pub-title a { color: #2c3e50; text-decoration: none; font-weight: 600; }
-    .pub-title a:hover { text-decoration: underline; }
-    .pub-authors, .pub-venue { color: #444; font-size: 14px; }
-    
     /* Sidebar (as nav landmark) */
     .sidebar {
       width: 260px; background: var(--muted); padding: 20px;
@@ -62,11 +52,16 @@
     .sidebar h2 { font-size: 14px; margin: 0 0 5px; color: var(--sub); }
     .sidebar h3 { font-size: 12px; color: #333; margin: 0 0 20px; }
     .sidebar p { font-size: 12px; margin-top: 5px; color: #444; }
+
+    /* CTA button (fix: win against `.sidebar a`) */
     .cta-btn{
       display:inline-block; margin: 6px 0 12px; padding:8px 12px; border-radius:6px;
-      background:#2c3e50; color:#fff; text-decoration:none; font-weight:bold;
+      background:#2c3e50; text-decoration:none; font-weight:bold;
     }
-    .cta-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+    /* higher-specificity color + visited to keep white text visible */
+    .sidebar a.cta-btn,
+    .sidebar a.cta-btn:visited { color:#fff; }
+    .sidebar a.cta-btn:hover { background:#1a252f; }
 
     /* Main content */
     main.content { margin-left: 280px; padding: 40px; max-width: 1000px; }
@@ -74,9 +69,14 @@
     h3 { color: #666; font-size: 16px; margin-top: 10px; }
     hr { border: 0; border-top: 1px solid var(--line); margin-top: 5px; margin-bottom: 20px; }
     .section { margin-bottom: 40px; }
+
     .box { border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: var(--accent); margin-bottom: 20px; }
     .box h3 { margin-top: 0; color: #333; }
     .box p { font-size: 14px; margin: 5px 0; }
+
+    /* Optional publication meta tweaks */
+    .pub-meta { color:#444; font-size:14px; }
+    .pub-links a { text-transform:none; font-weight:600; }
 
     /* Responsive */
     @media (max-width: 900px){
@@ -129,7 +129,7 @@
 
     <a href="#about">About</a>
     <a href="#interests">Current Interests</a>
-    <a href="#projects">Current Projects</a><!-- fixed anchor -->
+    <a href="#projects">Current Projects</a>
     <a href="#education">Education</a>
     <a href="#certifications">Certifications</a>
     <a href="#talks">Invited Talks</a>
@@ -147,10 +147,9 @@
       <hr>
       <p>Senior Research Scientist at RISE (Stockholm). Ph.D., KU Leuven/COSIC. WG lead and contributor in next-generation wireless networks (NGWN) and edge–cloud security. Horizon Europe contributor; active in EU and Swedish funding proposals. Security- and privacy-by-design for EVs, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging; contributed to ~SEK 10M in funded projects. Previously at KTH, SnT (Luxembourg), and KU Leuven. Team-first; strong cross-domain stakeholder engagement. International media coverage for “Collateral Damage of Facebook Apps.” Teaching and supervision in networked systems security. ISO/IEC 27001 Lead Auditor.</p>
 
-      <!-- Optional "Highlights" strip (keeps content scannable near top) -->
       <div class="box" aria-label="Highlights">
         <ul>
-          <li>WG leader/co-lead in NGWN security (BEiNG-WISE, NexusForum)</li>
+          <li>WG leader/co-lead in security-by-design of systems (BEiNG-WISE for NGWNs, NexusForum for Edge-to-Cloud Computing Continum)</li>
           <li>~SEK 10M funded; cross-domain EU collaborations</li>
           <li>Media: Wired, NBC, The Atlantic</li>
           <li>ISO/IEC 27001 Lead Auditor; teaching & supervision at KTH/RISE</li>
@@ -201,7 +200,7 @@
         <p><strong>Description:</strong> Coordinating research in next-generation wireless cybersecurity (5G/6G), including workshops, training, dissemination, and cross-disciplinary collaboration.</p>
         <p><strong>Funding Agency:</strong> COST Action</p>
         <p><strong>COST Action webpage:</strong> <a href="https://www.cost.eu/actions/CA22104/#tabs+Name:Working%20Groups%20and%20Membership" target="_blank" rel="noopener noreferrer">BEiNG-WISE</a></p>
-        <p><strong>Project Webpage:</strong> <a href="https://beingwise.eu" target="_blank" rel="noopener noreferrer">beingwise.eu</a></p><!-- fixed double https -->
+        <p><strong>Project Webpage:</strong> <a href="https://beingwise.eu" target="_blank" rel="noopener noreferrer">beingwise.eu</a></p>
       </div>
 
       <div class="box">
@@ -260,64 +259,63 @@
       </ul>
     </section>
 
+    <!-- SELECTED PUBLICATIONS AS GREY BOXES -->
     <section id="publications" class="section">
       <h2>Selected Publications</h2>
-      <p><a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
-      <ol class="pubs">
-        <li>
-          <span class="pub-title">
-            <a href="https://www.mdpi.com/2410-387X/9/3/52" target="_blank" rel="noopener noreferrer">
-              Towards Empowering Stakeholders Through Decentralized Trust and Secure Livestock Data Sharing
-            </a>
-          </span><br>
-          <span class="pub-authors">Abdul Ghafoor, <strong>Iraklis Symeonidis</strong>, Anna Rydberg, Cecilia Lindahl, Abdul Qadus Abbasi</span><br>
-          <span class="pub-venue"><em>Cryptography</em> 9(3):52, 2025</span> —
-          <a href="https://doi.org/10.3390/cryptography9030052" target="_blank" rel="noopener noreferrer">doi:10.3390/cryptography9030052</a>
-        </li>
-    
-        <li>
-          <span class="pub-title">
-            <a href="https://beingwise.eu/publications/deliverables/wg1-white-paper/" target="_blank" rel="noopener noreferrer">
-              Emerging Cybersecurity Paradigms in Wireless Networks: Physical Layer Innovation, Trust, and AI-Enhanced Defenses
-            </a>
-          </span><br>
-          <span class="pub-authors">Editors: <strong>Iraklis Symeonidis</strong>, Valeria Loscri (BEiNG-WISE WG1 White Paper)</span><br>
-          <span class="pub-venue">BEiNG-WISE (COST Action CA22104), 2025</span>
-        </li>
-    
-        <li>
-          <span class="pub-title">
-            <a href="https://doi.org/10.1109/EuCNC/6GSummit63408.2025.11037012" target="_blank" rel="noopener noreferrer">
-              Drowsiness and Fatigue Recognition Systems for Connected Vehicles, 6G and the EU AI Act
-            </a>
-          </span><br>
-          <span class="pub-authors">Ana Ferreira, Başak Ozan Özparlak, Hartmut Aden, <strong>Iraklis Symeonidis</strong>, Mehmet Çetin, Eirini Kanaki, Periklis Chatzimisios</span><br>
-          <span class="pub-venue">Proceedings of the 2025 Joint European Conference on Networks and Communications &amp; 6G Summit (EuCNC/6G Summit), 2025</span>
-        </li>
-    
-        <li>
-          <span class="pub-title">
-            <a href="https://arxiv.org/abs/2101.01950" target="_blank" rel="noopener noreferrer">
-              HERMES: Scalable, Secure, and Privacy-Enhancing Vehicle Access System
-            </a>
-          </span><br>
-          <span class="pub-authors"><strong>Iraklis Symeonidis</strong>, Dragos Rotaru, Mustafa A. Mustafa, Bart Mennink, Bart Preneel, Panos Papadimitratos</span><br>
-          <span class="pub-venue">arXiv, 2021</span> —
-          <a href="https://doi.org/10.48550/arXiv.2101.01950" target="_blank" rel="noopener noreferrer">doi:10.48550/arXiv.2101.01950</a>
-        </li>
-    
-        <li>
-          <span class="pub-title">
-            <a href="https://www.sciencedirect.com/science/article/pii/S016740481830302X" target="_blank" rel="noopener noreferrer">
-              Collateral damage of Facebook third-party applications: a comprehensive study
-            </a>
-          </span><br>
-          <span class="pub-authors"><strong>Iraklis Symeonidis</strong>, Gergely Biczók, Fatemeh Shirazi, Cristina Pérez-Solà, Jessica Schroers, Bart Preneel</span><br>
-          <span class="pub-venue"><em>Computers &amp; Security</em> 77:179–208, 2018</span> —
-          <a href="https://doi.org/10.1016/j.cose.2018.03.015" target="_blank" rel="noopener noreferrer">doi:10.1016/j.cose.2018.03.015</a>
-        </li>
-      </ol>
+      <hr>
+      <p class="pub-meta">
+        See also: <a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      </p>
+
+      <div class="box">
+        <h3>Towards Empowering Stakeholders Through Decentralized Trust and Secure Livestock Data Sharing (2025)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> Abdul Ghafoor, <strong>Iraklis Symeonidis</strong>, Anna Rydberg, Cecilia Lindahl, Abdul Qadus Abbasi</p>
+        <p class="pub-meta"><strong>Venue:</strong> <em>Cryptography</em> 9(3):52</p>
+        <p class="pub-links">
+          <a href="https://www.mdpi.com/2410-387X/9/3/52" target="_blank" rel="noopener noreferrer">Publisher</a> ·
+          <a href="https://doi.org/10.3390/cryptography9030052" target="_blank" rel="noopener noreferrer">DOI:10.3390/cryptography9030052</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Emerging Cybersecurity Paradigms in Wireless Networks: Physical Layer Innovation, Trust, and AI-Enhanced Defenses (2025)</h3>
+        <p class="pub-meta"><strong>Editors:</strong> <strong>Iraklis Symeonidis</strong>, Valeria Loscri (BEiNG-WISE WG1 White Paper)</p>
+        <p class="pub-meta"><strong>Venue:</strong> BEiNG-WISE (COST Action CA22104) — White Paper</p>
+        <p class="pub-links">
+          <a href="https://beingwise.eu/publications/deliverables/wg1-white-paper/" target="_blank" rel="noopener noreferrer">Project page</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Drowsiness and Fatigue Recognition Systems for Connected Vehicles, 6G and the EU AI Act (2025)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> Ana Ferreira, Başak Ozan Özparlak, Hartmut Aden, <strong>Iraklis Symeonidis</strong>, Mehmet Çetin, Eirini Kanaki, Periklis Chatzimisios</p>
+        <p class="pub-meta"><strong>Venue:</strong> Proc. EuCNC/6G Summit 2025</p>
+        <p class="pub-links">
+          <a href="https://doi.org/10.1109/EuCNC/6GSummit63408.2025.11037012" target="_blank" rel="noopener noreferrer">DOI</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>HERMES: Scalable, Secure, and Privacy-Enhancing Vehicle Access System (2021)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Dragos Rotaru, Mustafa A. Mustafa, Bart Mennink, Bart Preneel, Panos Papadimitratos</p>
+        <p class="pub-meta"><strong>Venue:</strong> arXiv</p>
+        <p class="pub-links">
+          <a href="https://arxiv.org/abs/2101.01950" target="_blank" rel="noopener noreferrer">arXiv</a> ·
+          <a href="https://doi.org/10.48550/arXiv.2101.01950" target="_blank" rel="noopener noreferrer">DOI:10.48550/arXiv.2101.01950</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Collateral damage of Facebook third-party applications: a comprehensive study (2018)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Gergely Biczók, Fatemeh Shirazi, Cristina Pérez-Solà, Jessica Schroers, Bart Preneel</p>
+        <p class="pub-meta"><strong>Venue:</strong> <em>Computers &amp; Security</em> 77:179–208</p>
+        <p class="pub-links">
+          <a href="https://www.sciencedirect.com/science/article/pii/S016740481830302X" target="_blank" rel="noopener noreferrer">Publisher</a> ·
+          <a href="https://doi.org/10.1016/j.cose.2018.03.015" target="_blank" rel="noopener noreferrer">DOI:10.1016/j.cose.2018.03.015</a>
+        </p>
+      </div>
     </section>
+    <!-- /SELECTED PUBLICATIONS -->
 
     <section id="academic" class="section">
       <h2>Academic and Other Services</h2>
