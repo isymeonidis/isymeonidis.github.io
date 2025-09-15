@@ -1,222 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iraklis Symeonidis - CV</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Iraklis Symeonidis — Senior Research Scientist & Cybersecurity Architect</title>
+  <meta name="description" content="Senior Research Scientist at RISE (Stockholm). Secure-by-design & cyber-resilient systems across NGWN/5G-6G, EV & edge–cloud, data spaces; ISO/IEC 27001 Lead Auditor." />
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:title" content="Iraklis Symeonidis — Senior Research Scientist & Cybersecurity Architect">
+  <meta property="og:description" content="Secure-by-design & cyber-resilient systems across NGWN/5G-6G, EV & edge–cloud, data spaces. Media: Wired, NBC, The Atlantic.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://isymeonidis.github.io/">
+  <meta property="og:image" content="https://isymeonidis.github.io/assets/og-cover.jpg"><!-- change to your image -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="canonical" href="https://isymeonidis.github.io/">
+  <meta name="theme-color" content="#2c3e50">
+
   <style>
+    :root{
+      --bg:#fff; --muted:#f4f4f4; --text:#222; --sub:#555; --line:#ccc; --link:#2c3e50; --linkHover:#1a252f; --accent:#f9f9f9;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
+      margin: 0; padding: 0;
+      display: flex; color: var(--text); background: var(--bg);
     }
+    /* Skip link for keyboard users */
+    .skip-link{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus, .skip-link:focus-visible{
+      position: fixed; left: 16px; top: 12px; width:auto; height:auto; padding:10px 14px;
+      background:#000; color:#fff; border-radius:6px; z-index:1000; outline:2px solid #fff;
+    }
+
+    /* Sidebar (as nav landmark) */
     .sidebar {
-      width: 260px;
-      background-color: #f4f4f4;
-      padding: 20px;
-      height: 100vh;
-      position: fixed;
-      overflow-y: auto;
-      text-align: right;
+      width: 260px; background: var(--muted); padding: 20px;
+      height: 100vh; position: fixed; overflow-y: auto; text-align: right;
     }
     .sidebar a {
-      display: block;
-      color: #2c3e50;
-      padding: 10px 0;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: bold;
-      font-size: 13px;
+      display: block; color: var(--link); padding: 10px 0; text-decoration: none;
+      text-transform: uppercase; font-weight: bold; font-size: 13px;
     }
-    .sidebar a:hover {
-      background-color: #ddd;
+    .sidebar a:hover, .sidebar a:focus-visible { background-color: #ddd; outline: 2px solid #555; outline-offset: 2px; }
+    .profile-img { width: 150px; border-radius: 50%; margin-bottom: 15px; }
+    .sidebar h1 { font-size: 20px; margin: 10px 0 5px; }
+    .sidebar h2 { font-size: 14px; margin: 0 0 5px; color: var(--sub); }
+    .sidebar h3 { font-size: 12px; color: #333; margin: 0 0 20px; }
+    .sidebar p { font-size: 12px; margin-top: 5px; color: #444; }
+    .cta-btn{
+      display:inline-block; margin: 6px 0 12px; padding:8px 12px; border-radius:6px;
+      background:#2c3e50; color:#fff; text-decoration:none; font-weight:bold;
     }
-    .profile-img {
-      width: 150px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
-    .sidebar h1 {
-      font-size: 20px;
-      margin: 10px 0 5px;
-    }
-    .sidebar h2 {
-      font-size: 14px;
-      margin: 0 0 5px;
-      color: #555;
-    }
-    .sidebar h3 {
-      font-size: 12px;
-      color: #333;
-      margin: 0 0 20px;
-    }
-    .sidebar p {
-      font-size: 12px;
-      margin-top: 5px;
-      color: #444;
-    }
-    .content {
-      margin-left: 280px;
-      padding: 40px;
-      max-width: 1000px;
-    }
-    h2 {
-      color: #666;
-      text-transform: uppercase;
-      font-size: 18px;
-    }
-    h3 {
-      color: #666;
-      font-size: 16px;
-      margin-top: 10px;
-    }
-    hr {
-      border: 0;
-      border-top: 1px solid #ccc;
-      margin-top: 5px;
-      margin-bottom: 20px;
-    }
-    .section {
-      margin-bottom: 40px;
-    }
+    .cta-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
-    .box {
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-      margin-bottom: 20px;
+    /* Main content */
+    main.content { margin-left: 280px; padding: 40px; max-width: 1000px; }
+    h2 { color: #666; text-transform: uppercase; font-size: 18px; }
+    h3 { color: #666; font-size: 16px; margin-top: 10px; }
+    hr { border: 0; border-top: 1px solid var(--line); margin-top: 5px; margin-bottom: 20px; }
+    .section { margin-bottom: 40px; }
+    .box { border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: var(--accent); margin-bottom: 20px; }
+    .box h3 { margin-top: 0; color: #333; }
+    .box p { font-size: 14px; margin: 5px 0; }
+
+    /* Responsive */
+    @media (max-width: 900px){
+      body{ flex-direction: column; }
+      .sidebar{ position: relative; width: 100%; height:auto; text-align: left; }
+      main.content{ margin-left: 0; padding: 20px; }
+      .sidebar a{ display:inline-block; margin-right:12px; }
     }
-
-  .box h3 {
-    margin-top: 0;
-    color: #333;
-  }
-
-  .box p {
-    font-size: 14px;
-    margin: 5px 0;
-  }
   </style>
+
+  <!-- Person JSON-LD (helps search & profile knowledge association) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iraklis Symeonidis",
+    "jobTitle": "Senior Research Scientist & Cybersecurity Architect",
+    "worksFor": { "@type": "Organization", "name": "RISE Research Institutes of Sweden" },
+    "alumniOf": [
+      {"@type":"CollegeOrUniversity","name":"KU Leuven"},
+      {"@type":"CollegeOrUniversity","name":"University of Piraeus"},
+      {"@type":"CollegeOrUniversity","name":"University of the Aegean"}
+    ],
+    "url": "https://isymeonidis.github.io/",
+    "image": "https://isymeonidis.github.io/assets/portrait.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/",
+      "https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en",
+      "https://www.ri.se/en/person/iraklis-symeonidis"
+    ],
+    "email": "mailto:iraklis.symeonidis@ri.se",
+    "knowsAbout": [
+      "Cybersecurity","Privacy Engineering","NGWN 5G/6G",
+      "Edge–Cloud Security","EV Cybersecurity","Data Spaces","PKI/Identity"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="sidebar">
-    <img class="profile-img" src="https://media.licdn.com/dms/image/v2/D4D03AQFskcQLWh0K8A/profile-displayphoto-scale_400_400/B4DZk9_xxaJkAk-/0/1757681758596?e=1760572800&v=beta&t=3Zitrb7b2TqeqqK_prUel6OBV8Y8tY5yIr8OIPOj9eo" alt="Iraklis Symeonidis">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="sidebar" aria-label="Primary">
+    <img class="profile-img" decoding="async" loading="lazy"
+         src="https://media.licdn.com/dms/image/v2/D4D03AQFskcQLWh0K8A/profile-displayphoto-scale_400_400/B4DZk9_xxaJkAk-/0/1757681758596?e=1760572800&v=beta&t=3Zitrb7b2TqeqqK_prUel6OBV8Y8tY5yIr8OIPOj9eo"
+         alt="Portrait of Iraklis Symeonidis">
     <h1>Iraklis Symeonidis</h1>
-    <h2>PhD, MSc, ISO 27001<br>Senior Researcher</h2>
-    <h3><a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank">RISE Research Institutes of Sweden</a></h3>
+    <h2>PhD, MSc, ISO 27001<br>Senior Research Scientist</h2>
+    <h3><a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer">RISE Research Institutes of Sweden</a></h3>
+    <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a>
+
     <a href="#about">About</a>
     <a href="#interests">Current Interests</a>
-    <a href="#interests">Current Projects</a>
+    <a href="#projects">Current Projects</a><!-- fixed anchor -->
     <a href="#education">Education</a>
     <a href="#certifications">Certifications</a>
     <a href="#talks">Invited Talks</a>
     <a href="#media">Media</a>
     <a href="#publications">Publications</a>
-<!--     <a href="#languages">Languages</a> -->
     <a href="#academic">Academic Service</a>
-    <a href="#teaching">Teaching & Supervision</a>
+    <a href="#teaching">Teaching &amp; Supervision</a>
     <a href="#personal_interests">Interests</a>
     <a href="#contact">Contact</a>
-  </div>
+  </nav>
 
-  <div class="content">
+  <main id="main" class="content" tabindex="-1">
     <section id="about" class="section">
       <h2>About</h2>
       <hr>
       <p>Senior Research Scientist at RISE (Stockholm). Ph.D., KU Leuven/COSIC. WG lead and contributor in next-generation wireless networks (NGWN) and edge–cloud security. Horizon Europe contributor; active in EU and Swedish funding proposals. Security- and privacy-by-design for EVs, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging; contributed to ~SEK 10M in funded projects. Previously at KTH, SnT (Luxembourg), and KU Leuven. Team-first; strong cross-domain stakeholder engagement. International media coverage for “Collateral Damage of Facebook Apps.” Teaching and supervision in networked systems security. ISO/IEC 27001 Lead Auditor.</p>
+
+      <!-- Optional "Highlights" strip (keeps content scannable near top) -->
+      <div class="box" aria-label="Highlights">
+        <ul>
+          <li>WG leader/co-lead in NGWN security (BEiNG-WISE, NexusForum)</li>
+          <li>~SEK 10M funded; cross-domain EU collaborations</li>
+          <li>Media: Wired, NBC, The Atlantic</li>
+          <li>ISO/IEC 27001 Lead Auditor; teaching & supervision at KTH/RISE</li>
+        </ul>
+      </div>
     </section>
 
-      <section id="interests" class="section">
-<!--         <h2>Current Interests</h2>
-        <hr>
-        <ul>
-          <li>Cybersecurity & Cryptography</li>
-          <li>Secure & Resilient Architectures</li>
-          <li>Decentralized Systems & Smart Contracts</li>
-          <li>Privacy-Enhancing Technologies</li>
-          <li>Digital Trust, Compliance & Governance</li>
-        </ul> -->
+    <section id="interests" class="section">
+      <h2>Current Skills &amp; Interests</h2>
+      <hr>
+      <ul>
+        <li><strong>Cybersecurity Leadership:</strong> Leading and contributing to WGs in NGWN and edge–cloud security (BEiNG-WISE, NexusForum)</li>
+        <li><strong>Funding &amp; Collaboration:</strong> Active contributor to Horizon Europe and Swedish funding proposals; secured ~SEK 10M in funded projects</li>
+        <li><strong>Technical Expertise:</strong> Security- &amp; privacy-by-design for EV ecosystems, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging</li>
+        <li><strong>Research &amp; Impact:</strong> Privacy engineering and secure systems; international media coverage for “Collateral Damage of Facebook Apps”</li>
+        <li><strong>Academic Engagement:</strong> Teaching and supervision in networked systems security; pedagogical experience across all education levels</li>
+        <li><strong>Team &amp; Stakeholder Skills:</strong> Team-first mindset with strong cross-domain stakeholder engagement</li>
+        <li><strong>Certifications:</strong> ISO/IEC 27001 Lead Auditor</li>
+        <li><strong>Broader Interests:</strong> Digital sovereignty, trust in NGWN, applied cryptography, edge intelligence, and decentralized systems</li>
+      </ul>
+    </section>
 
-        <h2>Current Skills & Interests</h2>
-        <hr>
-          <ul>
-            <li><strong>Cybersecurity Leadership:</strong> Leading and contributing to WGs in Next-Generation Wireless Networks (NGWN) and edge–cloud security (BEiNG-WISE, NexusForum)</li>
-            <li><strong>Funding & Collaboration:</strong> Active contributor to Horizon Europe and Swedish funding proposals; secured ~SEK 10M in funded projects</li>
-            <li><strong>Technical Expertise:</strong> Security- & privacy-by-design for EV ecosystems, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging</li>
-            <li><strong>Research & Impact:</strong> Published work on privacy engineering and secure systems; international media coverage for “Collateral Damage of Facebook Apps”</li>
-            <li><strong>Academic Engagement:</strong> Teaching and supervision in networked systems security; extensive pedagogical experience across all education levels</li>
-            <li><strong>Team & Stakeholder Skills:</strong> Team-first mindset with strong cross-domain stakeholder engagement</li>
-            <li><strong>Certifications:</strong> ISO/IEC 27001 Lead Auditor</li>
-            <li><strong>Broader Interests:</strong> Digital sovereignty, trust in NGWN, applied cryptography, edge intelligence, and decentralized systems</li>
-          </ul>
-      </section>
-
-
-    
     <section id="projects" class="section">
-  <h2>Current Projects</h2>
-  <hr>
+      <h2>Current Projects</h2>
+      <hr>
 
-   <div class="box">
-    <h3>2025 - Current — TWINLOOP [Horizon Europe 🇪🇺]</h3>
-    <p><strong>Role Description:</strong> Project Contributor</p>
-    <p><strong>Description:</strong> Contributing to research on secure and trustworthy AI-driven digital twins for critical infrastructures under the Horizon Europe programme.</p>
-    <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
-    <p><strong>Call:</strong> Advanced digital development tools to accelerate the development of software-defined vehicles that enable zero-emission mobility (2ZERO Partnership) — <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2024-D5-01-05</a></p>
-    <p><strong>Project Webpage:</strong> <a href="https://www.twin-loop.eu" target="_blank" rel="noopener noreferrer">twin-loop.eu</a></p>
-  </div>
+      <div class="box">
+        <h3>2025 – Current — TWINLOOP [Horizon Europe 🇪🇺]</h3>
+        <p><strong>Role Description:</strong> Project Contributor</p>
+        <p><strong>Description:</strong> Contributing to research on secure and trustworthy AI-driven digital twins for critical infrastructures under the Horizon Europe programme.</p>
+        <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
+        <p><strong>Call:</strong> Advanced digital development tools to accelerate the development of software-defined vehicles that enable zero-emission mobility (2ZERO Partnership) — <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2024-D5-01-05</a></p>
+        <p><strong>Project Webpage:</strong> <a href="https://www.twin-loop.eu" target="_blank" rel="noopener noreferrer">twin-loop.eu</a></p>
+      </div>
 
-  <div class="box">
-    <h3>2025 - Current — NexusForum Research and Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
-    <p><strong>Role Description:</strong> Working Group Co-Leader – Cybersecurity for the Cognitive Computing Continuum Roadmap</p>
-    <p><strong>Description:</strong> Participating in cross-sectoral research and collaboration focusing on secure digital ecosystems and next-generation network resilience.</p>
-    <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
-    <p><strong>Call:</strong> Coordination and Support of Cognitive Computing Continuum research and policy (CSA) -- <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2023-data-01-06" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2023-DATA-01</a></p>
-    <p><strong>Project Webpage:</strong> <a href="https://nexusforum.eu" target="_blank" rel="noopener noreferrer">NexusForum.eu</a></p>
-  </div>
+      <div class="box">
+        <h3>2025 – Current — NexusForum Research and Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
+        <p><strong>Role Description:</strong> Working Group Co-Leader – Cybersecurity for the Cognitive Computing Continuum Roadmap</p>
+        <p><strong>Description:</strong> Cross-sector collaboration on secure digital ecosystems and next-generation network resilience.</p>
+        <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
+        <p><strong>Call:</strong> Coordination and Support of Cognitive Computing Continuum research and policy (CSA) — <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2023-data-01-06" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2023-DATA-01</a></p>
+        <p><strong>Project Webpage:</strong> <a href="https://nexusforum.eu" target="_blank" rel="noopener noreferrer">NexusForum.eu</a></p>
+      </div>
 
-  <div class="box">
-    <h3>2023 - Current — Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺] </h3>
-    <p><strong>Role Description:</strong> Working Group Leader - Cybersecurity in Emerging Wireless Communications</p>
-    <p><strong>Description:</strong> Coordinating research activities in next-generation wireless cybersecurity (5G/6G), including workshops, training, dissemination, and cross-disciplinary collaboration.</p>
-    <p><strong>Funding Agency:</strong> COST Action</p>
-    <p><strong>COST Action webpage:</strong> <a href="https://www.cost.eu/actions/CA22104/#tabs+Name:Working%20Groups%20and%20Membership" target="_blank" rel="noopener noreferrer"> BEiNG-WISE</a></p>
-    <p><strong>Project Webpage:</strong> <a href="https://https://beingwise.eu/grants/stsm-2025/" target="_blank" rel="noopener noreferrer">BEiNG-WISE</a></p>
-  </div>
-      
-  <div class="box">
-    <h3>2023 - 2025 — Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
-    <p><strong>Role:</strong> Project Contributor - Researcher</p>
-    <p><strong>Role Description:</strong> Research on sustainable data sharing and digital transformation in industrial systems, with a focus on cybersecurity, privacy, and data analytics to support data-driven decision-making in the digitalized meat supply chain.</p>
-<!--     <p><strong>Project Title:</strong> Datadelning i en digitaliserad köttkedja</p> -->
-    <p><strong>Funding Agency:</strong> Formas — Swedish Research Council for Sustainable Development</p>
-    <p><strong>Budget:</strong>11.8M SEK</p>
-    <p><strong>Project Page:</strong> <a href="https://www.ri.se/sv/expertisomraden/projekt/mot-datadelning-och-datadrivna-beslut-i-en-digitaliserad-kottkedja" target="_blank">Mot datadelning och datadrivna beslut i en digitaliserad köttkedja</a></p>
-  </div>
-</section>
+      <div class="box">
+        <h3>2023 – Current — Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
+        <p><strong>Role Description:</strong> Working Group Leader — Cybersecurity in Emerging Wireless Communications</p>
+        <p><strong>Description:</strong> Coordinating research in next-generation wireless cybersecurity (5G/6G), including workshops, training, dissemination, and cross-disciplinary collaboration.</p>
+        <p><strong>Funding Agency:</strong> COST Action</p>
+        <p><strong>COST Action webpage:</strong> <a href="https://www.cost.eu/actions/CA22104/#tabs+Name:Working%20Groups%20and%20Membership" target="_blank" rel="noopener noreferrer">BEiNG-WISE</a></p>
+        <p><strong>Project Webpage:</strong> <a href="https://beingwise.eu/grants/stsm-2025/" target="_blank" rel="noopener noreferrer">beingwise.eu</a></p><!-- fixed double https -->
+      </div>
 
-    
+      <div class="box">
+        <h3>2023 – 2025 — Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
+        <p><strong>Role:</strong> Project Contributor — Researcher</p>
+        <p><strong>Role Description:</strong> Research on sustainable data sharing and digital transformation in industrial systems, with focus on cybersecurity, privacy, and data analytics to support data-driven decision-making in the digitalized meat supply chain.</p>
+        <p><strong>Funding Agency:</strong> Formas — Swedish Research Council for Sustainable Development</p>
+        <p><strong>Budget:</strong> 11.8M SEK</p>
+        <p><strong>Project Page:</strong> <a href="https://www.ri.se/sv/expertisomraden/projekt/mot-datadelning-och-datadrivna-beslut-i-en-digitaliserad-kottkedja" target="_blank" rel="noopener noreferrer">Mot datadelning och datadrivna beslut i en digitaliserad köttkedja</a></p>
+      </div>
+    </section>
 
     <section id="education" class="section">
       <h2>Education</h2>
       <hr>
       <ul>
-        <li>PhD, Applied Cryptography - KU Leuven, Belgium</li>
-        <li>MSc, Digital Systems Security - University of Piraeus, Greece</li>
-        <li>Diploma, Information & Communication Systems Engineering - University of the Aegean, Greece</li>
+        <li>PhD, Applied Cryptography — KU Leuven, Belgium</li>
+        <li>MSc, Digital Systems Security — University of Piraeus, Greece</li>
+        <li>Diploma, Information &amp; Communication Systems Engineering — University of the Aegean, Greece</li>
       </ul>
     </section>
 
     <section id="certifications" class="section">
-      <h2>Certifications & Training (selection)</h2>
+      <h2>Certifications &amp; Training (selection)</h2>
       <hr>
       <ul>
-        <li>ISO/IEC 27001:2005 Lead Auditor - TUV NORD, Athens, Greece</li>
-        <li>Advanced Cybersecurity Course - ENCS, The Hague, Netherlands</li>
-        <li>Secure Application Development - SecAppDev, Leuven, Belgium</li>
-        <li>Modern pedagogical and teaching methods in primary education - Institute der KPH Graz, Austria</li>
+        <li>ISO/IEC 27001:2005 Lead Auditor — TÜV NORD, Athens, Greece</li>
+        <li>Advanced Cybersecurity Course — ENCS, The Hague, Netherlands</li>
+        <li>Secure Application Development — SecAppDev, Leuven, Belgium</li>
+        <li>Modern pedagogical and teaching methods in primary education — Institute der KPH Graz, Austria</li>
       </ul>
     </section>
 
@@ -224,184 +229,158 @@
       <h2>Invited Talks (selection)</h2>
       <hr>
       <ul>
-        <li><strong>2023-2025</strong> WG Co-Leader "Cybersecurity in emerging wireless communications" -  Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE)</li>
-        <li><strong>2021:</strong> "Engineering Privacy for Vehicle 2 Cloud Infrastructure" - Privacy Engineering Group</li>
-        <li><strong>2019:</strong> "Privacy-enhancing Sharing Platforms" - University of Manchester</li>
-        <li><strong>2018:</strong> "Privacy in Car Sharing Systems" - IPEN Workshop, EDPS</li>
-        <li><strong>2018:</strong> "Privacy-Preserving Information Sharing" - Chinese Academy of Sciences</li>
+        <li><strong>2023–2025:</strong> WG Co-Leader “Cybersecurity in emerging wireless communications” — BEiNG-WISE</li>
+        <li><strong>2021:</strong> “Engineering Privacy for Vehicle-to-Cloud Infrastructure” — Privacy Engineering Group</li>
+        <li><strong>2019:</strong> “Privacy-enhancing Sharing Platforms” — University of Manchester</li>
+        <li><strong>2018:</strong> “Privacy in Car Sharing Systems” — IPEN Workshop, EDPS</li>
+        <li><strong>2018:</strong> “Privacy-Preserving Information Sharing” — Chinese Academy of Sciences</li>
       </ul>
     </section>
 
-<section id="media" class="section">
-  <h2>Media Attention</h2>
-  <hr>
-  <p>Research featured in major international outlets related to privacy, security, and the Cambridge Analytica scandal.</p>
-  <ul>
-    <li><strong>Wired:</strong> <a href="https://www.wired.com/story/facebook-privacy-setting-doesnt-do-anything/" target="_blank">The Facebook privacy settings that doesn’t do anything at all</a> - March 2018</li>
-    <li><strong>NBC News:</strong> <a href="https://www.nbcnews.com/tech/social-media/researchers-say-it-was-easy-take-people-s-data-facebook-n858701" target="_blank">Researchers say it was easy to take people’s data from Facebook</a> - March 2018</li>
-    <li><strong>France24:</strong> <a href="https://www.france24.com/fr/20180320-cambridge-analytica-scandale-effet-facebook-vie-privee-zuckerberg-trump" target="_blank">Cambridge Analytica : le scandale qui fait trembler l’empire Facebook</a> - March 2018</li>
-    <li><strong>The Atlantic:</strong> <a href="https://www.theatlantic.com/technology/archive/2018/03/facebook-cambridge-analytica/555866/" target="_blank">What Took Facebook So Long?</a> - March 2018</li>
-    <li><strong>Blog post (summary):</strong> <a href="/fb_collateral_dmg.html" target="_blank">Collateral Damage Research Summary</a> - March 2018</li>
-  </ul>
-</section>
+    <section id="media" class="section">
+      <h2>Media Attention</h2>
+      <hr>
+      <p>Research featured in major international outlets related to privacy, security, and the Cambridge Analytica scandal.</p>
+      <ul>
+        <li><strong>Wired:</strong> <a href="https://www.wired.com/story/facebook-privacy-setting-doesnt-do-anything/" target="_blank" rel="noopener noreferrer">The Facebook privacy settings that doesn’t do anything at all</a> — March 2018</li>
+        <li><strong>NBC News:</strong> <a href="https://www.nbcnews.com/tech/social-media/researchers-say-it-was-easy-take-people-s-data-facebook-n858701" target="_blank" rel="noopener noreferrer">Researchers say it was easy to take people’s data from Facebook</a> — March 2018</li>
+        <li><strong>France24:</strong> <a href="https://www.france24.com/fr/20180320-cambridge-analytica-scandale-effet-facebook-vie-privee-zuckerberg-trump" target="_blank" rel="noopener noreferrer">Cambridge Analytica : le scandale qui fait trembler l’empire Facebook</a> — March 2018</li>
+        <li><strong>The Atlantic:</strong> <a href="https://www.theatlantic.com/technology/archive/2018/03/facebook-cambridge-analytica/555866/" target="_blank" rel="noopener noreferrer">What Took Facebook So Long?</a> — March 2018</li>
+        <li><strong>Blog post (summary):</strong> <a href="/fb_collateral_dmg.html" target="_blank" rel="noopener noreferrer">Collateral Damage Research Summary</a> — March 2018</li>
+      </ul>
+    </section>
 
     <section id="publications" class="section">
       <h2>Publications</h2>
       <hr>
-      <p><a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl" target="_blank">Google Scholar</a></p>
+      <p><a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
     </section>
 
-<!--     <section id="languages" class="section">
-      <h2>Languages</h2>
+    <section id="academic" class="section">
+      <h2>Academic and Other Services</h2>
+      <hr>
+      <p><strong>Event organizer:</strong></p>
+      <ul>
+        <li><strong>2024:</strong> <a href="https://www.linkedin.com/events/openindustrydayon5g-6g7218592035530825729/comments/" target="_blank" rel="noopener noreferrer">Open Industry Day on 5G/6G: use-cases, cyber-resilience and sustainability</a></li>
+        <li><strong>2019:</strong> <a href="https://www.linkedin.com/posts/iraklis-symeonidis_cpdp-dataprotection-privatemessaging-activity-6627834663140503553-1M5Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAffeskBfz5wU6908UZptmbwfHPDMh6VAXE" target="_blank" rel="noopener noreferrer">CPDP Event: “Private messaging: why should you care?”</a></li>
+      </ul>
+
+      <p><strong>Program Committee Memberships:</strong></p>
+      <ul>
+        <li><strong>2025:</strong> CPDP, IEEE OJ-COMS, Cryptography and Communications (Springer)</li>
+        <li><strong>2024:</strong> PoPETS, PhD Review — Oulu University</li>
+        <li><strong>2023:</strong> PoPETS</li>
+        <li><strong>2022:</strong> PoPETS</li>
+        <li><strong>2021:</strong> PoPETS, Computers &amp; Security, IEEE IoT, Journal of Cybersecurity and Privacy</li>
+        <li><strong>2020:</strong> PoPETS, Computers &amp; Security, ACM Transactions on the Web</li>
+        <li><strong>2019:</strong> PoPETS, Computers &amp; Security, DPM@ESORICS, CPDP</li>
+        <li><strong>2018:</strong> ICISSP</li>
+        <li><strong>2017:</strong> ICISSP</li>
+        <li><strong>2016:</strong> ICISSP</li>
+      </ul>
+
+      <p><strong>External Reviews:</strong></p>
+      <ul><li><strong>2021:</strong> IEEE Security &amp; Privacy</li></ul>
+    </section>
+
+    <section id="teaching" class="section">
+      <h2>Teaching &amp; Supervision</h2>
+      <hr>
+
+      <div class="box">
+        <h3>2022–present</h3>
+        <ul><li><strong>PhD Supervisor</strong> — S. Mohammadi, Industrial PhD Student at RISE</li></ul>
+      </div>
+
+      <div class="box">
+        <h3>2024</h3>
+        <ul><li><strong>External PhD Evaluator</strong> — Rauli Kaksonen, University of Oulu, Finland</li></ul>
+      </div>
+
+      <div class="box">
+        <h3>2020–2022</h3>
+        <ul>
+          <li><strong>Teaching Assistant at NSS@KTH</strong>
+            <ul>
+              <li><strong>Networked Systems Security (NSS):</strong> Fundamentals of secure modern networked systems</li>
+              <li><strong>Building NSS (BNSS):</strong> Implementation of secure networked systems</li>
+              <li><strong>Advanced NSS (ANSS):</strong> Engineering of emerging secure networked infrastructures</li>
+            </ul>
+          </li>
+          <li><strong>MSc Thesis Supervision:</strong>
+            <ul>
+              <li>2021–2022: A. Kotsias — “Layer 2 Smart Contracts for Secure Vehicular-Sharing Systems”</li>
+              <li>2020–2021: S. Rabat — “Encrypted Documents Retrieval from the Cloud with Searchable Encryption”</li>
+              <li>2021: J. Shan — “Secure Vehicular Sharing Systems Implementation”</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>2015–2020</h3>
+        <ul>
+          <li><strong>MSc Thesis Supervision at COSIC@KU Leuven:</strong>
+            <ul>
+              <li>2019–2020: D. De Troch — “dPACE: A Decentralized Privacy-Preserving, yet Accountable Car Sharing Environment”</li>
+              <li>2017–2018: A. Madhusudan — “Applying Smart Contracts to Secure Car Sharing Systems”</li>
+              <li>2017–2018: D. Reardon — “Prevalence of Device Fingerprinting in Browser Extensions”</li>
+              <li>2016–2017: S. Dhooghe — “Applying Multiparty Computation to Car Access Provision”</li>
+              <li>2015–2016: T. Bertels — “Design of a Pairing Protocol for the AR.Drone 2.0”</li>
+              <li>2015–2016: K. Domin — “Security Analysis of the Drone Communication Protocol: Fuzzing the MAVLink Protocol”</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>2005–2011</h3>
+        <ul>
+          <li><strong>Educator &amp; Instructor — Ministry of Education, Police Academy, Lifelong Learning</strong></li>
+          <ul>
+            <li><strong>Web Programming:</strong> PHP, SQL, and web technologies</li>
+            <li><strong>Application Development:</strong> Algorithmic logic and programming, university entrance prep</li>
+            <li><strong>ICT Technologies:</strong> Computer science principles, mathematics, ICT-enhanced learning</li>
+            <li><strong>Microsoft Office Suite:</strong> Training & certification (Police Academy &amp; private sector)</li>
+          </ul>
+          <li><strong>Technical Support Analyst — Informatica SA, Greece</strong></li>
+          <ul>
+            <li>Software/infrastructure support for MS SQL Server and .NET client systems</li>
+            <li>Tech support to ~30 employees across municipality projects (Accounting, Protocol, Registration Office, Vehicle Management)</li>
+            <li>Monitored and maintained operational IT infrastructure</li>
+          </ul>
+        </ul>
+      </div>
+    </section>
+
+    <section id="personal_interests" class="section">
+      <h2>Personal Interests</h2>
       <hr>
       <ul>
-        <li>English (C2)</li>
-        <li>Greek (native)</li>
-        <li>French (A1)</li>
-        <li>Swedish (A1)</li>
+        <li><strong>Orfeas Choir:</strong> Greek repertoire, Bass voice, Board Member — Stockholm, Sweden
+          <a href="https://orfeas.se" target="_blank" rel="noopener noreferrer">[Website]</a>
+        </li>
+        <li><strong>Aerial Photography &amp; Editing:</strong>
+          <a href="https://www.instagram.com/aion_canvas/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                 alt="Instagram" style="height:16px; vertical-align:middle; margin-right:5px;">@aion_canvas</a>
+        </li>
+        <li><strong>First Aid &amp; Lifeguard:</strong> Certification</li>
+        <li><strong>Athlete:</strong> Former Water Polo &amp; Volleyball</li>
       </ul>
-    </section> -->
+    </section>
 
-   <section id="academic" class="section">
-  <h2>Academic and Other Services</h2>
-  <hr>
-  <p><strong>Event organizer:</strong></p>
-    <ul>
-      <li><strong>2024:</strong> <a href="https://www.linkedin.com/events/openindustrydayon5g-6g7218592035530825729/comments/" target="_blank" rel="noopener noreferrer">Open Industry Day on 5G/6G: Dive into use-cases, cyber-resilience and sustainability aspects of 5G/6G</a></li>
-      <li><strong>2019:</strong> <a href="https://www.linkedin.com/posts/iraklis-symeonidis_cpdp-dataprotection-privatemessaging-activity-6627834663140503553-1M5Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAffeskBfz5wU6908UZptmbwfHPDMh6VAXE" target="_blank" rel="noopener noreferrer">CPDP Event organizer: "Private messaging: why should
- you care?"</a></li>
-    </ul>
-
-
-     
-
-     
-  <p><strong>Program Committee Memberships:</strong></p>
-  <ul>
-    <li><strong>2025:</strong> CPDP, IEEE Open Journal of the Communications Society, Cryptography and Communications Springer Nature (Snapp)</li>
-    <li><strong>2024:</strong> PoPETS, PhD Review - Oulu University</li>
-    <li><strong>2023:</strong> PoPETS</li>
-    <li><strong>2022:</strong> PoPETS</li>
-    <li><strong>2021:</strong> PoPETS, Computers & Security, IEEE IoT, Journal of Cybersecurity and Privacy</li>
-    <li><strong>2020:</strong> PoPETS, Computers & Security, ACM Transactions on the Web</li>
-    <li><strong>2019:</strong> PoPETS, Computers & Security, DPM@ESORICS, CPDP</li>
-    <li><strong>2018:</strong> ICISSP</li>
-    <li><strong>2017:</strong> ICISSP</li>
-    <li><strong>2016:</strong> ICISSP</li>
-  </ul>
-
-<p><strong>External Reviews:</strong></p>
-<ul>
-  <li><strong>2021:</strong> IEEE Security & Privacy</li>
-</ul>
-
-</section>
-    
-<section id="teaching" class="section">
-  <h2>Teaching & Supervision</h2>
-  <hr>
-
-  <div class="box">
-    <h3>2022–present</h3>
-    <ul>
-      <li><strong>PhD Supervisor</strong> — S. Mohammadi, Industrial PhD Student at RISE</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>2024</h3>
-    <ul>
-      <li><strong>External PhD Evaluator</strong> — Rauli Kaksonen, University of Oulu, Finland</li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>2020–2022</h3>
-    <ul>
-      <li><strong>Teaching Assistant at NSS@KTH</strong>
-        <ul>
-          <li><strong>Networked Systems Security (NSS):</strong> Fundamentals of secure modern networked systems</li>
-          <li><strong>Building NSS (BNSS):</strong> Implementation of secure networked systems</li>
-          <li><strong>Advanced NSS (ANSS):</strong> Engineering of emerging secure networked infrastructures</li>
-        </ul>
-      </li>
-      <li><strong>MSc Thesis Supervision:</strong>
-        <ul>
-          <li>2021–2022: A. Kotsias — “Layer 2 Smart Contracts for Secure Vehicular-Sharing Systems”</li>
-          <li>2020–2021: S. Rabat — “Encrypted Documents Retrieval from the Cloud with Searchable Encryption”</li>
-          <li>2021: J. Shan — “Secure Vehicular Sharing Systems Implementation”</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>2015–2020</h3>
-    <ul>
-      <li><strong>MSc Thesis Supervision at COSIC@KU Leuven:</strong>
-        <ul>
-          <li>2019–2020: D. De Troch — “dPACE: A Decentralized Privacy-Preserving, yet Accountable Car Sharing Environment”</li>
-          <li>2017–2018: A. Madhusudan — “Applying Smart Contracts to Secure Car Sharing Systems”</li>
-          <li>2017–2018: D. Reardon — “Prevalence of Device Fingerprinting in Browser Extensions”</li>
-          <li>2016–2017: S. Dhooghe — “Applying Multiparty Computation to Car Access Provision”</li>
-          <li>2015–2016: T. Bertels — “Design of a Pairing Protocol for the AR.Drone 2.0”</li>
-          <li>2015–2016: K. Domin — “Security Analysis of the Drone Communication Protocol: Fuzzing the MAVLink Protocol”</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-
-  <div class="box">
-    <h3>2005–2011</h3>
-    <ul>
-      <li><strong>Educator & Instructor — Ministry of Education, Police Academy, Lifelong Learning</strong></li>
-      <ul>
-        <li><strong>Web Programming:</strong> Taught PHP, SQL, and web technologies</li>
-        <li><strong>Application Development:</strong> Educated students in algorithmic logic and programming, preparing them for university entrance exams</li>
-        <li><strong>ICT Technologies:</strong> Delivered courses on computer science principles, mathematics, and ICT-enhanced learning</li>
-        <li><strong>Microsoft Office Suite:</strong> Trained students on Microsoft Office and prepared them for certification (Police Academy & private sector)</li>
-      </ul>
-      <li><strong>Technical Support Analyst — Informatica SA, Greece</strong></li>
-      <ul>
-        <li>Provided software and infrastructure support for MS SQL Server and .NET client systems</li>
-        <li>Delivered technical support to ~30 employees across municipality projects (Accounting, Protocol, Registration Office, Vehicle Management)</li>
-        <li>Monitored and maintained operational IT infrastructure</li>
-      </ul>
-    </ul>
-  </div>
-</section>
-
-
-<section id="personal_interests" class="section">
-  <h2>Personal Interests</h2>
-    <hr>
-    <ul>
-      <li><strong>Orfeas Choir:</strong> Greek repertoire, Bass voice, Board Member — Stockholm, Sweden 
-        <a href="https://orfeas.se" target="_blank" rel="noopener noreferrer">[Website]</a>
-      </li>
-    
-      <li><strong>Aerial Photography & Editing: </strong> 
-        <a href="https://www.instagram.com/aion_canvas/" target="_blank" rel="noopener noreferrer">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" 
-               alt="Instagram" style="height:16px; vertical-align:middle; margin-right:5px;">@aion_canvas</a>
-      </li>
-    
-      <li><strong>First Aid & Lifeguard: </strong>Certification</li>
-      <li><strong>Athlete: </strong>Former Water Polo & Volleyball</li>
-    </ul>
-</section>
-    
     <section id="contact" class="section">
       <h2>Contact</h2>
       <hr>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:iraklis.symeonidis@ri.se">iraklis.symeonidis@ri.se</a></li>
-        <li><strong>Phone:</strong> +46 73-077 43 52</li>
+        <li><strong>Phone:</strong> <a href="tel:+46730774352">+46 73-077 43 52</a></li>
         <li><strong>Location:</strong> Isafjordsgatan 22, 16440 Kista, Stockholm, Sweden</li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/" target="_blank">Iraklis Symeonidis</a></li>
-        <li><strong>RISE Profile:</strong> <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank">RISE Webpage</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/" target="_blank" rel="noopener noreferrer">Iraklis Symeonidis</a></li>
+        <li><strong>RISE Profile:</strong> <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer">RISE Webpage</a></li>
       </ul>
     </section>
-  </div>
+  </main>
 </body>
 </html>
