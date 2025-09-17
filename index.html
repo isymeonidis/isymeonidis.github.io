@@ -46,16 +46,16 @@
       display: block; color: var(--link); padding: 10px 0; text-decoration: none;
       text-transform: uppercase; font-weight: bold; font-size: 13px;
     }
-    .sidebar a:hover, .sidebar a:focus-visible { background-color: rgba(127,127,127,.25); outline: 2px solid #555; outline-offset: 2px; }
+    .sidebar a:hover, .sidebar a:focus-visible { background-color: #ddd; outline: 2px solid #555; outline-offset: 2px; }
 
     .profile-img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; }
 
     .sidebar h1 { font-size: 20px; margin: 10px 0 5px; }
     .sidebar h2 { font-size: 14px; margin: 0 0 5px; color: var(--sub); }
-    .sidebar h3 { font-size: 12px; color: #ccc; margin: 0 0 20px; }
-    .sidebar p { font-size: 12px; margin-top: 5px; color: #888; }
+    .sidebar h3 { font-size: 12px; color: #333; margin: 0 0 20px; }
+    .sidebar p { font-size: 12px; margin-top: 5px; color: #444; }
 
-    /* CTA button */
+    /* CTA button (fix: win against `.sidebar a`) */
     .cta-btn{
       display:inline-block; margin: 6px 0 6px; padding:8px 12px; border-radius:6px;
       background:#2c3e50; text-decoration:none; font-weight:bold;
@@ -64,7 +64,7 @@
     .sidebar a.cta-btn:visited { color:#fff; }
     .sidebar a.cta-btn:hover { background:#1a252f; }
 
-    /* Theme toggle */
+    /* Theme toggle button (for manual light/dark) */
     .theme-toggle{
       display:inline-block; margin: 6px 0 12px; padding:8px 12px; border-radius:6px;
       border:1px solid var(--line); background:transparent; color:inherit; font-weight:700; cursor:pointer;
@@ -72,7 +72,7 @@
     .theme-toggle:hover, .theme-toggle:focus-visible{ outline:2px solid #888; }
 
     /* Small meta text under the CTA */
-    .updated { font-size:12px; color:#555; margin:0 0 12px; }
+    .updated { font-size:12px; color:var(--sub); margin:0 0 12px; }
 
     /* Main content */
     main.content { margin-left: 280px; padding: 40px; max-width: 1000px; }
@@ -81,12 +81,13 @@
     hr { border: 0; border-top: 1px solid var(--line); margin-top: 5px; margin-bottom: 20px; }
     .section { margin-bottom: 40px; }
 
+    /* Use theme line color so dark mode looks good */
     .box { border: 1px solid var(--line); padding: 15px; border-radius: 5px; background-color: var(--accent); margin-bottom: 20px; }
     .box h3 { margin-top: 0; color: #333; }
     .box p { font-size: 14px; margin: 5px 0; }
 
-    /* Publication meta */
-    .pub-meta { color:#888; font-size:14px; }
+    /* Publication meta uses themed sub color */
+    .pub-meta { color: var(--sub); font-size:14px; }
     .pub-links a { text-transform:none; font-weight:600; }
 
     /* Print styles: clean one-column print (hides sidebar) */
@@ -106,50 +107,33 @@
       .sidebar a{ display:inline-block; margin-right:12px; }
     }
 
-    /* ===== Alternating timeline ===== */
+    /* Timeline (kept as your original) */
     .timeline { position: relative; list-style: none; margin: 0; padding: 0; }
     .timeline::before {
-      content: ""; position: absolute; left: 50%; top: 0; bottom: 0;
-      width: 2px; background: var(--line); transform: translateX(-1px);
+      content: ""; position: absolute; left: 12px; top: 0; bottom: 0;
+      width: 2px; background: var(--line);
     }
     .timeline li {
-      position: relative; width: 50%;
-      margin: 0 0 24px 0;
+      position: relative; margin: 0 0 24px 0; padding-left: 40px;
     }
     .timeline .dot {
-      position: absolute; left: calc(50% - 6px); top: 18px; width: 12px; height: 12px;
+      position: absolute; left: 6px; top: 18px; width: 12px; height: 12px;
       border-radius: 50%; background: var(--link);
-      box-shadow: 0 0 0 2px var(--bg);
+      box-shadow: 0 0 0 2px var(--bg); /* ring adapts to theme */
     }
-    .timeline .when { font-weight: 600; color:#666; font-size:14px; margin: 0 0 6px; }
+    .timeline .when {
+      font-weight: 600; color: #666; font-size: 14px; margin-bottom: 6px;
+    }
     .timeline .badge {
-      display:inline-block; font-size:12px; line-height:1; padding:3px 8px; border-radius:999px;
-      background:#e9eef3; color:#223; margin-left:6px;
+      display: inline-block; font-size: 12px; line-height: 1;
+      padding: 3px 8px; border-radius: 999px;
+      background: #e9eef3; color: #223; margin-left: 6px;
     }
-    /* left (odd) */
-    .timeline li:nth-child(odd) { padding-right: 40px; text-align: right; }
-    .timeline li:nth-child(odd) .when { text-align: right; }
-    .timeline li:nth-child(odd) .box { margin-left: auto; }
-    /* right (even) */
-    .timeline li:nth-child(even) { margin-left: 50%; padding-left: 40px; }
-    .timeline li:nth-child(even) .when { text-align: left; }
-
-    /* ===== Collapsible project bodies ===== */
-    .box-body { transition: max-height .25s ease; overflow: hidden; }
-    .box.collapsible .box-body {
-      max-height: 220px; /* collapsed height */
-      position: relative;
+    /* Mobile tweaks */
+    @media (max-width: 900px){
+      .timeline::before { left: 10px; }
+      .timeline li { padding-left: 36px; }
     }
-    .box.collapsible:not(.expanded) .box-body::after{
-      content:""; position:absolute; left:0; right:0; bottom:0; height:48px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0), var(--accent));
-      pointer-events:none;
-    }
-    .collapse-btn{
-      margin-top:8px; border:1px solid var(--line); background:transparent; color:inherit;
-      padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:600;
-    }
-    .collapse-btn:hover, .collapse-btn:focus-visible { outline:2px solid #888; }
 
     /* ===== Dark mode: auto + manual override ===== */
     @media (prefers-color-scheme: dark){
@@ -166,14 +150,22 @@
       --link:#9ec1ff; --linkHover:#c5daff; --accent:#11161b;
     }
 
-    /* ===== Mobile: single-column fallback ===== */
-    @media (max-width: 900px){
-      .timeline::before{ left: 12px; transform:none; }
-      .timeline li{ width: 100%; margin-left: 0; padding-left: 40px; padding-right: 0; text-align: left; }
-      .timeline .dot{ left: 6px; }
-      .timeline li:nth-child(odd) .when,
-      .timeline li:nth-child(even) .when{ text-align:left; }
+    /* ===== Auto-collapse for long project cards ===== */
+    .box-body { transition: max-height .25s ease; overflow: hidden; }
+    .box.collapsible .box-body {
+      max-height: 220px; /* collapsed height */
+      position: relative;
     }
+    .box.collapsible:not(.expanded) .box-body::after{
+      content:""; position:absolute; left:0; right:0; bottom:0; height:48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0), var(--accent));
+      pointer-events:none;
+    }
+    .collapse-btn{
+      margin-top:8px; border:1px solid var(--line); background:transparent; color:inherit;
+      padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:600;
+    }
+    .collapse-btn:hover, .collapse-btn:focus-visible { outline:2px solid #888; }
   </style>
 
   <!-- Person JSON-LD -->
@@ -214,9 +206,11 @@
     <h1>Iraklis Symeonidis</h1>
     <h2>PhD, MSc, ISO 27001<br>Senior Research Scientist</h2>
     <h3><a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer">RISE Research Institutes of Sweden</a></h3>
-
     <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV as PDF (opens in a new tab)">Download CV (PDF)</a>
+
+    <!-- Manual theme toggle (saved across visits) -->
     <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">🌙 Dark mode</button>
+
     <p class="updated">Last updated: Sep 2025</p>
 
     <a href="#about">About</a>
@@ -237,7 +231,7 @@
     <section id="about" class="section">
       <h2>About</h2>
       <hr>
-      <p>Senior Research Scientist at RISE (Stockholm). PhD, KU Leuven/COSIC. WG lead and contributor in next-generation wireless networks (NGWN) and edge–cloud security. Horizon Europe contributor; active in EU and Swedish funding proposals. Security- and privacy-by-design for EVs, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging; contributed to ~SEK 10M in funded projects. Previously at KTH, SnT (Luxembourg), and KU Leuven. Team-first; strong cross-domain stakeholder engagement. International media coverage for “Collateral Damage of Facebook Apps.” Teaching and supervision in networked systems security. ISO/IEC 27001 Lead Auditor.</p>
+      <p>Senior Research Scientist at RISE (Stockholm). Ph.D., KU Leuven/COSIC. WG lead and contributor in next-generation wireless networks (NGWN) and edge–cloud security. Horizon Europe contributor; active in EU and Swedish funding proposals. Security- and privacy-by-design for EVs, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging; contributed to ~SEK 10M in funded projects. Previously at KTH, SnT (Luxembourg), and KU Leuven. Team-first; strong cross-domain stakeholder engagement. International media coverage for “Collateral Damage of Facebook Apps.” Teaching and supervision in networked systems security. ISO/IEC 27001 Lead Auditor.</p>
 
       <div class="box" aria-label="Highlights">
         <ul>
@@ -269,12 +263,9 @@
       <hr>
 
       <ol class="timeline">
-        <!-- TWINLOOP -->
         <li data-start="2025">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2025">2025</time> – <span class="badge">Current</span>
-          </div>
+          <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>TWINLOOP [Horizon Europe 🇪🇺]</h3>
             <p><strong>Role Description:</strong> Project Contributor</p>
@@ -286,12 +277,9 @@
           </div>
         </li>
 
-        <!-- NexusForum -->
         <li data-start="2025">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2025">2025</time> – <span class="badge">Current</span>
-          </div>
+          <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
             <p><strong>Role Description:</strong> Working Group Co-Leader – Cybersecurity for the Cognitive Computing Continuum Roadmap</p>
@@ -303,12 +291,9 @@
           </div>
         </li>
 
-        <!-- CitCom.ai -->
         <li data-start="2023">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2023">2023</time> – <span class="badge">Current</span>
-          </div>
+          <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>CitCom.ai (AI TEF SCC) [Digital Europe 🇪🇺 &amp; Vinnova 🇸🇪]</h3>
             <div class="box-body">
@@ -325,12 +310,9 @@
           </div>
         </li>
 
-        <!-- BEiNG-WISE -->
         <li data-start="2023">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2023">2023</time> – <span class="badge">Current</span>
-          </div>
+          <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
             <div class="box-body">
@@ -343,12 +325,9 @@
           </div>
         </li>
 
-        <!-- FORMAS project -->
         <li data-start="2023" data-end="2025">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2023">2023</time> – <time datetime="2025">2025</time>
-          </div>
+          <div class="when"><time datetime="2023">2023</time> – <time datetime="2025">2025</time></div>
           <div class="box">
             <h3>Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
             <div class="box-body">
@@ -576,9 +555,9 @@
     </section>
   </main>
 
-  <!-- Theme + Collapsible scripts -->
+  <!-- Theme toggle + Auto-collapse (static-friendly for GitHub Pages) -->
   <script>
-    // ===== Theme toggle (system-pref + persistent user choice) =====
+    // ===== Theme toggle (system pref + persistent user choice) =====
     (function(){
       const root = document.documentElement;
       const btn = document.getElementById('themeToggle');
@@ -593,7 +572,7 @@
           btn.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
         }
       }
-      // init
+      // Initialize theme
       apply(saved ? saved : (prefersDark ? 'dark' : 'light'));
 
       if (btn){
@@ -609,12 +588,12 @@
     (function(){
       const MAX = 220; // px of visible content when collapsed
       document.querySelectorAll('#projects .box').forEach(box => {
-        // Use existing .box-body if present, otherwise wrap all except H3
+        // Wrap everything except the heading in a .box-body (if not present)
         let body = box.querySelector('.box-body');
         if (!body){
           body = document.createElement('div');
           body.className = 'box-body';
-          const children = Array.from(box.children).filter(el => el.tagName !== 'H3' && el !== body);
+          const children = Array.from(box.children).filter(el => el.tagName !== 'H3');
           children.forEach(el => body.appendChild(el));
           box.appendChild(body);
         }
