@@ -99,6 +99,35 @@
       main.content{ margin-left: 0; padding: 20px; }
       .sidebar a{ display:inline-block; margin-right:12px; }
     }
+
+    /* Timeline */
+    .timeline { position: relative; list-style: none; margin: 0; padding: 0; }
+    .timeline::before {
+      content: ""; position: absolute; left: 12px; top: 0; bottom: 0;
+      width: 2px; background: var(--line);
+    }
+    .timeline li {
+      position: relative; margin: 0 0 24px 0; padding-left: 40px;
+    }
+    .timeline .dot {
+      position: absolute; left: 6px; top: 18px; width: 12px; height: 12px;
+      border-radius: 50%; background: var(--link);
+      box-shadow: 0 0 0 2px #fff; /* ring against light bg */
+    }
+    .timeline .when {
+      font-weight: 600; color: #666; font-size: 14px; margin-bottom: 6px;
+    }
+    .timeline .badge {
+      display: inline-block; font-size: 12px; line-height: 1;
+      padding: 3px 8px; border-radius: 999px;
+      background: #e9eef3; color: #223; margin-left: 6px;
+    }
+    
+    /* Mobile tweaks */
+    @media (max-width: 900px){
+      .timeline::before { left: 10px; }
+      .timeline li { padding-left: 36px; }
+    }
   </style>
 
   <!-- Person JSON-LD -->
@@ -186,9 +215,102 @@
         <li><strong>Broader Interests:</strong> Digital sovereignty, trust in NGWN, applied cryptography, edge intelligence, and decentralized systems</li>
       </ul>
     </section>
-
     <section id="projects" class="section">
-      <h2>Current Projects</h2>
+      
+  <h2>Current Projects (Selection)</h2>
+  <hr>
+
+  <ol class="timeline">
+    <!-- TWINLOOP -->
+    <li data-start="2025">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="when">
+        <time datetime="2025">2025</time> – <span class="badge">Current</span>
+      </div>
+      <div class="box">
+        <h3>TWINLOOP [Horizon Europe 🇪🇺]</h3>
+        <p><strong>Role Description:</strong> Project Contributor</p>
+        <p><strong>Description:</strong> Contributing to research on secure and trustworthy AI-driven digital twins for critical infrastructures under the Horizon Europe programme.</p>
+        <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
+        <p><strong>Call:</strong> Advanced digital development tools to accelerate the development of software-defined vehicles that enable zero-emission mobility (2ZERO Partnership) — 
+          <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2024-D5-01-05</a></p>
+        <p><strong>Learn more:</strong> <a href="https://www.twin-loop.eu" target="_blank" rel="noopener noreferrer">twin-loop.eu</a></p>
+      </div>
+    </li>
+
+    <!-- NexusForum -->
+    <li data-start="2025">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="when">
+        <time datetime="2025">2025</time> – <span class="badge">Current</span>
+      </div>
+      <div class="box">
+        <h3>NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
+        <p><strong>Role Description:</strong> Working Group Co-Leader – Cybersecurity for the Cognitive Computing Continuum Roadmap</p>
+        <p><strong>Description:</strong> Cross-sector collaboration on secure digital ecosystems and next-generation network resilience.</p>
+        <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
+        <p><strong>Call:</strong> Coordination and Support of Cognitive Computing Continuum research and policy (CSA) — 
+          <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2023-data-01-06" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2023-DATA-01</a></p>
+        <p><strong>Learn more:</strong> <a href="https://nexusforum.eu" target="_blank" rel="noopener noreferrer">NexusForum.eu</a></p>
+      </div>
+    </li>
+
+    <!-- CitCom.ai -->
+    <li data-start="2023">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="when">
+        <time datetime="2023">2023</time> – <span class="badge">Current</span>
+      </div>
+      <div class="box">
+        <h3>CitCom.ai (AI TEF SCC) [Digital Europe 🇪🇺 &amp; Vinnova 🇸🇪]</h3>
+        <p><strong>Role:</strong> Project Contributor — <em>Task 3.3: Cybersecurity, Resilience &amp; Connectivity (Edge/IoT)</em></p>
+        <p><strong>What I do in T3.3:</strong> Help design and validate a cybersecurity stack for TEF services, including data &amp; user activity monitoring, intrusion detection, role/attribute-based access control with identity integration (e.g., Keycloak), and ML-based anomaly detection for early APT/fault discovery.</p>
+        <p><strong>Consortium:</strong> 32 partners across 11 EU member states</p>
+        <p><strong>Budget (Sweden):</strong> 18&nbsp;M&nbsp;SEK</p>
+        <p><strong>Learn more:</strong>
+          <a href="https://citcomtef.eu/" target="_blank" rel="noopener noreferrer">CitComTEF</a> ·
+          <a href="https://www.ri.se/en/expertise-areas/projects/citcomai-ai-tef-scc" target="_blank" rel="noopener noreferrer">RISE project page</a> ·
+          <a href="https://www.vinnova.se/en/p/citcom.ai/" target="_blank" rel="noopener noreferrer">Vinnova</a>
+        </p>
+      </div>
+    </li>
+
+    <!-- BEiNG-WISE -->
+    <li data-start="2023">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="when">
+        <time datetime="2023">2023</time> – <span class="badge">Current</span>
+      </div>
+      <div class="box">
+        <h3>Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
+        <p><strong>Role Description:</strong> Working Group Leader — Cybersecurity in Emerging Wireless Communications</p>
+        <p><strong>Description:</strong> Coordinating research in next-generation wireless cybersecurity (5G/6G), including workshops, training, dissemination, and cross-disciplinary collaboration.</p>
+        <p><strong>Funding Agency:</strong> COST Action</p>
+        <p><strong>COST Action webpage:</strong> <a href="https://www.cost.eu/actions/CA22104/#tabs+Name:Working%20Groups%20and%20Membership" target="_blank" rel="noopener noreferrer">BEiNG-WISE</a></p>
+        <p><strong>Learn more:</strong> <a href="https://beingwise.eu" target="_blank" rel="noopener noreferrer">beingwise.eu</a></p>
+      </div>
+    </li>
+
+    <!-- FORMAS project -->
+    <li data-start="2023" data-end="2025">
+      <span class="dot" aria-hidden="true"></span>
+      <div class="when">
+        <time datetime="2023">2023</time> – <time datetime="2025">2025</time>
+      </div>
+      <div class="box">
+        <h3>Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
+        <p><strong>Role:</strong> Project Contributor — Researcher</p>
+        <p><strong>Role Description:</strong> Research on sustainable data sharing and digital transformation in industrial systems, with focus on cybersecurity, privacy, and data analytics to support data-driven decision-making in the digitalized meat supply chain.</p>
+        <p><strong>Funding Agency:</strong> Formas — Swedish Research Council for Sustainable Development</p>
+        <p><strong>Budget:</strong> 11.8&nbsp;M&nbsp;SEK</p>
+        <p><strong>Learn more:</strong> 
+          <a href="https://www.ri.se/sv/expertisomraden/projekt/mot-datadelning-och-datadrivna-beslut-i-en-digitaliserad-kottkedja" target="_blank" rel="noopener noreferrer">Mot datadelning och datadrivna beslut i en digitaliserad köttkedja</a></p>
+      </div>
+    </li>
+  </ol>
+</section>
+<!--     <section id="projects" class="section">
+      <h2>Current Projects (Selection) </h2>
       <hr>
 
       <div class="box">
@@ -240,7 +362,7 @@
         <p><strong>Budget:</strong> 11.8 M SEK</p>
         <p><strong>Learn more:</strong> <a href="https://www.ri.se/sv/expertisomraden/projekt/mot-datadelning-och-datadrivna-beslut-i-en-digitaliserad-kottkedja" target="_blank" rel="noopener noreferrer">Mot datadelning och datadrivna beslut i en digitaliserad köttkedja</a></p>
       </div>
-    </section>
+    </section> -->
 
     <section id="education" class="section">
       <h2>Education</h2>
