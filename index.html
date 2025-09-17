@@ -166,6 +166,21 @@
       padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:600;
     }
     .collapse-btn:hover, .collapse-btn:focus-visible { outline:2px solid #888; }
+    /* --- Title-only collapsed projects --- */
+    #projects .box details { margin: 0; }
+    #projects .box summary {
+      list-style: none; display: block; padding: 0; cursor: pointer;
+    }
+    #projects .box summary::-webkit-details-marker { display: none; }
+    #projects .box summary h3 { margin: 0; color: inherit; }
+    #projects .box details > .box-body {
+      padding-top: 10px; border-top: 1px dashed var(--line); margin-top: 10px;
+    }
+    #projects .box summary:focus-visible { outline: 2px solid var(--line); border-radius: 6px; }
+    
+    /* Hide timeline markers/dates when collapsed to truly keep only the title */
+    #projects .timeline li.collapsed .when,
+    #projects .timeline li.collapsed .dot { display: none; }
   </style>
 
   <!-- Person JSON-LD -->
@@ -584,40 +599,49 @@
       }
     })();
 
-    // ===== Auto-collapse long project cards =====
-    (function(){
-      const MAX = 220; // px of visible content when collapsed
-      document.querySelectorAll('#projects .box').forEach(box => {
-        // Wrap everything except the heading in a .box-body (if not present)
-        let body = box.querySelector('.box-body');
-        if (!body){
-          body = document.createElement('div');
-          body.className = 'box-body';
-          const children = Array.from(box.children).filter(el => el.tagName !== 'H3');
-          children.forEach(el => body.appendChild(el));
-          box.appendChild(body);
-        }
-        // Measure & collapse if needed
-        requestAnimationFrame(() => {
-          if (body.scrollHeight > MAX + 30){
-            box.classList.add('collapsible');
-            body.style.maxHeight = MAX + 'px';
-            const btn = document.createElement('button');
-            btn.className = 'collapse-btn';
-            btn.type = 'button';
-            btn.setAttribute('aria-expanded','false');
-            btn.textContent = 'Show more';
-            btn.addEventListener('click', () => {
-              const expanded = box.classList.toggle('expanded');
-              btn.setAttribute('aria-expanded', String(expanded));
-              btn.textContent = expanded ? 'Show less' : 'Show more';
-              body.style.maxHeight = expanded ? body.scrollHeight + 'px' : MAX + 'px';
-            });
-            box.appendChild(btn);
-          }
-        });
+   <script>
+  /* --- Title-only collapse: transform each project box into a <details> accordion --- */
+  (function(){
+    document.querySelectorAll('#projects .timeline li').forEach(li => {
+      const box = li.querySelector('.box');
+      if (!box) return;
+  
+      // Skip if already converted
+      if (box.querySelector('details')) {
+        li.classList.add('collapsed');
+        return;
+      }
+  
+      const h3 = box.querySelector('h3');
+      if (!h3) return;
+  
+      // Create <details> and move the H3 into <summary>
+      const details = document.createElement('details'); // collapsed by default
+      const summary = document.createElement('summary');
+      summary.appendChild(h3); // moves the existing H3
+      details.appendChild(summary);
+  
+      // Move the rest of the card content into a body container
+      const body = document.createElement('div');
+      body.className = 'box-body';
+      while (box.firstChild) {
+        // After we start moving nodes, the box becomes empty—until we append details
+        body.appendChild(box.firstChild);
+      }
+  
+      // Rebuild the box contents as <details><summary>H3</summary><div class="box-body">...</div></details>
+      details.appendChild(body);
+      box.appendChild(details);
+  
+      // Start collapsed state
+      li.classList.add('collapsed');
+  
+      // Toggle collapsed class on open/close
+      details.addEventListener('toggle', () => {
+        li.classList.toggle('collapsed', !details.open);
       });
-    })();
+    });
+  })();
   </script>
 </body>
 </html>
