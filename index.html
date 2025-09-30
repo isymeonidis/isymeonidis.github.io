@@ -265,18 +265,35 @@
       <h2>Current Projects (Selection)</h2>
       <hr>
       <ol class="timeline">
+        
         <li data-start="2025">
-          <span class="dot" aria-hidden="true"></span>
+          <span class="dot" aria-hidden="false"></span>
           <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
           <div class="box">
-            <h3>TWINLOOP [Horizon Europe 🇪🇺]</h3>
+            <h3>TWINLOOP — Secure Digital Twin Framework & TwinOps for Software-Defined EVs [Horizon Europe 🇪🇺]</h3>
             <div class="box-body">
-              <p><strong>Role Description:</strong> Project Contributor</p>
-              <p><strong>Description:</strong> Contributing to research on secure and trustworthy AI-driven digital twins for critical infrastructures under the Horizon Europe programme.</p>
-              <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
-              <p><strong>Call:</strong> Advanced digital development tools to accelerate the development of software-defined vehicles that enable zero-emission mobility (2ZERO Partnership) —
-                <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2024-D5-01-05</a></p>
+              <p><strong>Role:</strong> Secure System Design Lead (RISE)</p>
+        
+              <p><strong>What I do:</strong> Define the security architecture for an open, interoperable Digital Twin framework—spanning in-vehicle and off-board/cloud—so that multiple digital twins can exchange information safely for status monitoring and predictive analytics across OEM and Tier-1/2 ecosystems.</p>
+        
+              <ul class="compact">
+                <li><strong>Architecture & trust:</strong> zero-trust design; identity/PKI; mutual TLS; remote attestation for vehicle/edge nodes.</li>
+                <li><strong>Data models & contracts:</strong> canonical schemas and data-sharing policies; API-first interfaces (REST/AsyncAPI); payload signing & end-to-end encryption.</li>
+                <li><strong>Access & governance:</strong> OAuth2/OIDC; role/attribute-based access control; provenance & auditability for regulated analytics.</li>
+                <li><strong>Twin-to-Twin exchange:</strong> secure pub/sub (e.g., MQTT/Kafka), QoS and back-pressure; time-series + event integration for monitoring/forecasting.</li>
+                <li><strong>Operations (TwinOps):</strong> CI/CD for twins & models, safe rollout/rollback, policy enforcement, anomaly detection.</li>
+              </ul>
+        
+              <p><strong>Programme:</strong> Horizon Europe (2ZERO Partnership)</p>
+              <p><strong>Call:</strong> Advanced digital development tools for SDVs —
+                <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2024-D5-01-05</a>
+              </p>
               <p><strong>Learn more:</strong> <a href="https://www.twin-loop.eu" target="_blank" rel="noopener noreferrer">twin-loop.eu</a></p>
+        
+              <!-- Optional: keep task numbers out of the main flow -->
+              <details><summary class="muted">Show task alignment</summary>
+                <p><strong>Alignment:</strong> Open Framework for the MyEV Digital Twin (specs, reference architecture, data models & interfaces) and Open TwinOps (lifecycle, CI/CD, synchronization with physical EVs, secure operations).</p>
+              </details>
             </div>
           </div>
         </li>
