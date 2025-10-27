@@ -244,10 +244,8 @@
     }
     #projects .box summary:focus-visible, #teaching .box summary:focus-visible { outline: 2px solid var(--line); border-radius: 6px; }
 
-    /* Hide timeline markers/dates when collapsed to truly keep only the title */
-    #projects .timeline li.collapsed .when,
+    /* --- UPDATED: (Fix 1) Hide only dot when collapsed --- */
     #projects .timeline li.collapsed .dot,
-    #teaching .timeline li.collapsed .when,
     #teaching .timeline li.collapsed .dot { display: none; }
   </style>
 
@@ -378,7 +376,7 @@
       <hr>
       <ol class="timeline">
 
-        <li data-start="2025" aria-hidden="false">
+        <li data-start="2025" aria-hidden="false" id="twinloop-project">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
             <time datetime="2025">2025</time> – <span class="badge">Current</span>
@@ -767,7 +765,10 @@
 
           // Skip if already converted
           if (box.querySelector('details')) {
-            li.classList.add('collapsed');
+            // Check if it's the one we want open
+            if (li.id !== 'twinloop-project') {
+               li.classList.add('collapsed');
+            }
             return;
           }
 
@@ -806,8 +807,14 @@
           box.innerHTML = '';
           box.appendChild(details);
 
-          // Mark timeline item as collapsed initially (hide dot/dates)
-          li.classList.add('collapsed');
+          // --- UPDATED (Fix 2) ---
+          // Check if this is the TWINLOOP project to expand it
+          if (li.id === 'twinloop-project') {
+            details.open = true;
+            // 'collapsed' class is NOT added
+          } else {
+            li.classList.add('collapsed'); // Mark timeline item as collapsed initially
+          }
 
           // Toggle class on open/close
           details.addEventListener('toggle', () => {
