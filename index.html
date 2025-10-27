@@ -314,8 +314,8 @@
     </div>
 
     <div class="cta-buttons">
-      <a class="cta-btn" href="/Iraklis_Symeonidis_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
-      <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Academic CV as PDF (opens in a new tab)">Academic CV (PDF)</a>
+      <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
+      <!-- <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Academic CV as PDF (opens in a new tab)">Academic CV (PDF)</a> -->
     </div>
 
     <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">🌙 Dark mode</button>
@@ -371,7 +371,7 @@
         <ul style="margin:0; padding:0; list-style-type: disc; line-height: 1.6;">
           <li><strong>Expertise:</strong> Security-by-Design, Privacy-by-Design, Threat Modeling, Zero Trust</li>
           <li><strong>Systems:</strong> EV Ecosystems, Edge/Cloud, NGWN (5G/6G), Data Spaces, Supply Chains</li>
-          <li><strong>Standards &amp; Tools:</strong> ISO/IEC 27001, PKI/Identity, Keycloak</li>
+          <li><strong>Standards &amp; Tools:</strong> ISO/IEC 27001, PKI/Identity</li>
         </ul>
       </div>
     </section>
@@ -381,7 +381,7 @@
       <hr>
       <ol class="timeline">
 
-        <li data-start="2025" aria-hidden="false" id="twinloop-project">
+        <li data-start="2025" aria-hidden="false" id="project-current">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
             <time datetime="2025">2025</time> – <span class="badge">Current</span>
@@ -406,8 +406,8 @@
           </div>
         </li>
 
-        <li data-start="2025">
-          <span class="dot" aria-hidden="true"></span>
+        <li data-start="2025" aria-hidden="false" id="project-current">
+          <span class="dot" aria-hidden="false"></span>
           <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
@@ -814,7 +814,7 @@
         box.appendChild(details);
 
         // Check if this is the TWINLOOP project to expand it
-        if (li.id === 'twinloop-project') {
+        if (li.id === 'project-current') {
           details.open = true;
           // 'collapsed' class is NOT added
         } else {
