@@ -6,7 +6,6 @@
   <title>Iraklis Symeonidis - Senior Research Scientist & Cybersecurity Architect</title>
   <meta name="description" content="Senior Research Scientist at RISE (Stockholm). Secure-by-design & cyber-resilient systems across NGWN/5G-6G, EV & edge–cloud, data spaces; ISO/IEC 27001 Lead Auditor." />
 
-  <!-- Open Graph / Social preview -->
   <meta property="og:title" content="Iraklis Symeonidis - Senior Research Scientist & Cybersecurity Architect">
   <meta property="og:description" content="Secure-by-design & cyber-resilient systems across NGWN/5G-6G, EV & edge–cloud, data spaces. Media: Wired, NBC, The Atlantic.">
   <meta property="og:type" content="website">
@@ -72,16 +71,49 @@
     .profile-img { width: 150px; height: 150px; border-radius: 50%; margin-bottom: 15px; object-fit: cover; }
 
     .sidebar h1 { font-size: 20px; margin: 10px 0 5px; }
-    .sidebar h2 { font-size: 14px; margin: 0 0 5px; color: var(--sub); }
-    .sidebar h3 { font-size: 12px; color: var(--text); opacity:.9; margin: 0 0 20px; }
+    .sidebar h2 { font-size: 16px; margin: 0 0 5px; color: var(--sub); font-weight: 600; }
+    .sidebar h3 { font-size: 13px; color: var(--text); opacity:.9; margin: 0 0 10px; font-weight: 500; }
     .sidebar p { font-size: 12px; margin-top: 5px; color: var(--sub); }
 
-    /* CTA button */
-    .cta-btn{
-      display:inline-block; margin: 6px 0 6px; padding:8px 12px; border-radius:6px;
-      background:#2c3e50; text-decoration:none; font-weight:bold; color:#fff;
+    /* --- NEW: Social links --- */
+    .social-links {
+      margin: -5px 0 15px;
+      text-align: right;
     }
-    .sidebar a.cta-btn:hover { background:#1a252f; }
+    .social-links a {
+      display: inline-block;
+      padding: 8px;
+      margin-left: 4px;
+      color: var(--sub);
+      text-decoration: none;
+    }
+    .social-links a:hover, .social-links a:focus-visible {
+      color: var(--link);
+      background: none;
+      outline: none;
+    }
+    .social-links svg {
+      width: 22px; height: 22px;
+      fill: currentColor;
+      vertical-align: middle;
+    }
+
+    /* --- UPDATED: CTA buttons --- */
+    .cta-buttons {
+      display: flex;
+      gap: 8px;
+      margin: 6px 0 6px;
+      justify-content: flex-end;
+    }
+    .cta-btn{
+      display:inline-block; margin: 0; padding:8px 10px; border-radius:6px;
+      background:#2c3e50; text-decoration:none; font-weight:bold; color:#fff;
+      flex: 1 1 auto;
+      font-size: 13px;
+      text-align: center;
+      text-transform: none; /* Override sidebar 'a' */
+    }
+    .sidebar a.cta-btn:hover { background:#1a252f; outline: none; }
 
     /* Theme toggle button */
     .theme-toggle{
@@ -123,6 +155,10 @@
       .sidebar{ position: relative; width: 100%; height:auto; text-align: left; }
       main.content{ margin-left: 0; padding: 20px; }
       .sidebar a{ display:inline-block; margin-right:12px; }
+      /* --- NEW: Responsive social/CTA --- */
+      .social-links { text-align: left; }
+      .social-links a { margin-left: 0; margin-right: 8px; }
+      .cta-buttons { justify-content: flex-start; }
     }
 
     /* Timeline */
@@ -152,6 +188,24 @@
       .timeline li { padding-left: 36px; }
     }
 
+    /* --- NEW: Project Logos --- */
+    .project-logo {
+      max-height: 50px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
+      float: right;
+      margin-left: 15px;
+      margin-bottom: 10px;
+    }
+    /* Invert dark logos for dark mode */
+    [data-theme="dark"] .project-logo.invert-dark {
+      filter: invert(1) brightness(1.8);
+    }
+    @media (max-width: 600px){
+      .project-logo { float: none; display: block; margin: 0 0 15px; }
+    }
+
     /* --- Title-only collapsed cards (Projects + Teaching) --- */
     #projects .box details, #teaching .box details { margin: 0; }
     #projects .box summary, #teaching .box summary {
@@ -171,7 +225,6 @@
     #teaching .timeline li.collapsed .dot { display: none; }
   </style>
 
-  <!-- Person JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -189,6 +242,7 @@
     "sameAs": [
       "https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/",
       "https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en",
+      "https://github.com/isymeonidis",
       "https://www.ri.se/en/person/iraklis-symeonidis"
     ],
     "email": "mailto:iraklis.symeonidis@ri.se",
@@ -207,11 +261,32 @@
          src="https://media.licdn.com/dms/image/v2/D4D03AQFskcQLWh0K8A/profile-displayphoto-scale_200_200/B4DZk9_xxaJkAc-/0/1757681758596?e=1762992000&v=beta&t=wOU7fGXKp4Tiu1X3PAXNunnrqW-5PlEwXvELElH9g5w"
          alt="Portrait of Iraklis Symeonidis">
     <h1>Iraklis Symeonidis</h1>
-    <h2>PhD, MSc, ISO 27001<br>Senior Research Scientist</h2>
-    <h3><a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer">RISE Research Institutes of Sweden</a></h3>
-    <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download CV as PDF (opens in a new tab)">Download CV (PDF)</a>
+    
+    <h2>Senior Research Scientist | Cybersecurity Architect</h2>
+    <h3>PhD, MSc, ISO 27001</h3>
+    <p style="margin: 0 0 15px; font-size: 14px; color: var(--sub);">
+      <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration: none; text-transform:none; font-weight:normal;">
+        RISE Research Institutes of Sweden
+      </a>
+    </p>
 
-    <!-- Manual theme toggle (saved across visits) -->
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>LinkedIn</title><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.25-.5-2.25-1.75-2.25S12.75 13 12.75 14.25V19h-3v-9h2.9v1.3a3.1 3.1 0 012.8-1.55C17.45 9.75 19 11.5 19 14.25z"/></svg>
+      </a>
+      <a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>Google Scholar</title><path d="M12 24a7 7 0 110-14 7 7 0 010 14zm0-24L0 9.5l4.838 3.94A8.016 8.016 0 0112 10a8 8 0 11-8 8L12 24l12-9.5-4.838-3.94A8.016 8.016 0 0112 10zm0-2.45L19.2 9.5 12 15.95 4.8 9.5z"/></svg>
+      </a>
+      <a href="https://github.com/isymeonidis" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>GitHub</title><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 01.1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.3 1.23.14 2.14.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.59.69.49A10 10 0 0022 12 10 10 0 0012 2z"/></svg>
+      </a>
+    </div>
+
+    <div class="cta-buttons">
+      <a class="cta-btn" href="/Iraklis_Symeonidis_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
+      <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Academic CV as PDF (opens in a new tab)">Academic CV (PDF)</a>
+    </div>
+
     <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">🌙 Dark mode</button>
 
     <p class="updated">Last updated: Sep 2025</p>
@@ -259,6 +334,15 @@
         <li><strong>Certifications:</strong> ISO/IEC 27001 Lead Auditor</li>
         <li><strong>Broader Interests:</strong> Digital sovereignty, trust in NGWN, applied cryptography, edge intelligence, and decentralized systems</li>
       </ul>
+
+      <h3 style="font-size: 15px; margin-top: 25px; margin-bottom: 10px; color: var(--sub); text-transform: uppercase;">Technical Keywords</h3>
+      <div class="box" style="padding: 15px 15px 15px 30px; font-size: 14px; background-color: var(--muted);">
+        <ul style="margin:0; padding:0; list-style-type: disc; line-height: 1.6;">
+          <li><strong>Expertise:</strong> Security-by-Design, Privacy-by-Design, Threat Modeling, Zero Trust</li>
+          <li><strong>Systems:</strong> EV Ecosystems, Edge/Cloud, NGWN (5G/6G), Data Spaces, Supply Chains</li>
+          <li><strong>Standards &amp; Tools:</strong> ISO/IEC 27001, PKI/Identity, Keycloak</li>
+        </ul>
+      </div>
     </section>
 
     <section id="projects" class="section">
@@ -266,8 +350,7 @@
       <hr>
       <ol class="timeline">
 
-        <!-- TWINLOOP -->
-         <li data-start="2025" aria-hidden="false">
+        <li data-start="2025" aria-hidden="false">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
             <time datetime="2025">2025</time> – <span class="badge">Current</span>
@@ -275,20 +358,12 @@
           <div class="box">
             <h3>TWINLOOP - Secure Digital Twin Framework &amp; TwinOps for Software-Defined EVs [Horizon Europe 🇪🇺]</h3>
             <div class="box-body">
+              <img src="https://www.twin-loop.eu/images/twin-loop-logo.png" alt="TWINLOOP Logo" class="project-logo">
               <p><strong>Role:</strong> Secure Systems Architecture Lead &amp; Contributor (RISE)</p>
         
               <p><strong>Vision (secure system architecture):</strong> Design and build the security architecture for an open, interoperable Digital Twin framework-Zero Trust by default-to enable secure status monitoring, predictive analytics, and data-driven innovation across multi-OEM ecosystems.</p>
         
               <p><strong>What I do:</strong> Define the reference security architecture (vehicle ↔ edge ↔ cloud), lead threat modeling, and specify controls so multiple Digital Twins can exchange information securely across OEM and Tier-1/2 ecosystems.</p>
-        
-              <!-- <ul class="compact">
-                <li><strong>Secure Twin-to-Twin Exchange:</strong> Engineering a secure, replay-safe pub/sub communication fabric for reliable, low-latency data exchange between twins..</li>
-                <li><strong>Secure Operations (TwinOps):</strong> Integrating security into the entire operational lifecycle through secure CI/CD, vulnerability management (SBOMs), and runtime policy enforcement.</li>
-                <li><strong>Data Protection:</strong> End-to-end encryption, payload signing, and managed key lifecycle for data in transit and at rest.</li>
-                <li><strong>Zero Trust &amp; Identity:</strong> Federated OAuth2/OIDC with mutual authentication, least privilege via RBAC/ABAC, and policy-as-code.</li>
-                <li><strong>System Trust &amp; Integrity:</strong> Establishing system integrity from the hardware up through secure boot and remote attestation of vehicle and edge nodes.</li>
-                <li><strong>Governance &amp; Compliance Readiness:</strong> Provenance and audit trails with GDPR-aware processing, aligned to UNECE R155/R156, ISO/SAE 21434, ISO 24089, CRA, and the EU AI Act.</li>
-              </ul> -->
         
               <p><strong>Programme:</strong> Horizon Europe 🇪🇺 (2ZERO Partnership)</p>
               <p><strong>Call:</strong> Advanced digital development tools for SDVs -
@@ -306,6 +381,7 @@
           <div class="box">
             <h3>NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
             <div class="box-body">
+              <img src="https://nexusforum.eu/wp-content/uploads/2024/02/cropped-nexusforum_logo-e1707914040685.png" alt="NexusForum Logo" class="project-logo">
               <p><strong>Role Description:</strong> Working Group Co-Leader – Cybersecurity for the Cognitive Computing Continuum Roadmap</p>
               <p><strong>Description:</strong> Cross-sector collaboration on secure digital ecosystems and next-generation network resilience.</p>
               <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
@@ -322,6 +398,7 @@
           <div class="box">
             <h3>CitCom.ai (AI TEF SCC) [Digital Europe 🇪🇺 &amp; Vinnova 🇸🇪]</h3>
             <div class="box-body">
+              <img src="https://citcomtef.eu/wp-content/uploads/2023/10/logo-1.svg" alt="CitCom.ai Logo" class="project-logo invert-dark">
               <p><strong>Role:</strong> Project Contributor - <em>Task 3.3: Cybersecurity, Resilience &amp; Connectivity (Edge/IoT)</em></p>
               <p><strong>What I do in T3.3:</strong> Help design and validate a cybersecurity stack for TEF services, including data &amp; user activity monitoring, intrusion detection, role/attribute-based access control with identity integration (e.g., Keycloak), and ML-based anomaly detection for early APT/fault discovery.</p>
               <p><strong>Consortium:</strong> 32 partners across 11 EU member states</p>
@@ -341,6 +418,7 @@
           <div class="box">
             <h3>Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
             <div class="box-body">
+              <img src="https://beingwise.eu/wp-content/uploads/2023/10/logo_ca22104-1.png" alt="BEiNG-WISE Logo" class="project-logo invert-dark">
               <p><strong>Role Description:</strong> Working Group Leader - Cybersecurity in Emerging Wireless Communications</p>
               <p><strong>Description:</strong> Coordinating research in next-generation wireless cybersecurity (5G/6G), including workshops, training, dissemination, and cross-disciplinary collaboration.</p>
               <p><strong>Funding Agency:</strong> COST Action</p>
@@ -356,6 +434,7 @@
           <div class="box">
             <h3>Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
             <div class="box-body">
+              <img src="https://formas.se/images/18.550531518742c0342b49f3c/1681383792617/Formas_logo_liggande_rgb_positiv_svart.svg" alt="FORMAS Logo" class="project-logo invert-dark" style="max-width: 120px;">
               <p><strong>Role:</strong> Project Contributor - Researcher</p>
               <p><strong>Role Description:</strong> Research on sustainable data sharing and digital transformation in industrial systems, with focus on cybersecurity, privacy, and data analytics to support data-driven decision-making in the digitalized meat supply chain.</p>
               <p><strong>Funding Agency:</strong> Formas - Swedish Research Council for Sustainable Development</p>
@@ -372,7 +451,7 @@
       <h2>Education</h2>
       <hr>
       <ul>
-        <li>PhD, Privacy Enhancing Technologies &amp; Applied Cryptography - KU Leuven, Belgium (Supervised by <a href="https://homes.esat.kuleuven.be/~preneel/" target="_blank" rel="noopener noreferrer">Prof. Bart Preneel</a>)</li>
+        <li>PhD, Privacy Enhancing Technologies &amp; Applied Cryptography - KU Leuven, Belgium (Supervised by <a href="https://homes.esat.kuleuven.be/~preneel/" target="_blank" rel="noopener noreferrer">Prof. Bart Preel</a>)</li>
         <li>MSc, Digital Systems Security - University of Piraeus, Greece</li>
         <li>Diploma, Information &amp; Communication Systems Engineering - University of the Aegean, Greece</li>
       </ul>
@@ -451,7 +530,7 @@
 
       <div class="box">
         <h3>HERMES: Scalable, Secure, and Privacy-Enhancing Vehicle Access System (2021)</h3>
-        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Dragos Rotaru, Mustafa A. Mustafa, Bart Mennink, Bart Preneel, Panos Papadimitratos</p>
+        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Dragos Rotaru, Mustafa A. Mustafa, Bart Mennink, Bart Preel, Panos Papadimitratos</p>
         <p class="pub-meta"><strong>Venue:</strong> arXiv</p>
         <p class="pub-links">
           <a href="https://arxiv.org/abs/2101.01950" target="_blank" rel="noopener noreferrer">arXiv</a> ·
@@ -461,7 +540,7 @@
 
       <div class="box">
         <h3>Collateral damage of Facebook third-party applications: a comprehensive study (2018)</h3>
-        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Gergely Biczók, Fatemeh Shirazi, Cristina Pérez-Solà, Jessica Schroers, Bart Preneel</p>
+        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Gergely Biczók, Fatemeh Shirazi, Cristina Pérez-Solà, Jessica Schroers, Bart Preel</p>
         <p class="pub-meta"><strong>Venue:</strong> <em>Computers &amp; Security</em> 77:179–208</p>
         <p class="pub-links">
           <a href="https://www.sciencedirect.com/science/article/pii/S016740481830302X" target="_blank" rel="noopener noreferrer">Publisher</a> ·
@@ -586,19 +665,7 @@
                     <li><strong>Microsoft Office Suite:</strong> Training &amp; certification (Police Academy &amp; private sector)</li>
                   </ul>
                 </li>
-<!--                 <li><strong>Technical Support Analyst - Informatica SA, Greece</strong>
-                  <ul>
-                    <li>Support for MS SQL Server and .NET client systems</li>
-                    <li>Tech support to ~30 employees across municipality projects</li>
-                    <li>Monitoring &amp; maintenance of IT infrastructure</li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </li>
-      </ol> -->
-    </section>
+</section>
 
     <section id="personal_interests" class="section">
       <h2>Personal Interests</h2>
@@ -630,7 +697,6 @@
     </section>
   </main>
 
-  <!-- Theme toggle + Title-only collapse (static-friendly for GitHub Pages) -->
   <script>
     // ===== Theme toggle (system pref + persistent user choice) =====
     (function(){
