@@ -1,3 +1,16 @@
+Those numbers and letters are not random; they are essential.
+
+They are **vector path data** (the `d` attribute) inside an `<svg>` (Scalable Vector Graphics) tag. Think of them as the "connect-the-dots" instructions that tell your browser exactly how to draw the GitHub logo.
+
+If you remove them, the icon will disappear. **Do not remove them.**
+
+-----
+
+You are right, the Google Scholar icon path was problematic. I've replaced it with the standard "graduation cap" icon, which will render correctly.
+
+Here is the complete updated code:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,7 +111,7 @@
       vertical-align: middle;
     }
 
-    /* --- UPDATED: CTA buttons (Fix 1) --- */
+    /* --- CTA buttons --- */
     .cta-buttons {
       display: flex;
       gap: 8px;
@@ -162,4 +175,663 @@
       /* --- Responsive social/CTA --- */
       .social-links { text-align: left; }
       .social-links a { margin-left: 0; margin-right: 8px; }
-      .cta-buttons
+      .cta-buttons { justify-content: flex-start; }
+    }
+
+    /* Timeline */
+    .timeline { position: relative; list-style: none; margin: 0; padding: 0; }
+    .timeline::before {
+      content: ""; position: absolute; left: 12px; top: 0; bottom: 0;
+      width: 2px; background: var(--line);
+    }
+    .timeline li {
+      position: relative; margin: 0 0 24px 0; padding-left: 40px;
+    }
+    .timeline .dot {
+      position: absolute; left: 6px; top: 18px; width: 12px; height: 12px;
+      border-radius: 50%; background: var(--link);
+      box-shadow: 0 0 0 2px var(--bg);
+    }
+    .timeline .when {
+      font-weight: 600; color: var(--sub); font-size: 14px; margin-bottom: 6px;
+    }
+    .timeline .badge {
+      display: inline-block; font-size: 12px; line-height: 1;
+      padding: 3px 8px; border-radius: 999px;
+      background: var(--muted); color: var(--text); margin-left: 6px;
+    }
+    @media (max-width: 900px){
+      .timeline::before { left: 10px; }
+      .timeline li { padding-left: 36px; }
+    }
+
+    /* --- Project Logos --- */
+    .project-logo {
+      max-height: 50px;
+      max-width: 150px;
+      width: auto;
+      height: auto;
+      float: right;
+      margin-left: 15px;
+      margin-bottom: 10px;
+    }
+    /* Invert dark logos for dark mode */
+    [data-theme="dark"] .project-logo.invert-dark {
+      filter: invert(1) brightness(1.8);
+    }
+    @media (max-width: 600px){
+      .project-logo { float: none; display: block; margin: 0 0 15px; }
+    }
+
+    /* --- Title-only collapsed cards --- */
+    #projects .box details, #teaching .box details { margin: 0; }
+    #projects .box summary, #teaching .box summary {
+      list-style: none; display: block; 
+      padding: 0 25px 0 0; /* Add right padding for icon */
+      cursor: pointer;
+      position: relative; /* For positioning the icon */
+    }
+    #projects .box summary::-webkit-details-marker, #teaching .box summary::-webkit-details-marker { display: none; }
+    #projects .box summary h3, #teaching .box summary h3 { margin: 0; color: inherit; }
+    
+    /* Collapsible icon */
+    #projects .box summary::after, 
+    #teaching .box summary::after {
+      content: '+';
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      line-height: 1;
+      transform: translateY(-50%);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--sub);
+    }
+    #projects .box details[open] > summary::after,
+    #teaching .box details[open] > summary::after {
+      content: '−'; /* Minus sign */
+    }
+
+    #projects .box details > .box-body, #teaching .box details > .box-body {
+      padding-top: 10px; border-top: 1px dashed var(--line); margin-top: 10px;
+    }
+    #projects .box summary:focus-visible, #teaching .box summary:focus-visible { outline: 2px solid var(--line); border-radius: 6px; }
+
+    /* Hide timeline markers/dates when collapsed to truly keep only the title */
+    #projects .timeline li.collapsed .when,
+    #projects .timeline li.collapsed .dot,
+    #teaching .timeline li.collapsed .when,
+    #teaching .timeline li.collapsed .dot { display: none; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Iraklis Symeonidis",
+    "jobTitle": "Senior Research Scientist & Cybersecurity Architect",
+    "worksFor": { "@type": "Organization", "name": "RISE Research Institutes of Sweden" },
+    "alumniOf": [
+      {"@type":"CollegeOrUniversity","name":"KU Leuven"},
+      {"@type":"CollegeOrUniversity","name":"University of Piraeus"},
+      {"@type":"CollegeOrUniversity","name":"University of the Aegean"}
+    ],
+    "url": "https://isymeonidis.github.io/",
+    "image": "https://isymeonidis.github.io/assets/portrait.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/",
+      "https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en",
+      "https://github.com/isymeonidis",
+      "https://www.ri.se/en/person/iraklis-symeonidis"
+    ],
+    "email": "mailto:iraklis.symeonidis@ri.se",
+    "knowsAbout": [
+      "Cybersecurity","Privacy Engineering","NGWN 5G/6G",
+      "Edge–Cloud Security","EV Cybersecurity","Data Spaces","PKI/Identity"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav class="sidebar" aria-label="Primary">
+    <img class="profile-img" decoding="async" loading="lazy" width="150" height="150"
+         src="https://media.licdn.com/dms/image/v2/D4D03AQFskcQLWh0K8A/profile-displayphoto-scale_200_200/B4DZk9_xxaJkAc-/0/1757681758596?e=1762992000&v=beta&t=wOU7fGXKp4Tiu1X3PAXNunnrqW-5PlEwXvELElH9g5w"
+         alt="Portrait of Iraklis Symeonidis">
+    <h1>Iraklis Symeonidis</h1>
+    
+    <h2>Senior Research Scientist | Cybersecurity Architect</h2>
+    <h3>PhD, MSc, ISO 27001</h3>
+    <p style="margin: 0 0 15px; font-size: 14px; color: var(--sub);">
+      <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration: none; text-transform:none; font-weight:normal;">
+        RISE Research Institutes of Sweden
+      </a>
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>LinkedIn</title><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.25-.5-2.25-1.75-2.25S12.75 13 12.75 14.25V19h-3v-9h2.9v1.3a3.1 3.1 0 012.8-1.55C17.45 9.75 19 11.5 19 14.25z"/></svg>
+      </a>
+      
+      <a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>Google Scholar</title><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.241 14.978 9 12 9c-2.977 0-5.548 2.241-6.758 5.269zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z"/></svg>
+      </a>
+
+      <a href="https://github.com/isymeonidis" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>GitHub</title><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 01.1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.3 1.23.14 2.14.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.59.69.49A10 10 0 0022 12 10 10 0 0012 2z"/></svg>
+      </a>
+    </div>
+
+    <div class="cta-buttons">
+      <a class="cta-btn" href="/Iraklis_Symeonidis_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
+      <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Academic CV as PDF (opens in a new tab)">Academic CV (PDF)</a>
+    </div>
+
+    <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">🌙 Dark mode</button>
+
+    <p class="updated">Last updated: Sep 2025</p>
+
+    <a href="#about">About</a>
+    <a href="#interests">Current Interests</a>
+    <a href="#projects">Current Projects</a>
+    <a href="#education">Education</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#talks">Invited Talks</a>
+    <a href="#media">Media</a>
+    <a href="#publications">Publications</a>
+    <a href="#academic">Academic Service</a>
+    <a href="#teaching">Teaching &amp; Supervision</a>
+    <a href="#personal_interests">Interests</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="main" class="content" tabindex="-1">
+    <section id="about" class="section">
+      <h2>About</h2>
+      <hr>
+      <p>Senior Research Scientist at RISE (Stockholm). Ph.D., KU Leuven/COSIC. WG lead and contributor in next-generation wireless networks (NGWN) and edge–cloud security. Horizon Europe contributor; active in EU and Swedish funding proposals. Security- and privacy-by-design for EVs, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging; contributed to ~SEK 10M in funded projects. Previously at KTH, SnT (Luxembourg), and KU Leuven. Team-first; strong cross-domain stakeholder engagement. International media coverage for “Collateral Damage of Facebook Apps.” Teaching and supervision in networked systems security. ISO/IEC 27001 Lead Auditor.</p>
+
+      <div class="box" aria-label="Highlights">
+        <ul>
+          <li>WG leader/co-lead in security-by-design of systems (BEiNG-WISE for NGWN/6G; NexusForum for the Edge-to-Cloud Computing Continuum)</li>
+          <li>~SEK 10M funded; cross-domain EU collaborations</li>
+          <li>Media: Wired, NBC, The Atlantic</li>
+          <li>ISO/IEC 27001 Lead Auditor; teaching & supervision at KTH/RISE</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="interests" class="section">
+      <h2>Current Skills &amp; Interests</h2>
+      <hr>
+      <ul>
+        <li><strong>Cybersecurity Leadership:</strong> Leading and contributing to WGs in NGWN and edge–cloud security (BEiNG-WISE, NexusForum)</li>
+        <li><strong>Funding &amp; Collaboration:</strong> Active contributor to Horizon Europe and Swedish funding proposals; secured ~SEK 10M in funded projects</li>
+        <li><strong>Technical Expertise:</strong> Security- &amp; privacy-by-design for EV ecosystems, supply chains, manufacturing, data spaces, identity/PKI, and end-to-end messaging</li>
+        <li><strong>Research &amp; Impact:</strong> Privacy engineering and secure systems; international media coverage for “Collateral Damage of Facebook Apps”</li>
+        <li><strong>Academic Engagement:</strong> Teaching and supervision in networked systems security; pedagogical experience across all education levels</li>
+        <li><strong>Team &amp; Stakeholder Skills:</strong> Team-first mindset with strong cross-domain stakeholder engagement</li>
+        <li><strong>Certifications:</strong> ISO/IEC 27001 Lead Auditor</li>
+        <li><strong>Broader Interests:</strong> Digital sovereignty, trust in NGWN, applied cryptography, edge intelligence, and decentralized systems</li>
+      </ul>
+
+      <h3 style="font-size: 16px; margin-top: 25px; margin-bottom: 10px; color: var(--sub); text-transform: uppercase;">Technical Keywords</h3>
+      <div class="box" style="padding: 15px 15px 15px 30px; background-color: var(--muted);">
+        <ul style="margin:0; padding:0; list-style-type: disc; line-height: 1.6;">
+          <li><strong>Expertise:</strong> Security-by-Design, Privacy-by-Design, Threat Modeling, Zero Trust</li>
+          <li><strong>Systems:</strong> EV Ecosystems, Edge/Cloud, NGWN (5G/6G), Data Spaces, Supply Chains</li>
+          <li><strong>Standards &amp; Tools:</strong> ISO/IEC 27001, PKI/Identity, Keycloak</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Current Projects (Selection)</h2>
+      <hr>
+      <ol class="timeline">
+
+        <li data-start="2025" aria-hidden="false">
+          <span class="dot" aria-hidden="false"></span>
+          <div class="when">
+            <time datetime="2025">2025</time> – <span class="badge">Current</span>
+          </div>
+          <div class="box">
+            <h3>TWINLOOP - Secure Digital Twin Framework &amp; TwinOps for Software-Defined EVs [Horizon Europe 🇪🇺]</h3>
+            <div class="box-body">
+              <img src="https://www.twin-loop.eu/images/twin-loop-logo.png" alt="TWINLOOP Logo" class="project-logo">
+              <p><strong>Role:</strong> Secure Systems Architecture Lead &amp; Contributor (RISE)</p>
+        
+              <p><strong>Vision (secure system architecture):</strong> Design and build the security architecture for an open, interoperable Digital Twin framework-Zero Trust by default-to enable secure status monitoring, predictive analytics, and data-driven innovation across multi-OEM ecosystems.</p>
+        
+              <p><strong>What I do:</strong> Define the reference security architecture (vehicle ↔ edge ↔ cloud), lead threat modeling, and specify controls so multiple Digital Twins can exchange information securely across OEM and Tier-1/2 ecosystems.</p>
+        
+              <p><strong>Programme:</strong> Horizon Europe 🇪🇺 (2ZERO Partnership)</p>
+              <p><strong>Call:</strong> Advanced digital development tools for SDVs -
+                <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2024-D5-01-05</a>
+              </p>
+              <p><strong>Learn more:</strong> <a href="https://www.twin-loop.eu" target="_blank" rel="noopener noreferrer">twin-loop.eu</a></p>
+              <p><strong>Alignment:</strong> Open Framework for the MyEV Digital Twin (specs, reference architecture, data models &amp; interfaces) and Open TwinOps (lifecycle, CI/CD, synchronization with physical EVs, secure operations).</p>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2025">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
+          <div class="box">
+            <h3>NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
+            <div class="box-body">
+              <img src="https://nexusforum.eu/wp-content/uploads/2024/02/cropped-nexusforum_logo-e1707914040685.png" alt="NexusForum Logo" class="project-logo">
+              <p><strong>Role Description:</strong> Working Group Co-Leader – Cybersecurity for the Cognitive Computing Continuum Roadmap</p>
+              <p><strong>Description:</strong> Cross-sector collaboration on secure digital ecosystems and next-generation network resilience.</p>
+              <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
+              <p><strong>Call:</strong> Coordination and Support of Cognitive Computing Continuum research and policy (CSA) -
+                <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2023-data-01-06" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2023-DATA-01</a></p>
+              <p><strong>Learn more:</strong> <a href="https://nexusforum.eu" target="_blank" rel="noopener noreferrer">NexusForum.eu</a></p>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2023">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
+          <div class="box">
+            <h3>CitCom.ai (AI TEF SCC) [Digital Europe 🇪🇺 &amp; Vinnova 🇸🇪]</h3>
+            <div class="box-body">
+              <img src="https://citcomtef.eu/wp-content/uploads/2023/10/logo-1.svg" alt="CitCom.ai Logo" class="project-logo invert-dark">
+              <p><strong>Role:</strong> Project Contributor - <em>Task 3.3: Cybersecurity, Resilience &amp; Connectivity (Edge/IoT)</em></p>
+              <p><strong>What I do in T3.3:</strong> Help design and validate a cybersecurity stack for TEF services, including data &amp; user activity monitoring, intrusion detection, role/attribute-based access control with identity integration (e.g., Keycloak), and ML-based anomaly detection for early APT/fault discovery.</p>
+              <p><strong>Consortium:</strong> 32 partners across 11 EU member states</p>
+              <p><strong>Budget (Sweden):</strong> 18&nbsp;M&nbsp;SEK</p>
+              <p><strong>Learn more:</strong>
+                <a href="https://citcomtef.eu/" target="_blank" rel="noopener noreferrer">CitComTEF</a> ·
+                <a href="https://www.ri.se/en/expertise-areas/projects/citcomai-ai-tef-scc" target="_blank" rel="noopener noreferrer">RISE project page</a> ·
+                <a href="https://www.vinnova.se/en/p/citcom.ai/" target="_blank" rel="noopener noreferrer">Vinnova</a>
+              </p>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2023">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
+          <div class="box">
+            <h3>Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
+            <div class="box-body">
+              <img src="https://beingwise.eu/wp-content/uploads/2023/10/logo_ca22104-1.png" alt="BEiNG-WISE Logo" class="project-logo invert-dark">
+              <p><strong>Role Description:</strong> Working Group Leader - Cybersecurity in Emerging Wireless Communications</p>
+              <p><strong>Description:</strong> Coordinating research in next-generation wireless cybersecurity (5G/6G), including workshops, training, dissemination, and cross-disciplinary collaboration.</p>
+              <p><strong>Funding Agency:</strong> COST Action</p>
+              <p><strong>COST Action webpage:</strong> <a href="https://www.cost.eu/actions/CA22104/#tabs+Name:Working%20Groups%20and%20Membership" target="_blank" rel="noopener noreferrer">BEiNG-WISE</a></p>
+              <p><strong>Learn more:</strong> <a href="https://beingwise.eu" target="_blank" rel="noopener noreferrer">beingwise.eu</a></p>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2023" data-end="2025">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2023">2023</time> – <time datetime="2025">2025</time></div>
+          <div class="box">
+            <h3>Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
+            <div class="box-body">
+              <img src="https://formas.se/images/18.550531518742c0342b49f3c/1681383792617/Formas_logo_liggande_rgb_positiv_svart.svg" alt="FORMAS Logo" class="project-logo invert-dark" style="max-width: 120px;">
+              <p><strong>Role:</strong> Project Contributor - Researcher</p>
+              <p><strong>Role Description:</strong> Research on sustainable data sharing and digital transformation in industrial systems, with focus on cybersecurity, privacy, and data analytics to support data-driven decision-making in the digitalized meat supply chain.</p>
+              <p><strong>Funding Agency:</strong> Formas - Swedish Research Council for Sustainable Development</p>
+              <p><strong>Budget:</strong> 11.8&nbsp;M&nbsp;SEK</p>
+              <p><strong>Learn more:</strong> 
+                <a href="https://www.ri.se/sv/expertisomraden/projekt/mot-datadelning-och-datadrivna-beslut-i-en-digitaliserad-kottkedja" target="_blank" rel="noopener noreferrer">Mot datadelning och datadrivna beslut i en digitaliserad köttkedja</a></p>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <hr>
+      <ul>
+        <li>PhD, Privacy Enhancing Technologies &amp; Applied Cryptography - KU Leuven, Belgium (Supervised by <a href="https://homes.esat.kuleuven.be/~preneel/" target="_blank" rel="noopener noreferrer">Prof. Bart Preel</a>)</li>
+        <li>MSc, Digital Systems Security - University of Piraeus, Greece</li>
+        <li>Diploma, Information &amp; Communication Systems Engineering - University of the Aegean, Greece</li>
+      </ul>
+    </section>
+
+    <section id="certifications" class="section">
+      <h2>Certifications &amp; Training (selection)</h2>
+      <hr>
+      <ul>
+        <li>ISO/IEC 27001:2005 Lead Auditor - TÜV NORD, Athens, Greece</li>
+        <li>Advanced Cybersecurity Course - ENCS, The Hague, Netherlands</li>
+        <li>Secure Application Development - SecAppDev, Leuven, Belgium</li>
+        <li>Modern pedagogical and teaching methods in primary education - Institute der KPH Graz, Austria</li>
+      </ul>
+    </section>
+
+    <section id="talks" class="section">
+      <h2>Invited Talks (selection)</h2>
+      <hr>
+      <ul>
+        <li><strong>2023–2025:</strong> WG Co-Leader “Cybersecurity in emerging wireless communications” - BEiNG-WISE</li>
+        <li><strong>2021:</strong> “Engineering Privacy for Vehicle-to-Cloud Infrastructure” - Privacy Engineering Group</li>
+        <li><strong>2019:</strong> “Privacy-enhancing Sharing Platforms” - University of Manchester</li>
+        <li><strong>2018:</strong> “Privacy in Car Sharing Systems” - IPEN Workshop, EDPS</li>
+        <li><strong>2D018:</strong> “Privacy-Preserving Information Sharing” - Chinese Academy of Sciences</li>
+      </ul>
+    </section>
+
+    <section id="media" class="section">
+      <h2>Media Attention</h2>
+      <hr>
+      <p>Research featured in major international outlets related to privacy, security, and the Cambridge Analytica scandal.</p>
+      <ul>
+        <li><strong>Wired:</strong> <a href="https://www.wired.com/story/facebook-privacy-setting-doesnt-do-anything/" target="_blank" rel="noopener noreferrer">The Facebook privacy settings that doesn’t do anything at all</a> - March 2018</li>
+        <li><strong>NBC News:</strong> <a href="https://www.nbcnews.com/tech/social-media/researchers-say-it-was-easy-take-people-s-data-facebook-n858701" target="_blank" rel="noopener noreferrer">Researchers say it was easy to take people’s data from Facebook</a> - March 2018</li>
+        <li><strong>France24:</strong> <a href="https://www.france24.com/fr/20180320-cambridge-analytica-scandale-effet-facebook-vie-privee-zuckerberg-trump" target="_blank" rel="noopener noreferrer">Cambridge Analytica : le scandale qui fait trembler l’empire Facebook</a> - March 2018</li>
+        <li><strong>The Atlantic:</strong> <a href="https://www.theatlantic.com/technology/archive/2018/03/facebook-cambridge-analytica/555866/" target="_blank" rel="noopener noreferrer">What Took Facebook So Long?</a> - March 2018</li>
+        <li><strong>Blog post (summary):</strong> <a href="/fb_collateral_dmg.html" target="_blank" rel="noopener noreferrer">Collateral Damage Research Summary</a> - March 2018</li>
+      </ul>
+    </section>
+
+    <section id="publications" class="section">
+      <h2>Selected Publications</h2>
+      <hr>
+      <p class="pub-meta">
+        See also: <a href="https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      </p>
+
+      <div class="box">
+        <h3>Towards Empowering Stakeholders Through Decentralized Trust and Secure Livestock Data Sharing (2025)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> Abdul Ghafoor, <strong>Iraklis Symeonidis</strong>, Anna Rydberg, Cecilia Lindahl, Abdul Qadus Abbasi</p>
+        <p class="pub-meta"><strong>Venue:</strong> <em>Cryptography</em> 9(3):52</p>
+        <p class="pub-links">
+          <a href="https://www.mdpi.com/2410-387X/9/3/52" target="_blank" rel="noopener noreferrer">Publisher</a> ·
+          <a href="https://doi.org/10.3390/cryptography9030052" target="_blank" rel="noopener noreferrer">DOI:10.3390/cryptography9030052</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Emerging Cybersecurity Paradigms in Wireless Networks: Physical Layer Innovation, Trust, and AI-Enhanced Defenses (2025)</h3>
+        <p class="pub-meta"><strong>Editors:</strong> <strong>Iraklis Symeonidis</strong>, Valeria Loscri (BEiNG-WISE WG1 White Paper)</p>
+        <p class="pub-meta"><strong>Venue:</strong> BEiNG-WISE (COST Action CA22104) - White Paper</p>
+        <p class="pub-links">
+          <a href="https://beingwise.eu/publications/deliverables/wg1-white-paper/" target="_blank" rel="noopener noreferrer">Project page</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Drowsiness and Fatigue Recognition Systems for Connected Vehicles, 6G and the EU AI Act (2025)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> Ana Ferreira, Başak Ozan Özparlak, Hartmut Aden, Iraklis Symeonidis, Mehmet Çetin, Eirini Kanaki, Periklis Chatzimisios</p>
+        <p class="pub-meta"><strong>Venue:</strong> Proc. EuCNC/6G Summit 2025</p>
+        <p class="pub-links">
+          <a href="https://doi.org/10.1109/EuCNC/6GSummit63408.2025.11037012" target="_blank" rel="noopener noreferrer">DOI</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>HERMES: Scalable, Secure, and Privacy-Enhancing Vehicle Access System (2021)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Dragos Rotaru, Mustafa A. Mustafa, Bart Mennink, Bart Preel, Panos Papadimitratos</p>
+        <p class="pub-meta"><strong>Venue:</strong> arXiv</p>
+        <p class="pub-links">
+          <a href="https://arxiv.org/abs/2101.01950" target="_blank" rel="noopener noreferrer">arXiv</a> ·
+          <a href="https://doi.org/10.48550/arXiv.2101.01950" target="_blank" rel="noopener noreferrer">DOI:10.48550/arXiv.2101.01950</a>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Collateral damage of Facebook third-party applications: a comprehensive study (2018)</h3>
+        <p class="pub-meta"><strong>Authors:</strong> <strong>Iraklis Symeonidis</strong>, Gergely Biczók, Fatemeh Shirazi, Cristina Pérez-Solà, Jessica Schroers, Bart Preel</p>
+        <p class="pub-meta"><strong>Venue:</strong> <em>Computers &amp; Security</em> 77:179–208</p>
+        <p class="pub-links">
+          <a href="https://www.sciencedirect.com/science/article/pii/S016740481830302X" target="_blank" rel="noopener noreferrer">Publisher</a> ·
+          <a href="https://doi.org/10.1016/j.cose.2018.03.015" target="_blank" rel="noopener noreferrer">DOI:10.1016/j.cose.2018.03.015</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="academic" class="section">
+      <h2>Academic and Other Services</h2>
+      <hr>
+      <p><strong>Event organizer:</strong></p>
+      <ul>
+        <li><strong>2024:</strong> <a href="https://www.linkedin.com/events/openindustrydayon5g-6g7218592035530825729/comments/" target="_blank" rel="noopener noreferrer">Open Industry Day on 5G/6G: use-cases, cyber-resilience and sustainability</a></li>
+        <li><strong>2019:</strong> <a href="https://www.linkedin.com/posts/iraklis-symeonidis_cpdp-dataprotection-privatemessaging-activity-6627834663140503553-1M5Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAffeskBfz5wU6908UZptmbwfHPDMh6VAXE" target="_blank" rel="noopener noreferrer">CPDP Event: “Private messaging: why should you care?”</a></li>
+      </ul>
+
+      <p><strong>Program Committee Memberships:</strong></p>
+      <ul>
+        <li><strong>2025:</strong> CPDP, IEEE OJ-COMS, Cryptography and Communications (Springer)</li>
+        <li><strong>2024:</strong> PoPETS, PhD Review - Oulu University</li>
+        <li><strong>2023:</strong> PoPETS</li>
+        <li><strong>2022:</strong> PoPETS</li>
+        <li><strong>2021:</strong> PoPETS, Computers &amp; Security, IEEE IoT, Journal of Cybersecurity and Privacy</li>
+        <li><strong>2020:</strong> PoPETS, Computers &amp; Security, ACM Transactions on the Web</li>
+        <li><strong>2019:</strong> PoPETS, Computers &amp; Security, DPM@ESORICS, CPDP</li>
+        <li><strong>2018:</strong> ICISSP</li>
+        <li><strong>2017:</strong> ICISSP</li>
+        <li><strong>2016:</strong> ICISSP</li>
+      </ul>
+
+      <p><strong>External Reviews:</strong></p>
+      <ul><li><strong>2021:</strong> IEEE Security &amp; Privacy</li></ul>
+    </section>
+
+    <section id="teaching" class="section">
+      <h2>Teaching &amp; Supervision</h2>
+      <hr>
+      <ol class="timeline">
+        <li data-start="2022">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2022">2022</time> – <span class="badge">Current</span></div>
+          <div class="box">
+            <h3>PhD Supervision</h3>
+            <div class="box-body">
+              <ul>
+                <li><strong>PhD Supervisor</strong> - S. Mohammadi, Industrial PhD Student at RISE</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2024">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2024">2024</time></div>
+          <div class="box">
+            <h3>PhD Evaluation (External) </h3>
+            <div class="box-body">
+              <ul>
+                <li><strong>PhD Evaluator (External)</strong> - Rauli Kaksonen, University of Oulu, Finland</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2020" data-end="2022">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2020">2020</time> – <time datetime="2022">2022</time></div>
+          <div class="box">
+            <h3>NSS@KTH - Teaching Assistant &amp; MSc Thesis Supervision</h3>
+            <div class="box-body">
+              <ul>
+                <li><strong>Teaching Assistant at NSS@KTH</strong>
+                  <ul>
+                    <li><strong>Networked Systems Security (NSS):</strong> Fundamentals of secure modern networked systems</li>
+                    <li><strong>Building NSS (BNSS):</strong> Implementation of secure networked systems</li>
+                    <li><strong>Advanced NSS (ANSS):</strong> Engineering of emerging secure networked infrastructures</li>
+                  </ul>
+                </li>
+                <li><strong>MSc Thesis Supervision:</strong>
+                  <ul>
+                    <li>2021–2022: A. Kotsias - “Layer 2 Smart Contracts for Secure Vehicular-Sharing Systems”</li>
+                    <li>2020–2021: S. Rabat - “Encrypted Documents Retrieval from the Cloud with Searchable Encryption”</li>
+                    <li>2021: J. Shan - “Secure Vehicular Sharing Systems Implementation”</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2015" data-end="2020">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2015">2015</time> – <time datetime="2020">2020</time></div>
+          <div class="box">
+            <h3>COSIC@KU Leuven - MSc Thesis Supervision</h3>
+            <div class="box-body">
+              <ul>
+                <li>2019–2020: D. De Troch - “dPACE: A Decentralized Privacy-Preserving, yet Accountable Car Sharing Environment”</li>
+                <li>2017–2018: A. Madhusudan - “Applying Smart Contracts to Secure Car Sharing Systems”</li>
+                <li>2017–2018: D. Reardon - “Prevalence of Device Fingerprinting in Browser Extensions”</li>
+                <li>2016–2017: S. Dhooghe - “Applying Multiparty Computation to Car Access Provision”</li>
+                <li>2015–2016: T. Bertels - “Design of a Pairing Protocol for the AR.Drone 2.0”</li>
+                <li>2015–2016: K. Domin - “Security Analysis of the Drone Communication Protocol: Fuzzing the MAVLink Protocol”</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li data-start="2005" data-end="2011">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="when"><time datetime="2005">2005</time> – <time datetime="2011">2011</time></div>
+          <div class="box">
+            <h3>Educator &amp; Instructor - Ministry of Education, Police Academy, Lifelong Learning</h3>
+            <div class="box-body">
+              <ul>
+                <li><strong>Educator &amp; Instructor - Ministry of Education, Police Academy, Lifelong Learning</strong>
+                  <ul>
+                    <li><strong>Web Programming:</strong> PHP, SQL, and web technologies</li>
+                    <li><strong>Application Development:</strong> Algorithmic logic and programming, university entrance prep</li>
+                    <li><strong>ICT Technologies:</strong> CS principles, mathematics, ICT-enhanced learning</li>
+                    <li><strong>Microsoft Office Suite:</strong> Training &amp; certification (Police Academy &amp; private sector)</li>
+                  </ul>
+                </li>
+</section>
+
+    <section id="personal_interests" class="section">
+      <h2>Personal Interests</h2>
+      <hr>
+      <ul>
+        <li><strong>Orfeas Choir:</strong> Greek repertoire, Bass voice, Board Member - Stockholm, Sweden
+          <a href="https://orfeas.se" target="_blank" rel="noopener noreferrer">[Website]</a>
+        </li>
+        <li><strong>Aerial Photography &amp; Editing:</strong>
+          <a href="https://www.instagram.com/aion_canvas/" target="_blank" rel="noopener noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg"
+                 alt="Instagram" style="height:16px; vertical-align:middle; margin-right:5px;">@aion_canvas</a>
+        </li>
+        <li><strong>First Aid &amp; Lifeguard:</strong> Certification</li>
+        <li><strong>Athlete:</strong> Former Water Polo &amp; Volleyball</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <hr>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:iraklis.symeonidis@ri.se">iraklis.symeonidis@ri.se</a></li>
+        <li><strong>Phone:</strong> <a href="tel:+46730774352">+46 73-077 43 52</a></li>
+        <li><strong>Location:</strong> Isafjordsgatan 22, 16440 Kista, Stockholm, Sweden</li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/" target="_blank" rel="noopener noreferrer">Iraklis Symeonidis</a></li>
+        <li><strong>RISE Profile:</strong> <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer">RISE Webpage</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    // ===== Theme toggle (system pref + persistent user choice) =====
+    (function(){
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+      function apply(theme){
+        root.setAttribute('data-theme', theme);
+        if (btn){
+          const isDark = theme === 'dark';
+          btn.setAttribute('aria-pressed', String(isDark));
+          btn.textContent = isDark ? '☀️ Light mode' : '🌙 Dark mode';
+        }
+        // update browser UI theme color
+        if (metaTheme){
+          metaTheme.setAttribute('content', theme === 'dark' ? '#0b0f13' : '#2c3e50');
+        }
+      }
+      // Initialize theme
+      apply(saved ? saved : (prefersDark ? 'dark' : 'light'));
+
+      if (btn){
+        btn.addEventListener('click', () => {
+          const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+          localStorage.setItem('theme', next);
+          apply(next);
+        });
+      }
+    })();
+
+    // ===== Title-only collapse (Projects + Teaching): convert to <details>/<summary> =====
+    (function setupTitleOnlyCollapse(){
+      function convert(sectionId){
+        document.querySelectorAll(sectionId + ' .timeline li').forEach(li => {
+          const box = li.querySelector('.box');
+          if (!box) return;
+
+          // Skip if already converted
+          if (box.querySelector('details')) {
+            li.classList.add('collapsed');
+            return;
+          }
+
+          const h3 = box.querySelector('h3');
+          if (!h3) return;
+
+          // Create <details> and move H3 into <summary>
+          const details = document.createElement('details'); // collapsed by default
+          const summary = document.createElement('summary');
+          summary.appendChild(h3); // move the existing H3
+          details.appendChild(summary);
+
+          // Ensure body exists and holds the rest of the content
+          let body = box.querySelector('.box-body');
+          if (!body){
+            body = document.createElement('div');
+            body.className = 'box-body';
+            // Move remaining nodes into body
+            Array.from(box.childNodes).forEach(node => {
+              if (node !== details && node !== summary && node.nodeType === 1 /* element */) {
+                if (node.tagName !== 'H3') body.appendChild(node);
+              }
+            });
+          }
+          // If body is still empty (e.g. only H3 was in box), try again
+          if (!body.hasChildNodes()){
+             Array.from(box.childNodes).forEach(node => {
+              if (node !== details && node !== summary) {
+                body.appendChild(node.cloneNode(true));
+              }
+            });
+          }
+          details.appendChild(body);
+
+          // Rebuild the box
+          box.innerHTML = '';
+          box.appendChild(details);
+
+          // Mark timeline item as collapsed initially (hide dot/dates)
+          li.classList.add('collapsed');
+
+          // Toggle class on open/close
+          details.addEventListener('toggle', () => {
+            li.classList.toggle('collapsed', !details.open);
+          });
+        });
+      }
+      convert('#projects');
+      convert('#teaching');
+    })();
+  </script>
+</body>
+</html>
+```
