@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +93,7 @@
       background: none;
       outline: none;
     }
-    .social-links svg {
+    .social-links svg, .social-links img {
       width: 22px; height: 22px;
       fill: currentColor;
       vertical-align: middle;
@@ -206,24 +207,26 @@
     [data-theme="dark"] .project-logo.invert-dark {
       filter: invert(1) brightness(1.8);
     }
+    [data-theme="dark"] .social-links img.invert-dark {
+      filter: invert(1) brightness(1.8);
+    }
     @media (max-width: 600px){
       .project-logo { float: none; display: block; margin: 0 0 15px; }
     }
 
-    /* --- Title-only collapsed cards --- */
-    #projects .box details, #teaching .box details { margin: 0; }
-    #projects .box summary, #teaching .box summary {
+    /* --- UPDATED: Title-only collapsed cards (now general) --- */
+    .timeline .box details { margin: 0; }
+    .timeline .box summary {
       list-style: none; display: block; 
       padding: 0 25px 0 0; /* Add right padding for icon */
       cursor: pointer;
       position: relative; /* For positioning the icon */
     }
-    #projects .box summary::-webkit-details-marker, #teaching .box summary::-webkit-details-marker { display: none; }
-    #projects .box summary h3, #teaching .box summary h3 { margin: 0; color: inherit; }
+    .timeline .box summary::-webkit-details-marker { display: none; }
+    .timeline .box summary h3 { margin: 0; color: inherit; }
     
     /* Collapsible icon */
-    #projects .box summary::after, 
-    #teaching .box summary::after {
+    .timeline .box summary::after {
       content: '+';
       position: absolute;
       right: 5px;
@@ -234,19 +237,17 @@
       font-weight: 400;
       color: var(--sub);
     }
-    #projects .box details[open] > summary::after,
-    #teaching .box details[open] > summary::after {
+    .timeline .box details[open] > summary::after {
       content: '−'; /* Minus sign */
     }
 
-    #projects .box details > .box-body, #teaching .box details > .box-body {
+    .timeline .box details > .box-body {
       padding-top: 10px; border-top: 1px dashed var(--line); margin-top: 10px;
     }
-    #projects .box summary:focus-visible, #teaching .box summary:focus-visible { outline: 2px solid var(--line); border-radius: 6px; }
+    .timeline .box summary:focus-visible { outline: 2px solid var(--line); border-radius: 6px; }
 
-    /* --- UPDATED: (Fix 1) Hide only dot when collapsed --- */
-    #projects .timeline li.collapsed .dot,
-    #teaching .timeline li.collapsed .dot { display: none; }
+    /* Hide only dot when collapsed */
+    .timeline li.collapsed .dot { display: none; }
   </style>
 
   <script type="application/ld+json">
@@ -303,18 +304,18 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>Google Scholar</title><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.241 14.978 9 12 9c-2.977 0-5.548 2.241-6.758 5.269zM12 10c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z"/></svg>
       </a>
 
-      <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer" aria-label="RISE Profile">
-        <img src="rise-logo-black.svg" alt="RISE Logo" style="height: 22px; vertical-align: middle;">
-      </a>
-
       <a href="https://github.com/isymeonidis" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img"><title>GitHub</title><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.49v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.1-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 01.1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.3 1.23.14 2.14.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.59.69.49A10 10 0 0022 12 10 10 0 0012 2z"/></svg>
+      </a>
+      
+      <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer" aria-label="RISE Profile">
+        <img src="rise-logo-black.svg" alt="RISE Logo" class="invert-dark" style="height: 22px; vertical-align: middle;">
       </a>
     </div>
 
     <div class="cta-buttons">
-      <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
-      <!-- <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Academic CV as PDF (opens in a new tab)">Academic CV (PDF)</a> -->
+      <a class="cta-btn" href="/Iraklis_Symeonidis_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
+      <a class="cta-btn" href="/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Academic CV as PDF (opens in a new tab)">Academic CV (PDF)</a>
     </div>
 
     <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">🌙 Dark mode</button>
@@ -370,7 +371,7 @@
         <ul style="margin:0; padding:0; list-style-type: disc; line-height: 1.6;">
           <li><strong>Expertise:</strong> Security-by-Design, Privacy-by-Design, Threat Modeling, Zero Trust</li>
           <li><strong>Systems:</strong> EV Ecosystems, Edge/Cloud, NGWN (5G/6G), Data Spaces, Supply Chains</li>
-          <li><strong>Standards &amp; Tools:</strong> ISO/IEC 27001, PKI/Identity</li>
+          <li><strong>Standards &amp; Tools:</strong> ISO/IEC 27001, PKI/Identity, Keycloak</li>
         </ul>
       </div>
     </section>
@@ -406,7 +407,7 @@
         </li>
 
         <li data-start="2025">
-          <span class="dot" aria-hidden="false"></span>
+          <span class="dot" aria-hidden="true"></span>
           <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
@@ -760,74 +761,72 @@
       }
     })();
 
-    // ===== Title-only collapse (Projects + Teaching): convert to <details>/<summary> =====
+    // ===== UPDATED: Title-only collapse (now general) =====
     (function setupTitleOnlyCollapse(){
-      function convert(sectionId){
-        document.querySelectorAll(sectionId + ' .timeline li').forEach(li => {
-          const box = li.querySelector('.box');
-          if (!box) return;
+      
+      // Convert all timeline list items
+      document.querySelectorAll('.timeline li').forEach(li => {
+        const box = li.querySelector('.box');
+        if (!box) return;
 
-          // Skip if already converted
-          if (box.querySelector('details')) {
-            // Check if it's the one we want open
-            if (li.id !== 'twinloop-project') {
-               li.classList.add('collapsed');
+        // Skip if already converted
+        if (box.querySelector('details')) {
+          // Check if it's the one we want open
+          if (li.id !== 'twinloop-project') {
+             li.classList.add('collapsed');
+          }
+          return;
+        }
+
+        const h3 = box.querySelector('h3');
+        if (!h3) return;
+
+        // Create <details> and move H3 into <summary>
+        const details = document.createElement('details'); // collapsed by default
+        const summary = document.createElement('summary');
+        summary.appendChild(h3); // move the existing H3
+        details.appendChild(summary);
+
+        // Ensure body exists and holds the rest of the content
+        let body = box.querySelector('.box-body');
+        if (!body){
+          body = document.createElement('div');
+          body.className = 'box-body';
+          // Move remaining nodes into body
+          Array.from(box.childNodes).forEach(node => {
+            if (node !== details && node !== summary && node.nodeType === 1 /* element */) {
+              if (node.tagName !== 'H3') body.appendChild(node);
             }
-            return;
-          }
-
-          const h3 = box.querySelector('h3');
-          if (!h3) return;
-
-          // Create <details> and move H3 into <summary>
-          const details = document.createElement('details'); // collapsed by default
-          const summary = document.createElement('summary');
-          summary.appendChild(h3); // move the existing H3
-          details.appendChild(summary);
-
-          // Ensure body exists and holds the rest of the content
-          let body = box.querySelector('.box-body');
-          if (!body){
-            body = document.createElement('div');
-            body.className = 'box-body';
-            // Move remaining nodes into body
-            Array.from(box.childNodes).forEach(node => {
-              if (node !== details && node !== summary && node.nodeType === 1 /* element */) {
-                if (node.tagName !== 'H3') body.appendChild(node);
-              }
-            });
-          }
-          // If body is still empty (e.g. only H3 was in box), try again
-          if (!body.hasChildNodes()){
-             Array.from(box.childNodes).forEach(node => {
-              if (node !== details && node !== summary) {
-                body.appendChild(node.cloneNode(true));
-              }
-            });
-          }
-          details.appendChild(body);
-
-          // Rebuild the box
-          box.innerHTML = '';
-          box.appendChild(details);
-
-          // --- UPDATED (Fix 2) ---
-          // Check if this is the TWINLOOP project to expand it
-          if (li.id === 'twinloop-project') {
-            details.open = true;
-            // 'collapsed' class is NOT added
-          } else {
-            li.classList.add('collapsed'); // Mark timeline item as collapsed initially
-          }
-
-          // Toggle class on open/close
-          details.addEventListener('toggle', () => {
-            li.classList.toggle('collapsed', !details.open);
           });
+        }
+        // If body is still empty (e.g. only H3 was in box), try again
+        if (!body.hasChildNodes()){
+           Array.from(box.childNodes).forEach(node => {
+            if (node !== details && node !== summary) {
+              body.appendChild(node.cloneNode(true));
+            }
+          });
+        }
+        details.appendChild(body);
+
+        // Rebuild the box
+        box.innerHTML = '';
+        box.appendChild(details);
+
+        // Check if this is the TWINLOOP project to expand it
+        if (li.id === 'twinloop-project') {
+          details.open = true;
+          // 'collapsed' class is NOT added
+        } else {
+          li.classList.add('collapsed'); // Mark timeline item as collapsed initially
+        }
+
+        // Toggle class on open/close
+        details.addEventListener('toggle', () => {
+          li.classList.toggle('collapsed', !details.open);
         });
-      }
-      convert('#projects');
-      convert('#teaching');
+      });
+
     })();
   </script>
 </body>
