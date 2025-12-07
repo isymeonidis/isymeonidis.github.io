@@ -831,68 +831,79 @@
   - Use data-start="YYYY" and optional data-end="YYYY" or data-end="YYYY-MM-DD".
   - Keep the visible Contributions paragraph short and keyword-rich for ATS scanning.
 -->
-<li data-start="YYYY" aria-hidden="false" id="project-UNIQUE_ID" data-end="">
-  <span class="dot" aria-hidden="false"></span>
-  <div class="when">
-    <time datetime="YYYY">YYYY</time> – <span class="badge">Current</span>
-  </div>
+        <li data-start="YYYY" aria-hidden="false" id="project-UNIQUE_ID" data-end="">
+          <span class="dot" aria-hidden="false"></span>
+          <div class="when">
+            <time datetime="YYYY">YYYY</time> – <span class="badge">Current</span>
+          </div>
 
-  <div class="box">
-    <h3>PROJECT TITLE [Funding agency 🇪🇺/🇸🇪]</h3>
+          <div class="box">
+            <h3>PROJECT TITLE [Funding agency 🇪🇺/🇸🇪]</h3>
 
-    <div class="box-body">
-      <!-- Optional logo: update src if available -->
-      <img src="Files/PROJECT_LOGO.png" alt="PROJECT Logo" class="project-logo">
+            <div class="box-body">
+              <!-- Optional logo: update src if available -->
+              <img src="Files/PROJECT_LOGO.png" alt="PROJECT Logo" class="project-logo">
 
-      <p><strong>Consortium / WG:</strong> <em>e.g. 50+ organisations / 8+ WG participants</em></p>
-      <p><strong>Role:</strong> <em>e.g. Working Group Co-Leader — Cybersecurity</em></p>
-      <p><strong>Role Description:</strong> One-line: remit, scope, and primary impact (policy / R&I / deployments).</p>
+              <p><strong>Role:</strong> <em> TBD </em></p>
+              <p><strong>Role Description:</strong> TBD </p>
 
-      <p><strong>Funding agency:</strong> Funding body name</p>
-      <p><strong>Call / Instrument:</strong> Call identifier or instrument — 
-        <a href="CALL_URL" target="_blank" rel="noopener noreferrer">CALL-ID</a>
-      </p>
-      <p><strong>Budget (local):</strong> e.g. 18 M SEK / TBD</p>
-      <p><strong>Learn more:</strong>
-        <a href="PROJECT_HOME_URL" target="_blank" rel="noopener noreferrer">Project page</a> ·
-        <a href="PROJECT_DOC_URL" target="_blank" rel="noopener noreferrer">Key document</a>
-      </p>
+              <p><strong>Consortium / WG:</strong> <em>e.g. 50+ organisations / 8+ WG participants</em></p>
 
-      <hr>
+              <p><strong>Funding agency:</strong> Funding body name</p>
+              <p><strong>Call / Instrument:</strong> Call identifier or instrument —
+                <a href="CALL_URL" target="_blank" rel="noopener noreferrer">CALL-ID</a>
+              </p>
+              <p><strong>Budget (EU / Swedish):</strong> e.g. 1 M Euros / 18 M SEK</p>
+              <p><strong>Learn more:</strong>
+                <a href="PROJECT_HOME_URL" target="_blank" rel="noopener noreferrer">Project page</a> ·
+                <a href="PROJECT_DOC_URL" target="_blank" rel="noopener noreferrer">Key document</a>
+              </p>
 
-      <!-- Visible keyword summary (ATS-friendly) -->
-      <p><strong>Contributions (selection):</strong> KEYWORDS; short phrases; coordinating N+ participants.</p>
+              <hr>
 
-      <!-- Short user cue -->
-      <p class="contributions-desc">Expand “Details” to read selected contributions and technical priorities; expand “Metrics (KPIs)” for quantified impact.</p>
+              <!-- Visible keyword summary (ATS-friendly) -->
+              <p><strong>Contributions (selection):</strong> KEYWORDS; short phrases; coordinating N+ participants.</p>
 
-      <!-- Collapsed detailed contributions -->
-      <details class="project-contributions-details" style="margin-top:6px;">
-        <summary>Details</summary>
-        <ol class="project-contributions" style="margin-top:8px;">
-          <li><strong>Leadership &amp; coordination:</strong> Short bullet describing leadership work (e.g., WG coordination, stakeholder liaison, deliverables).</li>
-          <li><strong>D1 — Technology &amp; Innovation:</strong> One-line covering essential technologies & R&I priorities (Zero-Trust, PQC, confidential computing, etc.).</li>
-          <li><strong>D2 — Destinations / Mini-Roadmaps:</strong> One-line about strategic targets linking tech to policy/deployments.</li>
-          <li><strong>Outputs / Deliverables:</strong> One-line about authored drafts, guidance notes, or roadmap contributions (include link if relevant).</li>
-        </ol>
-      </details>
+              <!-- Short user cue -->
+              <p class="contributions-desc">Expand “Details” to read selected contributions and technical priorities;
+                expand “Metrics (KPIs)” for quantified impact.</p>
 
-      <!-- Collapsed ATS-style KPIs / metrics -->
-      <details class="project-metrics-details" style="margin-top:10px;">
-        <summary>Metrics (KPIs)</summary>
-        <ul class="project-metrics" style="margin-top:8px;">
-          <li><strong>Consortium scale:</strong> N+ organisations / stakeholders</li>
-          <li><strong>Working Group members:</strong> M+ active participants</li>
-          <li><strong>Teams supported:</strong> X+ engineering teams</li>
-          <li><strong>Requirements / Artefacts:</strong> Y+ produced (requirements, guidance, MIMs)</li>
-          <li><strong>Scenarios / Threat models:</strong> Z+ evaluated</li>
-          <li><strong>Outputs:</strong> Roadmap drafts, guidance notes (date / link)</li>
-        </ul>
-      </details>
+              <!-- Collapsed detailed contributions -->
+              <details class="project-contributions-details" style="margin-top:6px;">
+                <summary>Details</summary>
+                <ol class="project-contributions" style="margin-top:8px;">
+                  <li><strong>Leadership &amp; coordination:</strong> WG coordination, stakeholder liaison, and
+                    deliverable stewardship (meetings, reporting, dissemination).</li>
+                  <li><strong>D1 — Technology &amp; Innovation:</strong> Core R&amp;I priorities and technical themes
+                    (e.g., Zero‑Trust, secure data lifecycles, PQC, confidential computing).</li>
+                  <li><strong>D2 — Destinations / Mini‑Roadmaps:</strong> Strategic targets that map technologies to
+                    policy, regulation and deployment pathways.</li>
+                  <li><strong>Outputs / Deliverables:</strong> Drafts, guidance notes, requirements sets, and roadmap
+                    contributions (link to key doc if available).</li>
+                </ol>
+              </details>
 
-    </div>
-  </div>
-</li>
+              <!-- Collapsed ATS-style KPIs / metrics -->
+              <details class="project-metrics-details" style="margin-top:10px;">
+                <summary>Metrics (KPIs)</summary>
+                <ul class="project-metrics" style="margin-top:8px;">
+                  <li><strong>Consortium scale:</strong> N+ organisations and stakeholders.</li>
+                  <li><strong>Working Group members:</strong> M+ active participants (technical experts, policy leads,
+                    industry).</li>
+                  <li><strong>Teams supported:</strong> X+ engineering or research teams adopting secure‑by‑design
+                    practices.</li>
+                  <li><strong>Requirements / Artefacts:</strong> Y+ produced (requirements, guidance, MIMs,
+                    interoperability specs).</li>
+                  <li><strong>Scenarios / Threat models:</strong> Z+ integration scenarios and AI/ML threat models
+                    analysed.</li>
+                  <li><strong>Outputs &amp; Influence:</strong> Roadmap drafts, policy recommendations, and prioritized
+                    research actions (include date/link).</li>
+                </ul>
+              </details>
+
+            </div>
+          </div>
+        </li>
         <li data-start="2025" aria-hidden="false" id="project-current">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
