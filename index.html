@@ -425,16 +425,20 @@
           </div>
         </li>
 
-        <li data-start="2025" aria-hidden="false" id="project-current">
+        <li data-start="2025" aria-hidden="false" id="project-nexus">
           <span class="dot" aria-hidden="false"></span>
           <div class="when"><time datetime="2025">2025</time> – <span class="badge">Current</span></div>
           <div class="box">
             <h3>NexusForum Research &amp; Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
             <div class="box-body">
               <img src="Files/NF_logo_small.png" alt="NexusForum Logo" class="project-logo">
-              <p><strong>Role:</strong> Working Group Co‑Leader — <em>Cybersecurity for the Cognitive Computing Continuum Roadmap</em></p>
+
+              <p><strong>Role:</strong> Working Group Co-Leader — <em>Cybersecurity for the Cognitive Computing Continuum Roadmap</em></p>
+
               <p><strong>Description:</strong> Leading cross-sector collaboration to define security, resilience, and data-governance priorities for the Cloud–Edge–IoT Continuum, delivering guidance that informs EU policy, R&amp;I agendas, and large-scale deployment strategies.</p>
+
               <p><strong>Programme:</strong> Horizon Europe (HORIZON)</p>
+
               <p><strong>Call:</strong> Coordination and Support of Cognitive Computing Continuum research and policy (CSA) - 
                 <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2023-data-01-06" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2023-DATA-01</a>
               </p>
@@ -445,13 +449,22 @@
 
               <hr>
 
-              <p><strong>Contributions (selection):</strong></p>
-              <ol class="project-contributions">
-                <li><strong>WG leadership &amp; expertise coordination:</strong> Leading expert groups to analyze and prioritize essential security technologies, disruptive innovation areas, and fail‑safe mechanisms, ensuring alignment with EU cybersecurity, sovereignty, and resilience objectives.</li>
-                <li><strong>D1 — Technology &amp; Innovation Layers:</strong> Investigating and defining core R&amp;I priorities across foundational security capabilities (Zero‑Trust, secure data lifecycles), emerging innovations (Post‑Quantum Cryptography, confidential computing), and transitional safeguards (pervasive encryption, compliance‑anchored controls) to support secure-by-design Continuum architectures.</li>
-                <li><strong>D2 — Destinations / Mini‑Roadmaps:</strong> Developing strategic targets that map essential, emerging, and fail-safe technologies into actionable mini‑roadmaps, connecting technical priorities with regulatory, deployment, and policy requirements to enable secure, interoperable, and sovereign EU infrastructures.</li>
-                <li><strong>R&amp;I Roadmap contribution (first draft):</strong> Co‑authoring and reviewing the NexusForum R&amp;I Roadmap (Mar 2025), translating WG outputs into prioritized research actions and strategic recommendations for the European Commission — <a href="https://eucloudedgeiot.eu/wp-content/uploads/2025/03/NexusForum_R-I_Roadmap-B.pdf" target="_blank" rel="noopener noreferrer">view first draft</a>.</li>
-              </ol>
+              <!-- Contributions keywords are always visible -->
+              <p><strong>Contributions (selection):</strong> Security technologies, Zero-Trust, Post-Quantum Cryptography, Confidential Computing, Pervasive Encryption, Data Governance, Procurement Alignment, AI/ML Security, Threat Modeling — coordinating 25+ participants.</p>
+
+              <!-- Short description for the details (visible also to no-JS users) -->
+              <p class="contributions-desc" style="margin-top:6px; color:var(--sub);">Click “Details” to expand selected contributions and technical priorities.</p>
+
+              <!-- Native details for the detailed contributions; collapsed by default -->
+              <details class="project-contributions-details" style="margin-top:6px;">
+                <summary>Details</summary>
+                <ol class="project-contributions" style="margin-top:8px;">
+                  <li><strong>WG leadership &amp; expertise coordination:</strong> Leading expert groups to analyze and prioritize essential security technologies, disruptive innovation areas, and fail-safe mechanisms, ensuring alignment with EU cybersecurity, sovereignty, and resilience objectives.</li>
+                  <li><strong>D1 — Technology &amp; Innovation Layers:</strong> Investigating and defining core R&amp;I priorities across foundational security capabilities (Zero-Trust, secure data lifecycles), emerging innovations (Post-Quantum Cryptography, confidential computing), and transitional safeguards (pervasive encryption, compliance-anchored controls) to support secure-by-design Continuum architectures.</li>
+                  <li><strong>D2 — Destinations / Mini-Roadmaps:</strong> Developing strategic targets that map essential, emerging, and fail-safe technologies into actionable mini-roadmaps, connecting technical priorities with regulatory, deployment, and policy requirements to enable secure, interoperable, and sovereign EU infrastructures.</li>
+                  <li><strong>R&amp;I Roadmap contribution (first draft):</strong> Co-authoring and reviewing the NexusForum R&amp;I Roadmap (Mar 2025), translating WG outputs into prioritized research actions and strategic recommendations for the European Commission — <a href="https://eucloudedgeiot.eu/wp-content/uploads/2025/03/NexusForum_R-I_Roadmap-B.pdf" target="_blank" rel="noopener noreferrer">view first draft</a>.</li>
+                </ol>
+              </details>
 
             </div>
           </div>
@@ -931,6 +944,24 @@
         });
       });
 
+    })();
+    // ===== Collapsible: only for NexusForum Contributions (use native details element) =====
+    (function setupNexusContributionsCollapsible(){
+      // No global timeline conversion. We use a native <details> inside the NexusForum block
+      // to make only the "Contributions (selection)" section collapsible while keeping
+      // the Contributions keywords always visible. Native <details>/<summary> provide
+      // keyboard accessibility and work without JS in most browsers.
+
+      const nexus = document.getElementById('project-nexus');
+      if (!nexus) return;
+
+      // Ensure we don't duplicate if details already present
+      const existing = nexus.querySelector('details.project-contributions-details');
+      if (existing) return;
+
+      // If the page was generated already with the <details> (fallback), nothing else to do.
+      // If you prefer JS-only creation (move ol into details dynamically), implement here.
+      // Current HTML includes the <details> element, so no further action required.
     })();
   </script>
 </body>
