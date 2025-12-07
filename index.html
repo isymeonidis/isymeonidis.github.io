@@ -256,6 +256,48 @@
       margin-bottom: 0.6rem;
       line-height: 1.4;
     }
+
+/* --- Additional styling for NexusForum contributions & metrics --- */
+
+/* Align label/value pairs inside project boxes */
+.box-body p { display: flex; align-items: flex-start; gap: 12px; margin: 6px 0; }
+.box-body p strong { min-width: 200px; display: inline-block; font-weight: 700; color: var(--text); }
+.box-body p em, .box-body p a, .box-body p span, .box-body p strong + span { flex: 1 1 auto; color: var(--sub); }
+
+/* Make project logo sit neatly and limit size */
+.project-logo { max-height: 56px; max-width: 140px; float: right; margin-left: 18px; margin-bottom: 10px; }
+@media (max-width: 600px){ .project-logo { float: none; display:block; margin: 0 0 12px; } }
+
+/* Contributions summary styling (always visible keywords) */
+.contributions-desc, .box-body p strong + .contributions-desc { color: var(--sub); margin: 6px 0 10px; font-size: 13px; }
+
+/* Details summary styling as pill button to match timeline badges */
+.project-contributions-details > summary,
+.project-metrics-details > summary {
+  cursor: pointer; padding: 8px 12px; border-radius: 999px; display: inline-block; border: 1px solid var(--line);
+  background: transparent; color: var(--text); font-weight: 700; margin-top: 6px;
+}
+.project-contributions-details > summary:hover, .project-metrics-details > summary:hover { background: rgba(0,0,0,0.03); }
+
+/* Use the plus/minus icon already defined globally but better align it */
+.project-contributions-details > summary::marker, .project-metrics-details > summary::marker { display:none; }
+.project-contributions-details > summary::after, .project-metrics-details > summary::after {
+  content: '+'; margin-left: 8px; font-weight: 600; color: var(--sub);
+}
+.project-contributions-details[open] > summary::after, .project-metrics-details[open] > summary::after { content: '−'; }
+
+/* Make lists compact and legible */
+.project-contributions, .project-metrics { padding-left: 1.05rem; margin-top: 8px; }
+.project-contributions li, .project-metrics li { margin-bottom: 0.55rem; line-height: 1.4; }
+
+/* Emphasize metric numbers */
+.project-metrics strong { color: var(--link); }
+
+/* Ensure horizontal rhythm inside boxes */
+.box-body hr { margin: 12px 0; border-top: 1px dashed var(--line); }
+
+/* Accessibility: ensure summary focus is obvious */
+.project-contributions-details > summary:focus, .project-metrics-details > summary:focus { outline: 3px solid rgba(0,0,0,0.08); outline-offset: 2px; border-radius: 8px; }
   </style>
 
   <script type="application/ld+json">
@@ -435,7 +477,8 @@
       <p><strong>Consortium / WG:</strong> 120+ organisations &amp; stakeholders / 25+ WG participants</p>
       <p><strong>Role:</strong> Working Group Co‑Leader — <em>Cybersecurity for the Cognitive Computing Continuum Roadmap</em></p>
       <p><strong>Role Description:</strong> Leading cross-sector collaboration to define security, resilience, and data-governance R&amp;I priorities for the Cloud–Edge–IoT Continuum, producing policy-oriented guidance and prioritized research actions for EU stakeholders.</p>
-
+      <!-- Visible keywords summary for ATS and quick scan -->
+      <p><strong>Contributions (selection):</strong> Leadership; WG coordination; Technologies &amp; disruptive Innovations; Directions &amp; Pilots; Roadmap &amp; policy guidance.</p>
       <p><strong>Funding agency:</strong> Horizon Europe (HORIZON)</p>
 
       <p><strong>Call:</strong> Coordination and Support of Cognitive Computing Continuum research and policy (CSA) - 
@@ -447,9 +490,6 @@
       </p>
 
       <hr>
-
-      <!-- Visible keywords summary for ATS and quick scan -->
-      <p><strong>Contributions (selection):</strong> Leadership; Consortium coordination; Security architecture; Zero‑Trust; Post‑Quantum Cryptography; Confidential Computing; Pervasive Encryption; Data Governance; Procurement Alignment; AI/ML Security; Threat Modeling; Roadmap &amp; policy guidance.</p>
 
       <!-- Short description for the collapsible details -->
       <p class="contributions-desc">Expand “Details” to read selected contributions and technical priorities; expand “Metrics (KPIs)” for ATS-style impact figures.</p>
