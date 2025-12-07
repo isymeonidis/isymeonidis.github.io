@@ -690,6 +690,11 @@
       "Edge–Cloud Security","EV Cybersecurity","Data Spaces","PKI/Identity"
     ]
   }
+    // === Force all contribution & metrics details to remain closed by default ===
+    (function forceAllContributionDetailsClosed() {
+      document.querySelectorAll('details.project-contributions-details, details.project-metrics-details')
+        .forEach(d => { try { d.open = false; } catch (e){} });
+    })();
   </script>
 </head>
 
@@ -841,7 +846,7 @@
 -->
      
         
-<li data-start="2025" aria-hidden="false" id="project-twinloop" data-end="">
+<li data-start="2025" aria-hidden="false" id="project-twinloop">
   <span class="dot" aria-hidden="false"></span>
   <div class="when">
     <time datetime="2025">2025</time> – <span class="badge">Current</span>
@@ -906,7 +911,7 @@
   </div>
 </li>
 
-        <li data-start="2025" aria-hidden="false" id="project-current">
+        <li data-start="2025" aria-hidden="false" id="project-nexus">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
             <time datetime="2025">2025</time> – <span class="badge">Current</span>
@@ -1008,7 +1013,7 @@
           </div>
         </li>
 
-<li data-start="2023" aria-hidden="false" id="project-citcom" data-end="">
+<li data-start="2023" aria-hidden="false" id="project-citcom">
   <span class="dot" aria-hidden="true"></span>
   <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
 
@@ -1065,7 +1070,7 @@
   </div>
 </li>
 
-<li data-start="2023" aria-hidden="false" id="project-current" data-end="">
+<li data-start="2023" aria-hidden="false" id="project-beingwise">
   <span class="dot" aria-hidden="true"></span>
   <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
   <div class="box">
@@ -1112,7 +1117,7 @@
   </div>
 </li>
 
-<li data-start="2022" data-end="2024" id="project-current">
+<li data-start="2022" data-end="2024" id="project-formas">
   <span class="dot" aria-hidden="true"></span>
   <div class="when"><time datetime="2022">2022</time> – <time datetime="2024">2024</time></div>
   <div class="box">
@@ -1642,7 +1647,7 @@
         if (!box) return;
 
         // If already converted (contains details), skip conversion but still adjust collapsed state
-        const existingDetails = box.querySelector('details');
+        const existingDetails = box.querySelector(':scope > details');
         if (existingDetails) {
           const shouldBeOpen = !isExpired(li);
           existingDetails.open = shouldBeOpen;
