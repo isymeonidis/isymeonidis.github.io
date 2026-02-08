@@ -1,0 +1,32 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "pdflatex": true
+  },
+  "files.exclude": {
+    "**/*.aux": true,
+    "**/*.bbl": true,
+    "**/*.bcf": true,
+    "**/*.blg": true,
+    "**/*.fdb_latexmk": true,
+    "**/*.fls": true,
+    "**/*.lof": true,
+    "**/*.log": true,
+    "**/*.lot": true,
+    "**/*.out": true,
+    "**/*.run.xml": true,
+    "**/*.synctex.gz": true,
+    "**/*.toc": true,
+    "**/*.xdv": true,
+    "**/*.nav": true,
+    "**/*.snm": true,
+    "**/*.vrb": true,
+    "CV/.latex": true,
+    "CV/*.aux": true,
+    "CV/*.fdb_latexmk": true,
+    "CV/*.fls": true,
+    "CV/*.log": true,
+    "CV/*.out": true,
+    "CV/*.pdf": true,
+    "CV/*.synctex.gz": true
+  }
+}

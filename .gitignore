@@ -1,0 +1,24 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.out
+*.toc
+*.synctex.gz
+*.bbl
+*.blg
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
+*.xdv
+
+# Resume build outputs (keep .tex and .pdf)
+CV/Iraklis_Symeonidis_CV.*
+!CV/Iraklis_Symeonidis_CV.tex
+!CV/Iraklis_Symeonidis_CV.pdf
+
+# LaTeX aux output directory
+CV/.latex/
