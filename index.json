@@ -1,0 +1,752 @@
+{
+  "schema_version": "1.0",
+  "meta": {
+    "title": "Iraklis Symeonidis - Senior Research Scientist & Cybersecurity Architect",
+    "description": "Senior Research Scientist at RISE (Stockholm). Secure-by-design & cyber-resilient systems across NGWN/5G-6G, EV & edge-cloud, data spaces; ISO/IEC 27001 Lead Auditor.",
+    "canonical": "https://isymeonidis.github.io/",
+    "theme_color": "#2c3e50",
+    "image": "https://isymeonidis.github.io/Files/Isymeonidis_profile_image.jpeg",
+    "social": {
+      "og_title": "Iraklis Symeonidis - Senior Research Scientist & Cybersecurity Architect",
+      "og_description": "Secure-by-design & cyber-resilient systems across NGWN/5G-6G, EV & edge-cloud, data spaces. Media: Wired, NBC, The Atlantic.",
+      "og_type": "website",
+      "og_url": "https://isymeonidis.github.io/",
+      "og_image": "https://isymeonidis.github.io/Files/Isymeonidis_profile_image.jpeg",
+      "twitter_card": "summary_large_image"
+    }
+  },
+  "person": {
+    "name": "Iraklis Symeonidis",
+    "job_title": "Senior Research Scientist & Cybersecurity Architect",
+    "works_for": "RISE Research Institutes of Sweden",
+    "alumni_of": [
+      "KU Leuven",
+      "University of Piraeus",
+      "University of the Aegean"
+    ],
+    "url": "https://isymeonidis.github.io/",
+    "image": "Files/Isymeonidis_profile_image.jpeg",
+    "email": "iraklis.symeonidis@ri.se",
+    "same_as": [
+      "https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/",
+      "https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en",
+      "https://github.com/isymeonidis",
+      "https://www.ri.se/en/person/iraklis-symeonidis"
+    ],
+    "knows_about": [
+      "Cybersecurity",
+      "Privacy Engineering",
+      "NGWN 5G/6G",
+      "Edge-Cloud Security",
+      "EV Cybersecurity",
+      "Data Spaces",
+      "PKI/Identity"
+    ]
+  },
+  "sidebar": {
+    "title": "Senior Research Scientist | Cybersecurity Architect",
+    "subtitle": "PhD, MSc, ISO 27001",
+    "organization_label": "RISE Research Institutes of Sweden",
+    "organization_url": "https://www.ri.se/en/person/iraklis-symeonidis",
+    "social_links": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/"
+      },
+      {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl=en"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/isymeonidis"
+      }
+    ],
+    "cta_buttons": [
+      {
+        "label": "Resume (PDF)",
+        "url": "CV/Iraklis_Symeonidis_CV.pdf"
+      }
+    ],
+    "last_updated": "Feb 2026",
+    "nav": [
+      { "id": "about", "label": "About" },
+      { "id": "projects", "label": "Current Projects" },
+      { "id": "experience", "label": "Experience" },
+      { "id": "education", "label": "Education" },
+      { "id": "certifications", "label": "Certifications" },
+      { "id": "languages", "label": "Languages" },
+      { "id": "talks", "label": "Invited Talks" },
+      { "id": "research_visits", "label": "Research Visits" },
+      { "id": "awards", "label": "Awards & Grants" },
+      { "id": "media", "label": "Media" },
+      { "id": "publications", "label": "Publications" },
+      { "id": "academic", "label": "Academic Service" },
+      { "id": "teaching", "label": "Teaching & Supervision" },
+      { "id": "personal_interests", "label": "Interests" },
+      { "id": "contact", "label": "Contact" }
+    ]
+  },
+  "sections": {
+    "about": {
+      "title": "About Me",
+      "summary": "Senior Research Scientist at RISE and cybersecurity professional with over a decade of experience securing critical infrastructure and leading teams within complex, multi-stakeholder environments. Expert in coordinating technical and regulatory teams to bridge the gap between engineering execution and strategic governance, ensuring robust alignment with ISO/IEC 27001, GDPR, and emerging EU regulations. Proven ability to translate regulatory frameworks into practical, engineering-driven solutions for cross-domain environments. Recognized for orchestrating secure architecture design, cyber resilience, and governance by aligning cross-functional stakeholders to drive informed, risk-based decision-making. Collaborative team player and communicator, dedicated to fostering a security-first culture and empowering teams to navigate the evolving cybersecurity landscape.",
+      "expertise_highlights": {
+        "title": "Expertise Highlights - Technical and Leadership Skills",
+        "roles": "Security Architect, Working Group/Work Package/Task Leader, Principal Security Engineer, Research Scientist",
+        "focus_domains": "IT/OT manufacturing, 5G/6G and NGWN, EV/SDV security, cloud-edge-IoT, Data spaces, Digital twins",
+        "core_strengths": "Cyber Resilience & Security hardening, Secure-by-design architectures, Threat modeling & AI/ML, Applied cryptography, Privacy engineering, Secure data lifecycles, identity & access control",
+        "governance_policy": "Regulatory alignment and compliance engineering (NIS2, AI Act, ISO/IEC 27001), security roadmaps, requirements, and governance for large-scale pilots and testbeds",
+        "leadership_collaboration": "Cybersecurity architectural guidance, Cross-functional coordination, Technical guidance and mentoring, EU working groups and projects (Horizon, Digital Europe, COST); team-first, stakeholder-driven, cross-functional coordination",
+        "funding": "Co-secured research funding (approx. SEK 10M) for EU and national R&I initiatives",
+        "certification": "ISO/IEC 27001 Lead Auditor",
+        "media": "Featured in Wired, NBC News, and The Atlantic",
+        "location": "Stockholm, Sweden (EU/remote collaboration)"
+      }
+    },
+    "projects": {
+      "title": "Current Projects (Selection)",
+      "items": [
+        {
+          "id": "project-twinloop",
+          "start": "2025",
+          "end": "Current",
+          "title": "TWINLOOP - Secure Digital Twin Framework & TwinOps for Software-Defined EVs [Horizon Europe]",
+          "logo": "Files/TWINLOOP_LOGO_NEGATIVE.png",
+          "role": "Task Leader (RISE) & Secure Systems Architecture",
+          "role_description": "Design and deliver the secure reference architecture for an open, interoperable Digital Twin framework and TwinOps lifecycle for Software-Defined Vehicles (SDVs), enabling secure cross-OEM data exchange.",
+          "keywords": "Secure reference architecture, Zero Trust, Digital Twin/TwinOps, DevSecOps, threat modeling, data protection, edge-cloud integration; enables secure cross-OEM data exchange.",
+          "consortium": "Multi-stakeholder research & industry consortium (see project page)",
+          "funding_call": "Horizon Europe (2ZERO Partnership) - Advanced digital development tools for SDVs - HORIZON-CL5-2024-D5-01-05",
+          "links": [
+            {
+              "label": "HORIZON-CL5-2024-D5-01-05",
+              "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2024-d5-01-05"
+            },
+            {
+              "label": "twin-loop.eu",
+              "url": "https://www.twin-loop.eu"
+            }
+          ]
+        },
+        {
+          "id": "project-nexus",
+          "start": "2025",
+          "end": "Current",
+          "title": "NexusForum Research & Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe]",
+          "logo": "Files/NF_logo_small.png",
+          "role": "Working Group Co-Leader - Cybersecurity for the Cognitive Computing Continuum Roadmap",
+          "role_description": "Leading cross-sector collaboration to define security, resilience, and data-governance R&I priorities for the Cloud-Edge-IoT Continuum, producing policy-oriented guidance and prioritized research actions for EU stakeholders.",
+          "keywords": "Roadmap leadership, cybersecurity governance, cloud-edge-IoT continuum, cyber resilience, data governance, PQC, confidential computing; produced EU R&I priorities and policy guidance.",
+          "consortium": "120+ organisations & stakeholders / 25+ WG participants",
+          "funding_call": "Horizon Europe (HORIZON) - Coordination and Support of Cognitive Computing Continuum research and policy (CSA) - HORIZON-CL4-2023-DATA-01",
+          "links": [
+            {
+              "label": "HORIZON-CL4-2023-DATA-01",
+              "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2023-data-01-06"
+            },
+            {
+              "label": "NexusForum.eu",
+              "url": "https://nexusforum.eu"
+            },
+            {
+              "label": "NexusForum R&I Roadmap (first draft, Mar 2025)",
+              "url": "https://eucloudedgeiot.eu/wp-content/uploads/2025/03/NexusForum_R-I_Roadmap-B.pdf"
+            }
+          ]
+        },
+        {
+          "id": "project-citcom",
+          "start": "2023",
+          "end": "Current",
+          "title": "CitCom.ai (AI TEF SCC) - Digital Europe & Vinnova",
+          "logo": "Files/CitCom.png",
+          "role": "Project Contributor - Task 3.3: Cybersecurity, Cyber Resilience & Procurement/Governance",
+          "role_description": "Design and validate cybersecurity controls and interoperability requirements for TEF Data Spaces and Edge/IoT pilots, focusing on connector hardening, MIM6-aligned requirements, procurement alignment, and AI/ML security.",
+          "keywords": "Data Spaces connectors, MIM6, procurement, AI/ML security, threat modeling, secure-by-design; hardened TEF pilots and procurement readiness.",
+          "consortium": "32 partners across 11 EU member states",
+          "budget_sweden": "18 M SEK",
+          "links": [
+            {
+              "label": "CitComTEF",
+              "url": "https://citcomtef.eu/"
+            },
+            {
+              "label": "RISE project page",
+              "url": "https://www.ri.se/en/expertise-areas/projects/citcomai-ai-tef-scc"
+            },
+            {
+              "label": "Vinnova",
+              "url": "https://www.vinnova.se/en/p/citcom.ai/"
+            }
+          ]
+        },
+        {
+          "id": "project-beingwise",
+          "start": "2023",
+          "end": "Current",
+          "title": "Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action]",
+          "logo": "Files/BEiNG-WISE_logo_300.png",
+          "role": "Working Group Leader - Cybersecurity in Emerging Wireless Communications",
+          "role_description": "Coordinate WG activities focused on security and trust in next-generation wireless (5G/6G), organising workshops, training events, and cross-disciplinary research to support standards and R&I agendas.",
+          "keywords": "5G/6G security, physical-layer security, trust & privacy, AI-enabled defenses, standards input; built WG outputs and training for EU stakeholders.",
+          "consortium": "European research & industry network (multi-country participation)",
+          "funding_agency": "COST Action (CA22104)",
+          "links": [
+            {
+              "label": "beingwise.eu",
+              "url": "https://beingwise.eu"
+            },
+            {
+              "label": "COST Action CA22104",
+              "url": "https://www.cost.eu/actions/CA22104/"
+            }
+          ]
+        },
+        {
+          "id": "project-formas",
+          "start": "2022",
+          "end": "2024",
+          "title": "Datadelning i en digitaliserad k\u00f6ttkedja [FORMAS]",
+          "logo": "Files/FORMAS.svg",
+          "role": "Project Contributor - Researcher",
+          "role_description": "Research on sustainable data sharing and digital transformation in industrial systems, focusing on secure data governance, privacy-preserving sharing mechanisms, and analytics to support data-driven decision-making across the meat supply chain.",
+          "keywords": "Data governance, privacy-preserving sharing, secure data pipelines, interoperability, analytics; enabled secure data sharing across supply-chain partners.",
+          "consortium": "Multi-partner Swedish consortium (industry, research, public bodies)",
+          "funding_agency": "Formas - Swedish Research Council for Sustainable Development",
+          "budget": "11.8 M SEK",
+          "links": [
+            {
+              "label": "Project page",
+              "url": "https://www.vr.se/swecris.html?project=2019-02277_Formas#/"
+            },
+            {
+              "label": "YouTube video",
+              "url": "https://youtu.be/w6iqCluHEfY?si=4kB5VoiuR4NYF2aJ"
+            }
+          ]
+        }
+      ]
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "items": [
+        {
+          "id": "experience-rise",
+          "start": "2022",
+          "end": "Current",
+          "role": "Cybersecurity Architect and Senior Researcher",
+          "org": "RISE Research Institutes of Sweden",
+          "summary": "As a Senior Research Scientist and Cybersecurity Architect at RISE, I specialize in cybersecurity and privacy (data protection) to ensure compliance with ISO/IEC 27001, the AI Act, GDPR, and other security standards.",
+          "role_focus": [
+            "Develop and implement secure architectures for critical infrastructure across industries.",
+            "Evaluate third-party security risks and conduct vendor security assessments to strengthen supply chain security.",
+            "Advise on cybersecurity governance best practices and design risk mitigation strategies to enhance resilience.",
+            "Integrate DevSecOps principles into development workflows to ensure security by design.",
+            "Collaborate with cross-functional teams to drive cybersecurity innovation and secure digital transformation."
+          ],
+          "contributions": [
+            "Electric vehicles and smart mobility",
+            "Next-generation wireless networks (5G/6G)",
+            "Manufacturing and Industry 4.0",
+            "Data spaces and secure digital ecosystems",
+            "Livestock supply chains and agritech"
+          ],
+          "closing": "Through research, industry collaboration, and applied innovation, I help organizations strengthen cybersecurity, enhance privacy, and drive secure digitalization."
+        },
+        {
+          "id": "experience-kth",
+          "start": "2020",
+          "end": "2022",
+          "role": "Scientist, Secure Communications and Cybersecurity",
+          "org": "KTH Royal Institute of Technology",
+          "summary": "As a Postdoctoral Researcher in Cybersecurity, I contributed to the development of secure architectures for smart mobility and trustworthy information-sharing systems. My work focused on analyzing, designing, and evaluating privacy-preserving V2X communication to ensure robust and resilient system architectures in connected and autonomous mobility.",
+          "bullets": [
+            "Conducted research on secure vehicular architectures and networking protocols.",
+            "Designed privacy-preserving communication systems and protocols for secure V2X data exchange.",
+            "Authored a top-tier IEEE IoT journal publication, contributing to advancements in cybersecurity for smart mobility.",
+            "Developed teaching materials for cybersecurity courses and delivered training on applied cryptography and secure networking.",
+            "Supervised and mentored MSc and BSc students."
+          ]
+        },
+        {
+          "id": "experience-ulux",
+          "start": "2018",
+          "end": "2020",
+          "role": "Scientist, Secure Communications and Architectures",
+          "org": "University of Luxembourg",
+          "summary": "As a Postdoctoral Researcher at SnT, I focused on end-to-end encryption protocols, threat analysis, and cryptographic solution design for secure communication applications. My role involved analyzing security threats, evaluating cryptographic mechanisms for data protection and compliance, and contributing to the design and assessment of security solutions for enterprise applications.",
+          "bullets": [
+            "Conducted security evaluations for enterprise applications, ensuring robust end-to-end encrypted communication.",
+            "Analyzed and assessed cryptographic mechanisms to enhance security, privacy, and regulatory compliance.",
+            "Designed and implemented threat models to evaluate vulnerabilities in encrypted communication systems.",
+            "Managed project deliverables, ensuring alignment with security requirements and research objectives.",
+            "Led research dissemination efforts, presenting findings at international conferences and contributing to cybersecurity standards.",
+            "Organized and coordinated CPDP conference events, fostering discussions on emerging privacy and security challenges."
+          ],
+          "outcomes": [
+            "Contributed an Internet-Draft to the IETF PEARG group.",
+            "Collaborated with research institutions including COSIC@KU Leuven and DCS@University of Manchester.",
+            "Completed a EUR 300K-funded research project with SnT@University of Luxembourg and pEp."
+          ],
+          "closing": "This role reinforced my expertise in secure communication systems, cryptographic protocols, and cybersecurity research, advancing privacy-preserving technologies for the digital ecosystem."
+        },
+        {
+          "id": "experience-kuleuven",
+          "start": "2012",
+          "end": "2018",
+          "role": "Scientist, Secure Systems Architectures",
+          "org": "KU Leuven (COSIC)",
+          "summary": "PhD candidate at COSIC (Computer Security and Industrial Cryptography) at KU Leuven, Belgium, advised by Prof. Bart Preneel.",
+          "projects": [
+            "Third-party application security risks and privacy violations (Facebook-Cambridge Analytica): Investigated privacy risks in Facebook's third-party app ecosystem, focusing on APIs and permission systems. Published multiple research papers in top-tier conferences and journals, with media attention related to the Cambridge Analytica scandal. Collaborations: CrySyS Lab @ BME, CITIP @ KU Leuven.",
+            "Privacy-preserving protocols for physical asset-sharing (V2X): Designed secure and privacy-preserving V2X communication protocols. Integrated access control with financial operations to ensure accountability in mobility applications. Resulted in multiple peer-reviewed publications.",
+            "Industrial project - identity management and SSO security: Designed and developed revocation mechanisms for long-lived assertions in Single Sign-On systems. Delivered a proof-of-concept software solution as part of the iMinds@COSIC research initiative."
+          ],
+          "responsibilities": [
+            "Led research on third-party application security risks, including the Facebook-Cambridge Analytica case.",
+            "Designed privacy-preserving data-sharing protocols for secure and accountable transactions.",
+            "Developed identity and access management frameworks to enhance authentication security.",
+            "Managed project deliverables, ensuring alignment with security, privacy, and compliance objectives."
+          ],
+          "closing": "This experience strengthened my expertise in cybersecurity, privacy, and identity management, contributing to the advancement of secure digital ecosystems."
+        },
+        {
+          "id": "experience-starfish",
+          "start": "2009",
+          "end": "2011",
+          "role": "Back-end Web Developer (Drupal + E-commerce)",
+          "org": "Starfish Web & Art",
+          "summary": "Back-end web developer at Starfish Web & Art, delivering Drupal and CS-Cart solutions across e-commerce, portals, blogs, and forums.",
+          "projects": {
+            "ecommerce": [
+              { "label": "greekpharm.gr (CS-Cart Pro)", "url": "http://greekpharm.gr/" },
+              { "label": "3shops.gr (CS-Cart Pro)", "url": "http://www.3shops.gr/" }
+            ],
+            "portals_news_forums": [
+              { "label": "foodspot.gr (Drupal)", "url": "http://foodspot.gr/" },
+              { "label": "anotherdrop.gr (Drupal)", "url": "http://anotherdrop.gr/" },
+              { "label": "fex.org.gr (Drupal)", "url": "http://fex.org.gr/" },
+              { "label": "ethnikos-mgs.gr (Drupal)", "url": "http://ethnikos-mgs.gr/" },
+              { "label": "comedyfest.gr (Drupal)", "url": "http://comedyfest.gr/" },
+              { "label": "standupcomedy.gr (Drupal)", "url": "http://standupcomedy.gr/" },
+              { "label": "radioxanthi.gr (Drupal)", "url": "http://radioxanthi.gr/" },
+              { "label": "dimosmykis.gr (Drupal)", "url": "http://dimosmykis.gr/" }
+            ],
+            "academia_portals": [
+              { "label": "arch.duth.gr (Drupal)", "url": "http://www.arch.duth.gr/" },
+              { "label": "env.duth.gr (Drupal)", "url": "http://www.env.duth.gr/" }
+            ]
+          }
+        },
+        {
+          "id": "experience-informatica",
+          "start": "2008",
+          "end": "2009",
+          "role": "Technical Support Analyst",
+          "org": "Informatica S.A.",
+          "summary": "Supported municipal software products, handling operator requests, software updates, and ongoing maintenance.",
+          "bullets": [
+            "Maintained MS SQL Server instances and .NET client applications.",
+            "Supported accounting, protocol, registration office, and vehicle management systems."
+          ]
+        },
+        {
+          "id": "experience-teaching",
+          "start": "2005",
+          "end": "2011",
+          "role": "Teacher (New Technologies & Web Programming)",
+          "org": "Ministry of Education / General Secretariat for Lifelong Learning",
+          "summary": "Taught primary and secondary education programs and adult lifelong learning courses using new technologies.",
+          "bullets": [
+            "Delivered instruction in mathematics, geography, and language with technology-enabled teaching methods.",
+            "Taught web programming (PHP, SQL) in lifelong learning programs."
+          ]
+        },
+        {
+          "id": "experience-esoft",
+          "start": "2005",
+          "end": "2005",
+          "role": "Technical Support Analyst",
+          "org": "e-soft consulting",
+          "summary": "Provided technical support for accounting software used by small and medium local companies."
+        },
+        {
+          "id": "experience-military",
+          "start": "2004",
+          "end": "2005",
+          "role": "Military Service",
+          "org": "Hellenic Armed Forces",
+          "summary": "Completed national military service with a focus on telecommunications. Received hands-on training with military communication systems and operated as a member of a disciplined, collaborative team."
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "degree": "PhD, Secure and Privacy-Preserving Systems Architectures (automotive focus)",
+          "institution": "KU Leuven",
+          "location": "Belgium",
+          "thesis": "Analysis and Design of Privacy-Enhancing Information Sharing Systems",
+          "supervisor": "Prof. Bart Preneel",
+          "supervisor_url": "https://homes.esat.kuleuven.be/~preneel/"
+        },
+        {
+          "degree": "MSc, Digital Systems Security",
+          "institution": "University of Piraeus",
+          "location": "Greece",
+          "thesis": "Privacy-preserving Reputation System for Online Social Networks",
+          "supervisor": "Prof. Bart Preneel, ESAT COSIC"
+        },
+        {
+          "degree": "Diploma, Information & Communication Systems Engineering",
+          "institution": "University of the Aegean",
+          "location": "Greece",
+          "thesis": "Open Architecture for Connection Control Management on Wireless--ATM Networks",
+          "supervisor": "Prof. Georgios Kormentzas; collaboration with NCSR Demokritos"
+        }
+      ]
+    },
+    "certifications": {
+      "title": "Certifications & Training (selection)",
+      "items": [
+        "ISO/IEC 27001:2005 Lead Auditor - T\u00dcV NORD, Athens, Greece",
+        "Advanced Cybersecurity Course - ENCS, The Hague, Netherlands",
+        "Secure Application Development - SecAppDev, Leuven, Belgium",
+        "Modern pedagogical and teaching methods in primary education - Institute der KPH Graz, Austria"
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "items": [
+        "English (Fluent)",
+        "Greek (Native)",
+        "Swedish (A2)"
+      ]
+    },
+    "talks": {
+      "title": "Invited Talks (selection)",
+      "items": [
+        "2023-2025: WG Co-Leader \"Cybersecurity in emerging wireless communications\" - BEiNG-WISE",
+        "2021: \"Engineering Privacy for Vehicle-to-Cloud Infrastructure\" - Privacy Engineering Group",
+        "2019: \"Privacy-enhancing Sharing Platforms\" - University of Manchester",
+        "2018: \"Privacy in Car Sharing Systems\" - IPEN Workshop, EDPS",
+        "2018: \"Privacy-Preserving Information Sharing\" - Chinese Academy of Sciences",
+        "2017: \"Car sharing without a physical key: a security and privacy perspective\" - CrySyS Lab @ BME"
+      ]
+    },
+    "research_visits": {
+      "title": "Research Visits & Collaborations",
+      "items": [
+        "2020: COSIC@KU Leuven - Research visit on secure V2X systems and privacy-preserving off-chain smart contract protocols (FNR INTER / FWO proposal collaboration).",
+        "2019: DCS@University of Manchester - Research visit on secure V2X systems.",
+        "2019: FCA Bank (Turin, Italy) - Industry collaboration discussions on secure vehicular sharing systems.",
+        "2017: CrySyS Lab @ BME - Research visit on interdependent privacy in Facebook apps (FWO research-visit grant)."
+      ]
+    },
+    "awards": {
+      "title": "Awards & Grants (selection)",
+      "items": [
+        "2017: FWO research-visit grant (COSIC@KU Leuven <-> CrySyS Lab @ BME)."
+      ]
+    },
+    "media": {
+      "title": "Media Attention",
+      "intro": "Research featured in major international outlets related to privacy, security, and the Cambridge Analytica scandal.",
+      "items": [
+        {
+          "outlet": "Wired",
+          "title": "The Facebook privacy settings that doesn\u2019t do anything at all",
+          "date": "March 2018",
+          "url": "https://www.wired.com/story/facebook-privacy-setting-doesnt-do-anything/"
+        },
+        {
+          "outlet": "NBC News",
+          "title": "Researchers say it was easy to take people\u2019s data from Facebook",
+          "date": "March 2018",
+          "url": "https://www.nbcnews.com/tech/social-media/researchers-say-it-was-easy-take-people-s-data-facebook-n858701"
+        },
+        {
+          "outlet": "France24",
+          "title": "Cambridge Analytica : le scandale qui fait trembler l\u2019empire Facebook",
+          "date": "March 2018",
+          "url": "https://www.france24.com/fr/20180320-cambridge-analytica-scandale-effet-facebook-vie-privee-zuckerberg-trump"
+        },
+        {
+          "outlet": "Medium",
+          "title": "The Graph API: key points in the Facebook and Cambridge Analytica debacle",
+          "date": "March 2018",
+          "url": "https://medium.com/tow-center/the-graph-api-key-points-in-the-facebook-and-cambridge-analytica-debacle-b69fe692d747"
+        },
+        {
+          "outlet": "AOL",
+          "title": "Consent & privacy coverage (Yahoo/AOL)",
+          "date": "March 2018",
+          "url": "https://consent.yahoo.com/v2/collectConsent?sessionId=3_cc-session_cac0a8c7-8f69-45ea-adfb-6dac9e3b0c2a"
+        },
+        {
+          "outlet": "Cadenaser",
+          "title": "Cambridge Analytica: efectos y alcance",
+          "date": "March 2018",
+          "url": "https://cadenaser.com/ser/2018/03/22/ciencia/1521704072_349964.html"
+        },
+        {
+          "outlet": "The Atlantic",
+          "title": "What Took Facebook So Long?",
+          "date": "March 2018",
+          "url": "https://www.theatlantic.com/technology/archive/2018/03/facebook-cambridge-analytica/555866/"
+        },
+        {
+          "outlet": "Nepszava",
+          "title": "Zuckerberg b\u00edr\u00f3s\u00e1g el\u0151tt a Facebook-\u00fcgyekben",
+          "date": "March 2018",
+          "url": "https://nepszava.hu/1155869_zuckerberg-banja-perek-ele-nez-a-facebook-guru"
+        },
+        {
+          "outlet": "COSIC blog",
+          "title": "Collateral damage of Facebook apps",
+          "date": "March 2018",
+          "url": "https://www.esat.kuleuven.be/cosic/blog/collateral-damage-of-facebook-apps/"
+        },
+        {
+          "outlet": "CrySyS lab blog",
+          "title": "Interdependent privacy and third-party apps on Facebook",
+          "date": "March 2018",
+          "url": "https://blog.crysys.hu/2018/03/interdependent-privacy-in-effect-the-collateral-damage-of-third-party-apps-on-facebook/"
+        },
+        {
+          "outlet": "iAfrican",
+          "title": "Collateral damage of third-party apps on Facebook (republished)",
+          "date": "March 2018",
+          "url": "https://www.iafrikan.com/2018/03/26/the-collateral-damage-of-third-party-apps-on-facebook/"
+        },
+        {
+          "outlet": "Blog post (summary)",
+          "title": "Collateral Damage Research Summary",
+          "date": "March 2018",
+          "url": "/fb_collateral_dmg.html"
+        }
+      ]
+    },
+    "publications": {
+      "title": "Selected Publications",
+      "see_also": {
+        "label": "Google Scholar",
+        "url": "https://scholar.google.com/citations?user=CMBbc_kAAAAJ&hl"
+      },
+      "items": [
+        {
+          "title": "Towards Empowering Stakeholders Through Decentralized Trust and Secure Livestock Data Sharing",
+          "year": "2025",
+          "authors": "Abdul Ghafoor, Iraklis Symeonidis, Anna Rydberg, Cecilia Lindahl, Abdul Qadus Abbasi",
+          "publisher": "MDPI Cryptography Journal",
+          "links": [
+            {
+              "label": "Cryptography Journal",
+              "url": "https://www.mdpi.com/2410-387X/9/3/52"
+            },
+            {
+              "label": "DOI:10.3390/cryptography9030052",
+              "url": "https://doi.org/10.3390/cryptography9030052"
+            }
+          ]
+        },
+        {
+          "title": "Emerging Cybersecurity Paradigms in Wireless Networks: Physical Layer Innovation, Trust, and AI-Enhanced Defenses",
+          "year": "2025",
+          "authors": "Iraklis Symeonidis, Valeria Loscri (BEiNG-WISE WG1 White Paper)",
+          "publisher": "BEiNG-WISE (COST Action CA22104) - White Paper",
+          "links": [
+            {
+              "label": "Project page",
+              "url": "https://beingwise.eu/publications/deliverables/wg1-white-paper/"
+            }
+          ]
+        },
+        {
+          "title": "Drowsiness and Fatigue Recognition Systems for Connected Vehicles, 6G and the EU AI Act",
+          "year": "2025",
+          "authors": "Ana Ferreira, Basak Ozan Ozparlak, Hartmut Aden, Iraklis Symeonidis, Mehmet Cetin, Eirini Kanaki, Periklis Chatzimisios",
+          "publisher": "IEEE EuCNC/6G Summit",
+          "links": [
+            {
+              "label": "IEEE EuCNC/6G Summit",
+              "url": "https://ieeexplore.ieee.org/document/11037012"
+            },
+            {
+              "label": "DOI:10.1109/EuCNC/6GSummit63408.2025.11037012",
+              "url": "https://doi.org/10.1109/EuCNC/6GSummit63408.2025.11037012"
+            }
+          ]
+        },
+        {
+          "title": "HERMES: Scalable, Secure, and Privacy-Enhancing Vehicle Access System",
+          "year": "2021",
+          "authors": "Iraklis Symeonidis, Dragos Rotaru, Mustafa A. Mustafa, Bart Mennink, Bart Preneel, Panos Papadimitratos",
+          "publisher": "IEEE Internet of Things Journal",
+          "links": [
+            {
+              "label": "IEEE Internet of Things Journal",
+              "url": "https://ieeexplore.ieee.org/document/9477257"
+            },
+            {
+              "label": "DOI:10.1109/JIOT.2021.3094930",
+              "url": "https://doi.org/10.1109/JIOT.2021.3094930"
+            }
+          ]
+        },
+        {
+          "title": "Collateral damage of Facebook third-party applications: a comprehensive study",
+          "year": "2018",
+          "authors": "Iraklis Symeonidis, Gergely Biczok, Fatemeh Shirazi, Cristina Perez-Sola, Jessica Schroers, Bart Preneel",
+          "publisher": "Elsevier Computers & Security",
+          "links": [
+            {
+              "label": "Computers & Security",
+              "url": "https://www.sciencedirect.com/science/article/pii/S016740481830302X"
+            },
+            {
+              "label": "DOI:10.1016/j.cose.2018.03.015",
+              "url": "https://doi.org/10.1016/j.cose.2018.03.015"
+            }
+          ]
+        }
+      ]
+    },
+    "academic_service": {
+      "title": "Academic and Other Services",
+      "event_organizer": [
+        {
+          "year": "2024",
+          "title": "Open Industry Day on 5G/6G: use-cases, cyber-resilience and sustainability",
+          "url": "https://www.linkedin.com/events/openindustrydayon5g-6g7218592035530825729/comments/"
+        },
+        {
+          "year": "2019",
+          "title": "CPDP Event: \"Private messaging: why should you care?\"",
+          "url": "https://www.linkedin.com/posts/iraklis-symeonidis_cpdp-dataprotection-privatemessaging-activity-6627834663140503553-1M5Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAffeskBfz5wU6908UZptmbwfHPDMh6VAXE"
+        }
+      ],
+      "program_committees": [
+        "2026: Cryptography and Communications (Springer)",
+        "2025: IEEE IoT, CPDP, IEEE OJ-COMS, Cryptography and Communications (Springer)",
+        "2024: PoPETS",
+        "2023: PoPETS",
+        "2022: PoPETS",
+        "2021: PoPETS, Computers & Security, IEEE IoT, Journal of Cybersecurity and Privacy",
+        "2020: PoPETS, Computers & Security, ACM Transactions on the Web",
+        "2019: PoPETS, Computers & Security, DPM@ESORICS, CPDP",
+        "2018: ICISSP",
+        "2017: ICISSP",
+        "2016: ICISSP"
+      ],
+      "external_reviews": [
+        "2021: IEEE Security & Privacy"
+      ]
+    },
+    "teaching": {
+      "title": "Teaching & Supervision",
+      "items": [
+        {
+          "start": "2022",
+          "end": "Current",
+          "title": "PhD Supervision",
+          "bullets": [
+            "PhD Supervisor - S. Mohammadi, Industrial PhD Student at RISE"
+          ]
+        },
+        {
+          "start": "2024",
+          "end": "2024",
+          "title": "PhD External reviewer / examiner",
+          "bullets": [
+            "2024: Rauli Kaksonen, \"Transparent and tool-driven security assessment for sustainable IoT cybersecurity\", University of Oulu, Finland",
+            "2025: Liu Shuaishuai, \"Interdependent Privacy: Modeling, Measurement, and Mitigation\", Budapest University of Technology and Economics, Hungary"
+          ]
+        },
+        {
+          "start": "2020",
+          "end": "2022",
+          "title": "NSS@KTH - Teaching Assistant & MSc Thesis Supervision",
+          "bullets": [
+            "Teaching Assistant at NSS@KTH (Networked Systems Security, Building NSS, Advanced NSS)",
+            "MSc Thesis Supervision: 2021-2022 A. Kotsias, 2020-2021 S. Rabat, 2021 J. Shan"
+          ]
+        },
+        {
+          "start": "2015",
+          "end": "2020",
+          "title": "COSIC@KU Leuven - MSc Thesis Supervision",
+          "bullets": [
+            "2019-2020: D. De Troch - dPACE: A Decentralized Privacy-Preserving, yet Accountable Car Sharing Environment",
+            "2017-2018: A. Madhusudan - Applying Smart Contracts to Secure Car Sharing Systems",
+            "2017-2018: D. Reardon - Prevalence of Device Fingerprinting in Browser Extensions",
+            "2016-2017: S. Dhooghe - Applying Multiparty Computation to Car Access Provision",
+            "2015-2016: T. Bertels - Design of a Pairing Protocol for the AR.Drone 2.0",
+            "2015-2016: K. Domin - Security Analysis of the Drone Communication Protocol: Fuzzing the MAVLink Protocol"
+          ]
+        },
+        {
+          "start": "2005",
+          "end": "2011",
+          "title": "Educator & Instructor - Ministry of Education, Police Academy, Lifelong Learning",
+          "bullets": [
+            "Web Programming: PHP, SQL, and web technologies",
+            "Application Development: Algorithmic logic and programming, university entrance prep",
+            "ICT Technologies: CS principles, mathematics, ICT-enhanced learning",
+            "Microsoft Office Suite: Training & certification (Police Academy & private sector)"
+          ]
+        }
+      ]
+    },
+    "personal_interests": {
+      "title": "Personal Interests",
+      "items": [
+        {
+          "label": "Orfeas Choir",
+          "details": "Greek repertoire, Bass voice, Board Member - Stockholm, Sweden",
+          "url": "https://orfeas.se"
+        },
+        {
+          "label": "Aerial Photography & Editing",
+          "details": "@aion_canvas",
+          "url": "https://www.instagram.com/aion_canvas/"
+        },
+        "First Aid: National Center for Emergency Assistance training (2011)",
+        "Pool Lifeguard: Certified by Hellenic School Lifeguard (2009)",
+        "Athlete: Former Water Polo & Volleyball",
+        "Student Union: Board Member, ICSE (2000-2002)"
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "items": [
+        {
+          "label": "Email",
+          "value": "iraklis.symeonidis@ri.se",
+          "url": "mailto:iraklis.symeonidis@ri.se"
+        },
+        {
+          "label": "Phone",
+          "value": "+46 73-077 43 52",
+          "url": "tel:+46730774352"
+        },
+        {
+          "label": "Location",
+          "value": "Isafjordsgatan 22, 16440 Kista, Stockholm, Sweden"
+        },
+        {
+          "label": "LinkedIn",
+          "value": "Iraklis Symeonidis",
+          "url": "https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/"
+        },
+        {
+          "label": "RISE Profile",
+          "value": "RISE Webpage",
+          "url": "https://www.ri.se/en/person/iraklis-symeonidis"
+        }
+      ]
+    }
+  }
+}
