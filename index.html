@@ -19,10 +19,14 @@
   <link rel="canonical" href="https://isymeonidis.github.io/">
   <meta name="theme-color" content="#2c3e50">
   <meta name="color-scheme" content="light dark">
+  <meta name="author" content="Iraklis Symeonidis">
+  <meta name="keywords"
+    content="cybersecurity, privacy engineering, secure architecture, 5G, 6G, data spaces, ISO 27001, research">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="Files/Isymeonidis_profile_image.jpeg">
 
   <style>
     :root {
@@ -31,6 +35,7 @@
       --text: #222;
       --sub: #555;
       --line: #ccc;
+      --line-soft: rgba(0, 0, 0, 0.12);
       --link: #2c3e50;
       --linkHover: #1a252f;
       --accent: #f9f9f9;
@@ -50,6 +55,7 @@
         --text: #e6e9ee;
         --sub: #a3adba;
         --line: #26303a;
+        --line-soft: rgba(255, 255, 255, 0.14);
         --link: #9ec1ff;
         --linkHover: #c5daff;
         --accent: #11161b;
@@ -148,6 +154,10 @@
       background-color: rgba(0, 0, 0, 0.06);
       outline: 2px solid var(--line);
       outline-offset: 2px;
+    }
+
+    [data-theme="light"] .sidebar a:focus-visible {
+      outline-color: var(--link);
     }
 
     /* Softer hover in dark mode */
@@ -297,6 +307,8 @@
       color: var(--sub);
       text-transform: uppercase;
       font-size: var(--text-lg);
+      margin: 0 0 8px;
+      letter-spacing: 0.04em;
     }
 
     h3 {
@@ -307,13 +319,32 @@
 
     hr {
       border: 0;
-      border-top: 1px solid var(--line);
-      margin-top: 5px;
+      border-top: 1px solid var(--line-soft);
+      margin-top: 8px;
       margin-bottom: 20px;
     }
 
     .section {
-      margin-bottom: 40px;
+      position: relative;
+      margin-bottom: 44px;
+      padding: 14px 16px;
+      border-radius: 10px;
+    }
+
+    main.content .section:nth-of-type(even) {
+      background: var(--muted);
+    }
+
+    main.content .section::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 18px;
+      width: 4px;
+      height: 28px;
+      border-radius: 999px;
+      background: var(--line);
+      opacity: 0.6;
     }
 
     main.content ul {
@@ -374,6 +405,36 @@
 
     .pub-links a:hover {
       color: var(--linkHover);
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--link);
+      color: #fff;
+      font-weight: 700;
+      font-size: var(--text-xs);
+      text-decoration: none;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+      z-index: 1000;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, 0.7);
+      outline-offset: 2px;
     }
 
     /* Print */
@@ -506,12 +567,12 @@
 
     /* --- Project Logos --- */
     .project-logo {
-      max-height: 50px;
-      max-width: 150px;
+      max-height: 56px;
+      max-width: 140px;
       width: auto;
       height: auto;
       float: right;
-      margin-left: 15px;
+      margin-left: 18px;
       margin-bottom: 10px;
     }
 
@@ -528,7 +589,7 @@
       .project-logo {
         float: none;
         display: block;
-        margin: 0 0 15px;
+        margin: 0 0 12px;
       }
     }
 
@@ -605,23 +666,6 @@
     /* .box-body p { display: flex; align-items: flex-start; gap: 12px; margin: 6px 0; }
 .box-body p strong { min-width: 200px; display: inline-block; font-weight: 700; color: var(--text); }
 .box-body p em, .box-body p a, .box-body p span, .box-body p strong + span { flex: 1 1 auto; color: var(--sub); } */
-
-    /* Make project logo sit neatly and limit size */
-    .project-logo {
-      max-height: 56px;
-      max-width: 140px;
-      float: right;
-      margin-left: 18px;
-      margin-bottom: 10px;
-    }
-
-    @media (max-width: 600px) {
-      .project-logo {
-        float: none;
-        display: block;
-        margin: 0 0 12px;
-      }
-    }
 
     /* Contributions summary styling (always visible keywords) */
     .contributions-desc,
@@ -747,7 +791,7 @@
   </script>
 </head>
 
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <nav class="sidebar" aria-label="Primary">
@@ -1865,6 +1909,8 @@
     </section>
   </main>
 
+  <a class="back-to-top" href="#top" aria-label="Back to top">Back to top</a>
+
   <script>
     // ===== Theme toggle (system pref + persistent user choice) =====
     (function () {
@@ -1896,6 +1942,18 @@
           apply(next);
         });
       }
+    })();
+
+    (function () {
+      const backToTop = document.querySelector('.back-to-top');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        backToTop.classList.toggle('is-visible', window.scrollY > 400);
+      }
+
+      toggleBackToTop();
+      window.addEventListener('scroll', toggleBackToTop, { passive: true });
     })();
 
     (function ensureInnerDetailsClosed(){
