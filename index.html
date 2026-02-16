@@ -20,6 +20,10 @@
   <meta name="theme-color" content="#2c3e50">
   <meta name="color-scheme" content="light dark">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #fff;
@@ -30,6 +34,13 @@
       --link: #2c3e50;
       --linkHover: #1a252f;
       --accent: #f9f9f9;
+      --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+      --text-base: 16px;
+      --text-sm: 14px;
+      --text-xs: 13px;
+      --text-xxs: 12px;
+      --text-lg: 18px;
+      --text-xl: 20px;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -76,7 +87,9 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: var(--font-sans);
+      font-size: var(--text-base);
+      line-height: 1.6;
       margin: 0;
       padding: 0;
       display: flex;
@@ -127,7 +140,7 @@
       text-decoration: none;
       text-transform: uppercase;
       font-weight: bold;
-      font-size: 13px;
+      font-size: var(--text-xs);
     }
 
     .sidebar a:hover,
@@ -152,19 +165,19 @@
     }
 
     .sidebar h1 {
-      font-size: 20px;
+      font-size: var(--text-xl);
       margin: 10px 0 5px;
     }
 
     .sidebar h2 {
-      font-size: 16px;
+      font-size: var(--text-base);
       margin: 0 0 5px;
       color: var(--sub);
       font-weight: 600;
     }
 
     .sidebar h3 {
-      font-size: 13px;
+      font-size: var(--text-xs);
       color: var(--text);
       opacity: .9;
       margin: 0 0 10px;
@@ -172,8 +185,14 @@
     }
 
     .sidebar p {
-      font-size: 12px;
+      font-size: var(--text-xxs);
       margin-top: 5px;
+      color: var(--sub);
+    }
+
+    .sidebar-affiliation {
+      font-size: var(--text-sm);
+      margin: 0 0 15px;
       color: var(--sub);
     }
 
@@ -225,7 +244,7 @@
       font-weight: bold;
       color: #fff;
       flex: 1 1 auto;
-      font-size: 13px;
+      font-size: var(--text-xs);
       text-align: center;
       text-transform: none;
       /* Override sidebar 'a' */
@@ -262,7 +281,7 @@
 
     /* Small meta text under the CTA */
     .updated {
-      font-size: 12px;
+      font-size: var(--text-xxs);
       color: var(--sub);
       margin: 0 0 12px;
     }
@@ -277,12 +296,12 @@
     h2 {
       color: var(--sub);
       text-transform: uppercase;
-      font-size: 18px;
+      font-size: var(--text-lg);
     }
 
     h3 {
       color: var(--text);
-      font-size: 16px;
+      font-size: var(--text-base);
       margin-top: 10px;
     }
 
@@ -295,6 +314,17 @@
 
     .section {
       margin-bottom: 40px;
+    }
+
+    main.content ul {
+      padding-left: 20px;
+      margin-left: 0;
+    }
+
+    main.content li {
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      margin-bottom: 4px;
     }
 
     .box {
@@ -311,7 +341,7 @@
     }
 
     .box p {
-      font-size: 14px;
+      font-size: var(--text-sm);
       margin: 5px 0;
     }
 
@@ -323,16 +353,16 @@
 
     .box ul {
       margin: 6px 0 8px;
-      padding-left: 18px;
+      padding-left: 16px;
     }
 
     .box li {
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .pub-meta {
       color: var(--sub);
-      font-size: 14px;
+      font-size: var(--text-sm);
     }
 
     .pub-links a {
@@ -448,13 +478,13 @@
     .timeline .when {
       font-weight: 600;
       color: var(--sub);
-      font-size: 14px;
+      font-size: var(--text-sm);
       margin-bottom: 6px;
     }
 
     .timeline .badge {
       display: inline-block;
-      font-size: 12px;
+      font-size: var(--text-xxs);
       line-height: 1;
       padding: 3px 8px;
       border-radius: 999px;
@@ -560,7 +590,7 @@
     }
 
     .project-contributions {
-      padding-left: 1.2rem;
+      padding-left: 1rem;
     }
 
     .project-contributions li {
@@ -597,7 +627,7 @@
     .box-body p strong+.contributions-desc {
       color: var(--sub);
       margin: 6px 0 10px;
-      font-size: 13px;
+      font-size: var(--text-xs);
     }
 
     /* Details summary styling as pill button to match timeline badges */
@@ -641,13 +671,13 @@
     /* Make lists compact and legible */
     .project-contributions,
     .project-metrics {
-      padding-left: 1.05rem;
+      padding-left: 1rem;
       margin-top: 8px;
     }
 
     .project-contributions li,
     .project-metrics li {
-      margin-bottom: 0.55rem;
+      margin-bottom: 0.4rem;
       line-height: 1.4;
     }
 
@@ -673,7 +703,7 @@
     /* --- Small visual harmonization for project detail buttons --- */
     .project-contributions-details>summary,
     .project-metrics-details>summary {
-      font-size: 13px; /* harmonize font size */
+      font-size: var(--text-xs);
       line-height: 1.2;
       padding: 7px 12px;
     }
@@ -726,7 +756,7 @@
 
     <h2>Senior Research Scientist | Cybersecurity Architect</h2>
     <h3>PhD, MSc, ISO 27001</h3>
-    <p style="margin: 0 0 15px; font-size: 14px; color: var(--sub);">
+    <p class="sidebar-affiliation">
       <a href="https://www.ri.se/en/person/iraklis-symeonidis" target="_blank" rel="noopener noreferrer"
         style="color:inherit; text-decoration: none; text-transform:none; font-weight:normal;">
         RISE Research Institutes of Sweden
@@ -780,11 +810,11 @@
     <a href="#certifications">Certifications</a>
     <a href="#languages">Languages</a>
     <a href="#talks">Invited Talks</a>
-    <a href="#research_visits">Research Visits</a>
-    <a href="#awards">Awards &amp; Grants</a>
     <a href="#media">Media</a>
     <a href="#publications">Publications</a>
     <a href="#academic">Academic Service</a>
+    <a href="#research_visits">Research Visits</a>
+    <a href="#awards">Awards &amp; Grants</a>
     <a href="#teaching">Teaching &amp; Supervision</a>
     <a href="#personal_interests">Interests</a>
     <a href="#contact">Contact</a>
@@ -1500,28 +1530,6 @@
       </ul>
     </section>
 
-    <section id="research_visits" class="section">
-      <h2>Research Visits &amp; Collaborations</h2>
-      <hr>
-      <ul>
-        <li><strong>2020:</strong> COSIC@KU Leuven - Research visit on secure V2X systems and privacy-preserving off-chain
-          smart contract protocols (FNR INTER / FWO proposal collaboration).</li>
-        <li><strong>2019:</strong> DCS@University of Manchester - Research visit on secure V2X systems.</li>
-        <li><strong>2019:</strong> FCA Bank (Turin, Italy) - Industry collaboration discussions on secure vehicular
-          sharing systems.</li>
-        <li><strong>2017:</strong> CrySyS Lab @ BME - Research visit on interdependent privacy in Facebook apps (FWO
-          research-visit grant).</li>
-      </ul>
-    </section>
-
-    <section id="awards" class="section">
-      <h2>Awards &amp; Grants (selection)</h2>
-      <hr>
-      <ul>
-        <li><strong>2017:</strong> FWO research-visit grant (COSIC@KU Leuven ↔ CrySyS Lab @ BME).</li>
-      </ul>
-    </section>
-
     <section id="media" class="section">
       <h2>Media Attention</h2>
       <hr>
@@ -1695,6 +1703,28 @@
       <p><strong>External Reviews:</strong></p>
       <ul>
         <li><strong>2021:</strong> IEEE Security &amp; Privacy</li>
+      </ul>
+    </section>
+
+    <section id="research_visits" class="section">
+      <h2>Research Visits &amp; Collaborations</h2>
+      <hr>
+      <ul>
+        <li><strong>2020:</strong> COSIC@KU Leuven - Research visit on secure V2X systems and privacy-preserving off-chain
+          smart contract protocols (FNR INTER / FWO proposal collaboration).</li>
+        <li><strong>2019:</strong> DCS@University of Manchester - Research visit on secure V2X systems.</li>
+        <li><strong>2019:</strong> FCA Bank (Turin, Italy) - Industry collaboration discussions on secure vehicular
+          sharing systems.</li>
+        <li><strong>2017:</strong> CrySyS Lab @ BME - Research visit on interdependent privacy in Facebook apps (FWO
+          research-visit grant).</li>
+      </ul>
+    </section>
+
+    <section id="awards" class="section">
+      <h2>Awards &amp; Grants (selection)</h2>
+      <hr>
+      <ul>
+        <li><strong>2017:</strong> FWO research-visit grant (COSIC@KU Leuven ↔ CrySyS Lab @ BME).</li>
       </ul>
     </section>
 
