@@ -538,10 +538,12 @@
     }
 
     .timeline .when {
-      font-weight: 600;
+      display: none;
+    }
+    .title-date {
       color: var(--sub);
-      font-size: var(--text-sm);
-      margin-bottom: 6px;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     .timeline .badge {
@@ -646,9 +648,9 @@
       border-radius: 6px;
     }
 
-    /* Hide only dot when collapsed */
+    /* Keep bullets visible for all main timeline entries */
     .timeline li.collapsed .dot {
-      display: none;
+      display: block;
     }
 
     .project-contributions {
@@ -729,6 +731,51 @@
     /* Emphasize metric numbers */
     .project-metrics strong {
       color: var(--link);
+    }
+
+    /* --- RISE projects visually grouped under the RISE role --- */
+    .subprojects-heading {
+      margin: 14px 0 8px;
+      font-size: var(--text-xs);
+      font-weight: 700;
+      color: var(--sub);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .timeline-project {
+      margin-top: -8px;
+    }
+
+    .timeline-project .dot {
+      background: var(--link);
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #experience-projects .timeline > li > .dot {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .timeline-project .box {
+      margin-bottom: 0;
+      margin-left: 14px;
+      border-left: 3px solid var(--line);
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .timeline-project.rise-project-first .box {
+      margin-top: -6px;
+      padding-top: 18px;
+    }
+
+    .timeline-project.rise-project-last .box {
+      margin-bottom: 10px;
+      padding-bottom: 18px;
     }
 
     /* Ensure horizontal rhythm inside boxes */
@@ -849,8 +896,7 @@
     <p class="updated">Last updated: Feb 2026</p>
 
     <a href="#about">About</a>
-    <a href="#projects">Current Projects</a>
-    <a href="#experience">Experience</a>
+    <a href="#experience-projects">Professional Experience, Flagship Projects &amp; Impact</a>
     <a href="#education">Education</a>
     <a href="#certifications">Certifications</a>
     <a href="#media">Media</a>
@@ -915,10 +961,25 @@
       </div>
     </section> -->
 
-    <section id="projects" class="section">
-      <h2>Current Projects (Selection)</h2>
+    <section id="experience-projects" class="section">
+      <h2>Professional Experience, Flagship Projects &amp; Impact</h2>
       <hr>
       <ol class="timeline">
+        <li data-start="2022" id="experience-rise">
+          <span class="dot" aria-hidden="true"></span>
+          <div class="box">
+            <details open>
+              <summary>
+                <h3><span class="title-date">2022 - Current</span> · Senior Cybersecurity Architect and Senior Research Scientist - RISE Research Institutes of Sweden</h3>
+              </summary>
+              <div class="box-body">
+                <p>Provide cybersecurity architectural guidance across automotive, cloud-edge, and data-space initiatives, ensuring security-by-design alignment with ISO/IEC 27001, GDPR, and emerging EU cybersecurity and digital regulations.</p>
+                <p><strong>Role focus:</strong> Secure architectures for critical infrastructure, cybersecurity governance and risk mitigation, DevSecOps and secure-by-design engineering, and cross-functional collaboration across research, industry, and public-sector initiatives.</p>
+                <p class="subprojects-heading">Flagship projects within this role are grouped below.</p>
+              </div>
+            </details>
+          </div>
+        </li>
 
         <!--
   PROJECT TEMPLATE
@@ -928,14 +989,14 @@
 -->
      
         
-<li data-start="2025" aria-hidden="false" id="project-twinloop">
+<li data-start="2025" aria-hidden="false" id="project-twinloop" class="timeline-project rise-project-first">
   <span class="dot" aria-hidden="false"></span>
   <div class="when">
     <time datetime="2025">2025</time> – <span class="badge">Current</span>
   </div>
 
   <div class="box">
-    <h3>TWINLOOP - Secure Digital Twin Framework &amp; TwinOps for Software-Defined EVs [Horizon Europe 🇪🇺]</h3>
+    <h3><span class="title-date">2025 - Current</span> · TWINLOOP - Secure Digital Twin Framework &amp; TwinOps for Software-Defined EVs [Horizon Europe 🇪🇺]</h3>
 
     <div class="box-body">
       <img src="Files/TWINLOOP_LOGO_NEGATIVE.png" alt="TWINLOOP Logo" class="project-logo">
@@ -997,7 +1058,7 @@
   </div>
 </li>
 
-        <li data-start="2025" aria-hidden="false" id="project-nexus">
+        <li data-start="2025" aria-hidden="false" id="project-nexus" class="timeline-project">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
             <time datetime="2025">2025</time> – <span class="badge">Current</span>
@@ -1005,7 +1066,7 @@
 
           <div class="box">
 
-            <h3>NexusForum Research &amp; Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
+            <h3><span class="title-date">2025 - Current</span> · NexusForum Research &amp; Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
 
             <div class="box-body">
 
@@ -1096,12 +1157,12 @@
           </div>
         </li>
 
-<li data-start="2023" aria-hidden="false" id="project-citcom">
-  <span class="dot" aria-hidden="true"></span>
+<li data-start="2023" aria-hidden="false" id="project-citcom" class="timeline-project">
+  <span class="dot" aria-hidden="false"></span>
   <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
 
   <div class="box">
-    <h3>CitCom.ai (AI TEF SCC) - Digital Europe 🇪🇺 &amp; Vinnova 🇸🇪</h3>
+    <h3><span class="title-date">2023 - Current</span> · CitCom.ai (AI TEF SCC) - Digital Europe 🇪🇺 &amp; Vinnova 🇸🇪</h3>
 
     <div class="box-body">
       <img src="Files/CitCom.png" alt="CitCom.ai Logo" class="project-logo invert-dark">
@@ -1158,11 +1219,11 @@
   </div>
 </li>
 
-<li data-start="2023" aria-hidden="false" id="project-beingwise">
-  <span class="dot" aria-hidden="true"></span>
+<li data-start="2023" aria-hidden="false" id="project-beingwise" class="timeline-project">
+  <span class="dot" aria-hidden="false"></span>
   <div class="when"><time datetime="2023">2023</time> – <span class="badge">Current</span></div>
   <div class="box">
-    <h3>Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
+    <h3><span class="title-date">2023 - Current</span> · Behavioral Next Generation in Wireless Networks for Cyber Security (BEiNG-WISE) [COST Action 🇪🇺]</h3>
     <div class="box-body">
       <img src="Files/BEiNG-WISE_logo_300.png" alt="BEiNG-WISE Logo" class="project-logo invert-dark">
 
@@ -1210,11 +1271,11 @@
   </div>
 </li>
 
-<li data-start="2022" data-end="2024" id="project-formas">
-  <span class="dot" aria-hidden="true"></span>
+<li data-start="2022" data-end="2024" id="project-formas" class="timeline-project rise-project-last">
+  <span class="dot" aria-hidden="false"></span>
   <div class="when"><time datetime="2022">2022</time> – <time datetime="2024">2024</time></div>
   <div class="box">
-    <h3>Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
+    <h3><span class="title-date">2022 - 2024</span> · Datadelning i en digitaliserad köttkedja [FORMAS 🇸🇪]</h3>
     <div class="box-body">
       <img src="Files/FORMAS.svg" alt="FORMAS Logo" class="project-logo invert-dark" style="max-width: 120px;">
 
@@ -1266,58 +1327,13 @@
     </div>
   </div>
 </li>
-      </ol>
-    </section>
-
-    <section id="experience" class="section">
-      <h2>Professional Experience</h2>
-      <hr>
-
-      <ol class="timeline">
-        <li data-start="2022" id="experience-rise">
-          <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2022">2022</time> – <span class="badge">Current</span>
-          </div>
-          <div class="box">
-            <details open>
-              <summary>
-                <h3>Cybersecurity Architect and Senior Researcher - RISE Research Institutes of Sweden</h3>
-              </summary>
-              <div class="box-body">
-                <p>As a Senior Research Scientist and Cybersecurity Architect at RISE, I specialize in cybersecurity and privacy (data protection) to ensure compliance with ISO/IEC 27001, the AI Act, GDPR, and other security standards.</p>
-                <p><strong>Role focus:</strong></p>
-                <ul>
-                  <li>Develop and implement secure architectures for critical infrastructure across industries.</li>
-                  <li>Evaluate third-party security risks and conduct vendor security assessments to strengthen supply chain security.</li>
-                  <li>Advise on cybersecurity governance best practices and design risk mitigation strategies to enhance resilience.</li>
-                  <li>Integrate DevSecOps principles into development workflows to ensure security by design.</li>
-                  <li>Collaborate with cross-functional teams to drive cybersecurity innovation and secure digital transformation.</li>
-                </ul>
-
-                <p><strong>Technology and scientific contributions:</strong> I contribute to cybersecurity research and innovation, focusing on secure, resilient system architectures that enable trustworthy, privacy-compliant information sharing across:</p>
-                <ul>
-                  <li>Electric vehicles and smart mobility</li>
-                  <li>Next-generation wireless networks (5G/6G)</li>
-                  <li>Manufacturing and Industry 4.0</li>
-                  <li>Data spaces and secure digital ecosystems</li>
-                  <li>Livestock supply chains and agritech</li>
-                </ul>
-                <p>Through research, industry collaboration, and applied innovation, I help organizations strengthen cybersecurity, enhance privacy, and drive secure digitalization.</p>
-              </div>
-            </details>
-          </div>
-        </li>
 
         <li data-start="2020" data-end="2022" id="experience-kth">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2020">2020</time> – <time datetime="2022">2022</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Scientist, Secure Communications and Cybersecurity - KTH Royal Institute of Technology</h3>
+                <h3><span class="title-date">2020 - 2022</span> · Scientist, Secure Communications and Cybersecurity - KTH Royal Institute of Technology</h3>
               </summary>
               <div class="box-body">
                 <p>As a Postdoctoral Researcher in Cybersecurity, I contributed to the development of secure architectures for smart mobility and trustworthy information-sharing systems. My work focused on analyzing, designing, and evaluating privacy-preserving V2X communication to ensure robust and resilient system architectures in connected and autonomous mobility.</p>
@@ -1336,13 +1352,10 @@
 
         <li data-start="2018" data-end="2020" id="experience-ulux">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2018">2018</time> – <time datetime="2020">2020</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Scientist, Secure Communications and Architectures - University of Luxembourg</h3>
+                <h3><span class="title-date">2018 - 2020</span> · Scientist, Secure Communications and Architectures - University of Luxembourg</h3>
               </summary>
               <div class="box-body">
                 <p>As a Postdoctoral Researcher at SnT, I focused on end-to-end encryption protocols, threat analysis, and cryptographic solution design for secure communication applications. My role involved analyzing security threats, evaluating cryptographic mechanisms for data protection and compliance, and contributing to the design and assessment of security solutions for enterprise applications.</p>
@@ -1369,13 +1382,10 @@
 
         <li data-start="2012" data-end="2018" id="experience-kuleuven">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2012">2012</time> – <time datetime="2018">2018</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Scientist, Secure Systems Architectures - KU Leuven (COSIC)</h3>
+                <h3><span class="title-date">2012 - 2018</span> · Scientist, Secure Systems Architectures - KU Leuven (COSIC)</h3>
               </summary>
               <div class="box-body">
                 <p>I was a PhD candidate at COSIC (Computer Security and Industrial Cryptography) at KU Leuven, Belgium, advised by Prof. Bart Preneel.</p>
@@ -1403,13 +1413,10 @@
 
         <li data-start="2009" data-end="2011" id="experience-starfish">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2009">2009</time> – <time datetime="2011">2011</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Back-end Web Developer (Drupal + E-commerce) - Starfish Web &amp; Art</h3>
+                <h3><span class="title-date">2009 - 2011</span> · Back-end Web Developer (Drupal + E-commerce) - Starfish Web &amp; Art</h3>
               </summary>
               <div class="box-body">
                 <p>Back-end web developer at Starfish Web &amp; Art, delivering Drupal and CS-Cart solutions across e-commerce, portals, blogs, and forums.</p>
@@ -1441,13 +1448,10 @@
 
         <li data-start="2008" data-end="2009" id="experience-informatica">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2008">2008</time> – <time datetime="2009">2009</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Technical Support Analyst - Informatica S.A.</h3>
+                <h3><span class="title-date">2008 - 2009</span> · Technical Support Analyst - Informatica S.A.</h3>
               </summary>
               <div class="box-body">
                 <p>Supported municipal software products, handling operator requests, software updates, and ongoing maintenance.</p>
@@ -1462,13 +1466,10 @@
 
         <li data-start="2005" data-end="2011" id="experience-teaching">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2005">2005</time> – <time datetime="2011">2011</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Teacher (New Technologies &amp; Web Programming) - Ministry of Education / General Secretariat for Lifelong Learning</h3>
+                <h3><span class="title-date">2005 - 2011</span> · Teacher (New Technologies &amp; Web Programming) - Ministry of Education / General Secretariat for Lifelong Learning</h3>
               </summary>
               <div class="box-body">
                 <p>Taught primary and secondary education programs and adult lifelong learning courses using new technologies.</p>
@@ -1484,13 +1485,10 @@
         
         <li data-start="2005" data-end="2005" id="experience-esoft">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2005">2005</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Technical Support Analyst - e-soft consulting</h3>
+                <h3><span class="title-date">2005</span> · Technical Support Analyst - e-soft consulting</h3>
               </summary>
               <div class="box-body">
                 <p>Provided technical support for accounting software used by small and medium local companies.</p>
@@ -1502,13 +1500,10 @@
 
         <li data-start="2004" data-end="2005" id="experience-military">
           <span class="dot" aria-hidden="true"></span>
-          <div class="when">
-            <time datetime="2004">2004</time> – <time datetime="2005">2005</time>
-          </div>
           <div class="box">
             <details>
               <summary>
-                <h3>Military Service - Hellenic Armed Forces</h3>
+                <h3><span class="title-date">2004 - 2005</span> · Military Service - Hellenic Armed Forces</h3>
               </summary>
               <div class="box-body">
                 <p>Completed national military service with a focus on telecommunications. Received hands-on training with military communication systems and operated as a member of a disciplined, collaborative team.</p>
