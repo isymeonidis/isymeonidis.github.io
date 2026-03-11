@@ -358,6 +358,10 @@
       margin-bottom: 4px;
     }
 
+    main.content p {
+      font-size: var(--text-sm);
+    }
+
     .box {
       border: 1px solid var(--line);
       padding: 15px;
@@ -405,6 +409,18 @@
 
     .pub-links a:hover {
       color: var(--linkHover);
+    }
+
+    .obfuscated-email a {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .obfuscated-email a:hover,
+    .obfuscated-email a:focus-visible {
+      color: var(--linkHover);
+      text-decoration: underline;
     }
 
     .back-to-top {
@@ -821,7 +837,10 @@
       "https://github.com/isymeonidis",
       "https://www.ri.se/en/person/iraklis-symeonidis"
     ],
-    "email": "mailto:iraklis.symeonidis@ri.se",
+    "email": [
+      "mailto:iraklis.symeonidis@ri.se",
+      "mailto:iraklis.symeonidis@icloud.com"
+    ],
     "knowsAbout": [
       "Cybersecurity","Privacy Engineering","NGWN 5G/6G",
       "Edge-Cloud Security","EV Cybersecurity","Data Spaces","PKI/Identity"
@@ -830,11 +849,36 @@
   </script>
 
   <script>
-    // === Force all contribution & metrics details to remain closed by default ===
-    (function forceAllContributionDetailsClosed() {
+    document.addEventListener('DOMContentLoaded', function () {
+      // === Force all contribution & metrics details to remain closed by default ===
       document.querySelectorAll('details.project-contributions-details, details.project-metrics-details')
-        .forEach(d => { try { d.open = false; } catch (e){} });
-    })();
+        .forEach(function (d) { try { d.open = false; } catch (e) {} });
+
+      // === Reconstruct obfuscated email links client-side ===
+      document.querySelectorAll('.obfuscated-email').forEach(function (node) {
+        var user = node.getAttribute('data-user');
+        var domain = node.getAttribute('data-domain');
+        if (!user || !domain) return;
+
+        var email = user + '@' + domain;
+        var link = document.createElement('a');
+        link.href = 'mailto:' + email;
+
+        // Format display text: "iraklis.symeonidis@ri.se" -> "iraklis dot Symeonidis <Et> ri dot se"
+        var displayUser = user
+          .split('.')
+          .map(function (part, index) {
+            if (index === 0 || part.length === 0) return part;
+            return part.charAt(0).toUpperCase() + part.slice(1);
+          })
+          .join(' <dot> ');
+        var displayDomain = domain.replace(/\./g, ' <dot> ');
+        link.textContent = displayUser + ' <Et> ' + displayDomain;
+        
+        link.setAttribute('aria-label', node.getAttribute('data-label') || ('Email ' + email));
+        node.appendChild(link);
+      });
+    });
   </script>
 </head>
 
@@ -1892,8 +1936,12 @@
     <section id="contact" class="section">
       <h2>Contact</h2>
       <hr>
+      <p>You can reach me via email at:</p>
       <ul>
-        <li><strong>Email:</strong> <a href="mailto:iraklis.symeonidis@ri.se">iraklis.symeonidis@ri.se</a></li>
+        <li><span class="obfuscated-email" data-user="iraklis.symeonidis" data-domain="ri.se" data-label="RISE email"></span></li>
+        <li><span class="obfuscated-email" data-user="iraklis.symeonidis" data-domain="icloud.com" data-label="Personal email"></span></li>
+      </ul>
+      <ul>
         <li><strong>Phone:</strong> <a href="tel:+46730774352">+46 73-077 43 52</a></li>
         <li><strong>Location:</strong> Isafjordsgatan 22, 16440 Kista, Stockholm, Sweden</li>
         <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/iraklis-symeonidis-b2129a38/"
