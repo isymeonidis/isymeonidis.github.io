@@ -751,12 +751,21 @@
 
     /* --- RISE projects visually grouped under the RISE role --- */
     .subprojects-heading {
-      margin: 14px 0 8px;
+      margin: 10px 0 4px;
       font-size: var(--text-xs);
       font-weight: 700;
-      color: var(--sub);
+      color: var(--link);
       text-transform: uppercase;
       letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .subprojects-heading::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line-soft);
     }
 
     .timeline-project {
@@ -764,7 +773,13 @@
     }
 
     .timeline-project .dot {
-      background: var(--link);
+      background: var(--bg);
+      border: 2px solid var(--link);
+      width: 10px;
+      height: 10px;
+      left: 7px;
+      top: 20px;
+      box-shadow: none;
       display: block;
       opacity: 1;
       visibility: visible;
@@ -778,10 +793,9 @@
 
     .timeline-project .box {
       margin-bottom: 0;
-      margin-left: 14px;
-      border-left: 3px solid var(--line);
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      margin-left: 20px;
+      border-left: 4px solid var(--link);
+      border-radius: 4px;
     }
 
     .timeline-project.rise-project-first .box {
@@ -1018,11 +1032,17 @@
               </summary>
               <div class="box-body">
                 <p>Provide cybersecurity architectural guidance across automotive, cloud-edge, and data-space initiatives, ensuring security-by-design alignment with ISO/IEC 27001, GDPR, and emerging EU cybersecurity and digital regulations.</p>
-                <p><strong>Role focus:</strong> Secure architectures for critical infrastructure, cybersecurity governance and risk mitigation, DevSecOps and secure-by-design engineering, and cross-functional collaboration across research, industry, and public-sector initiatives.</p>
-                <p class="subprojects-heading">Flagship projects within this role are grouped below.</p>
+                <p><strong>Role focus:</strong></p>
+                <ul style="margin-top: 5px; margin-bottom: 15px;">
+                  <li>Secure architectures for critical infrastructure</li>
+                  <li>Cybersecurity governance and risk mitigation</li>
+                  <li>DevSecOps and secure-by-design engineering</li>
+                  <li>Cross-functional collaboration across research, industry, and public-sector initiatives</li>
+                </ul>
               </div>
             </details>
           </div>
+          <p class="subprojects-heading">Flagship Projects</p>
         </li>
 
         <!--
