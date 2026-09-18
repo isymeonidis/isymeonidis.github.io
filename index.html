@@ -1120,17 +1120,20 @@
   </div>
 </li>
 
-        <li data-start="2025" aria-hidden="false" id="project-nexus" class="timeline-project">
+        <li data-start="2025" data-end="2026" aria-hidden="false" id="project-nexus" class="timeline-project">
           <span class="dot" aria-hidden="false"></span>
           <div class="when">
-            <time datetime="2025">2025</time> – <span class="badge">Current</span>
+            <time datetime="2025">2025</time> – <time datetime="2026">2026</time> <span class="badge">Inactive</span>
           </div>
 
           <div class="box">
+            <details>
 
-            <h3><span class="title-date">2025 - Current</span> · NexusForum Research &amp; Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
+              <summary>
+                <h3><span class="title-date">2025 - 2026</span> · NexusForum Research &amp; Innovation Roadmap, Cognitive Computing Continuum [Horizon Europe 🇪🇺]</h3>
+              </summary>
 
-            <div class="box-body">
+              <div class="box-body">
 
               <img src="Files/NF_logo_small.png" alt="NexusForum Logo" class="project-logo">
 
@@ -1213,7 +1216,8 @@
               </details>
               -->
 
-            </div>
+              </div>
+            </details>
           </div>
         </li>
 
@@ -2173,7 +2177,8 @@
         // If already converted (contains details), skip conversion but still adjust collapsed state
         const existingDetails = box.querySelector(':scope > details');
         if (existingDetails) {
-          const shouldBeOpen = !isExpired(li);
+          const isInactive = li.querySelector('.badge')?.textContent.trim().toLowerCase() === 'inactive';
+          const shouldBeOpen = !isExpired(li) && !isInactive;
           existingDetails.open = shouldBeOpen;
           li.classList.toggle('collapsed', !shouldBeOpen);
           // ensure toggle event keeps class in sync
