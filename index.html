@@ -2177,7 +2177,8 @@
         // If already converted (contains details), skip conversion but still adjust collapsed state
         const existingDetails = box.querySelector(':scope > details');
         if (existingDetails) {
-          const shouldBeOpen = !isExpired(li);
+          const isInactive = li.querySelector('.badge')?.textContent.trim().toLowerCase() === 'inactive';
+          const shouldBeOpen = !isExpired(li) && !isInactive;
           existingDetails.open = shouldBeOpen;
           li.classList.toggle('collapsed', !shouldBeOpen);
           // ensure toggle event keeps class in sync
