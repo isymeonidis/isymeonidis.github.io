@@ -243,29 +243,30 @@
       justify-content: flex-end;
     }
 
-    a.cta-btn,
-    .sidebar a.cta-btn {
+    .cta-btn,
+    .sidebar .cta-btn {
       display: inline-block;
       margin: 0;
       padding: 8px 10px;
       border-radius: 6px;
+      border: 0;
       background: #2c3e50;
       text-decoration: none;
       font-weight: bold;
       color: #fff;
+      font-family: inherit;
       flex: 1 1 auto;
       font-size: var(--text-xs);
       text-align: center;
       text-transform: none;
-      /* Override sidebar 'a' */
+      cursor: not-allowed;
     }
 
-    .sidebar a.cta-btn:visited {
+    .sidebar .cta-btn:disabled {
       color: #fff;
-      /* Ensure visited links are also white */
     }
 
-    .sidebar a.cta-btn:hover {
+    .sidebar .cta-btn:not(:disabled):hover {
       background: #1a252f;
       outline: none;
     }
@@ -945,8 +946,7 @@
     </div>
 
     <div class="cta-buttons">
-      <a class="cta-btn" href="CV/Iraklis_Symeonidis_CV.pdf" target="_blank" rel="noopener noreferrer"
-        aria-label="Download Resume as PDF (opens in a new tab)">Resume (PDF)</a>
+      <button class="cta-btn" type="button" disabled aria-label="Resume PDF unavailable">Resume (PDF)</button>
     </div>
 
     <!-- <button class="theme-toggle" type="button" id="themeToggle" aria-pressed="false">🌙 Dark mode</button> -->
